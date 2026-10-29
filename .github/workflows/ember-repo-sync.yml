@@ -1,0 +1,27 @@
+# ember-repo-sync v1.9.92
+name: Ember Repo Sync
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/15 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: ember-repo-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Clone whole sources, update snapshots, push and build
+        env:
+          GH_TOKEN: ${{ secrets.EMBER_REPO_TOKEN }}
+          EMBER_EVENT: ${{ github.event_name }}
+        run: node scripts/ember-repo-runner.cjs sync

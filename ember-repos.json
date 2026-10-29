@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "brain": "fezzymultiverse/ember-brain",
+  "target": "fezzymultiverse/ember-ui-lab",
+  "branch": "",
+  "sources": [
+    {
+      "repo": "fezzymultiverse/ember-brain"
+    },
+    {
+      "repo": "callbacked/keyless-gpt-wrapper-api"
+    },
+    {
+      "repo": "galleonlabs/hypergrok-trading-desk"
+    },
+    {
+      "repo": "drmikecrypto/WebSearchFree"
+    },
+    {
+      "repo": "somanchiu/Keyless-Google-Maps-API"
+    }
+  ],
+  "buildWorkflow": "build.yml",
+  "autoBuild": true,
+  "autoSync": false
+}
