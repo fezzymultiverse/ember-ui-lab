@@ -1,0 +1,49 @@
+{
+  "name": "ember",
+  "version": "1.10.11",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Ember - a companion to talk to about anything (PWA, APK-ready via Capacitor)",
+  "scripts": {
+    "test": "node tests/artifact-test.js && node tests/routing-fallback-test.js && node tests/streaming-routing-test.js && node tests/term-test.js && node tests/app-test.js && node tests/safety-test.js && node tests/voice-native-test.js && node tests/agent-test.js && node tests/context-test.js && node tests/music-test.js && node tests/speaker-test.js && node tests/scrape-test.js && node tests/keyscan-test.js && node tests/handoff-test.js && node tests/v183-test.js && node tests/v198-test.js && node tests/v1915-test.js && node tests/v1924-test.js && node tests/v1925-test.js && node tests/v1927-test.js && node tests/v1927b-test.js && node tests/v1928-test.js && node tests/v1929-test.js && node tests/v1930-test.js && node tests/v1932-test.js && node tests/v1933-test.js",
+    "serve": "node serve.js 8080",
+    "sync": "cap sync android",
+    "patch:android": "python3 scripts/apply_android_patch.py android android_patch",
+    "test:v1974": "node tests/v1974-test.js",
+    "test:v1973": "node tests/v1973-test.js",
+    "test:ui-stability": "node tests/v1950-ui-stability-test.js",
+    "test:api-audit": "node tests/v1951-api-audit-test.js",
+    "test:api-profile": "node tests/v1955-api-profile-test.js",
+    "test:newpipe-direct": "node tests/v1957-newpipe-direct-test.js",
+    "test:v1980": "node tests/v1980-puter-key-test.js",
+    "test:v1987": "node tests/v1987-test.js",
+    "test:v1988": "node tests/v1988-test.js",
+    "test:brain": "node tests/knowledge-brain-test.js",
+    "test:brain:browser": "node tests/knowledge-brain-browser-test.js",
+    "test:deliverables": "node tests/v1991-deliverables-test.js",
+    "test:deliverables:browser": "node tests/v1991-browser-test.js",
+    "test:repo-runner": "node tests/v1992-repo-runner-test.js",
+    "test:repo-runner:browser": "node tests/v1992-repo-runner-browser-test.js",
+    "test:command-center": "node tests/command-center-test.js",
+    "test:command-center:browser": "node tests/command-center-browser-test.js",
+    "test:routing94": "node tests/routing94-test.js",
+    "downloads": "node tools/download-bridge.cjs",
+    "test:routing94:browser": "node tests/routing94-browser-test.js",
+    "test:downloads94": "node tests/download94-test.js",
+    "test:workspace": "node tests/workspace95-browser-test.js",
+    "test:workspace:unit": "node tests/workspace95-test.js",
+    "test:release": "node tests/workspace95-test.js && node tests/knowledge-brain-test.js && node tests/v1992-repo-runner-test.js && node tests/command-center-test.js && node tests/routing94-test.js && node tests/download94-test.js && node tests/workspace95-browser-test.js && node tests/knowledge-brain-browser-test.js && node tests/v1992-repo-runner-browser-test.js && node tests/command-center-browser-test.js && node tests/routing94-browser-test.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/local-notifications": "^6.1.0",
+    "@capacitor-community/speech-recognition": "^6.0.1",
+    "@capacitor-community/keep-awake": "^5.0.0",
+    "@capacitor-community/text-to-speech": "^5.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0",
+    "playwright": "^1.64.1"
+  }
+}
