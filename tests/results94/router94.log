@@ -1,0 +1,25 @@
+PASS healthy keys round-robin across requests
+PASS successful stats persist immediately
+PASS usage tokens reflect provider-reported totals only
+PASS live provider status event emitted
+PASS model 429 proceeds to another model on same key
+PASS Retry-After longer than fifteen minutes respected
+PASS cooldown stats never expose raw keys
+PASS opening provider health preserves cooldown
+PASS 401 rejects only affected key and rotates
+PASS model permission 403 does not poison valid key
+PASS strict pin does not leak to paid providers or free mode
+PASS new aggregators require automatic routing opt-in
+PASS OpenRouter appears in fallback after opt-in
+PASS Stability never joins chat routing
+PASS media provider cannot be pinned as chat
+PASS OpenRouter correct completion endpoint
+PASS Plugsky documented quickstart endpoint
+PASS mid-stream error is surfaced without mixing providers
+PASS paste scanner detects OpenRouter prefix
+PASS paste scanner detects Plugsky prefix
+PASS labelled Stability sk key never filed as OpenAI
+PASS download bridge accepts expected video and playlist links
+PASS download bridge blocks SSRF and disguised hosts
+
+23 routing/provider/security checks passed. All provider traffic mocked.

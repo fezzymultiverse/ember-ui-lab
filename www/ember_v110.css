@@ -1,0 +1,27 @@
+/* Ember V1.10.10 - ember_v110.css
+   1) One Settings: the 5-card Actions dropdown is gone. A single Settings button opens the side panel.
+   2) The old keys side panel never shows (the side panel's API Keys row is the keys list).
+   3) Flashing blue dot IN FRONT of the name. It is a real element, so no ::after rule can switch it off,
+      and it is NOT stopped by "reduce motion". */
+
+html body header .hr>#bActionMenu.hb,html body header #bActionMenu,html body #headerActionsMenu,html body header .hr>#headerActionsMenu{display:none!important}
+html body #keysSidePanel,html body .ksp-backdrop{display:none!important}
+
+html body header .hr>#bSetTop.hb{
+  width:46px!important;height:46px!important;min-width:46px!important;max-width:46px!important;flex:0 0 46px!important;
+  border-radius:15px!important;padding:0!important;display:inline-flex!important;align-items:center;justify-content:center;
+  font-size:21px!important;line-height:1;overflow:visible!important;
+  background:linear-gradient(150deg,#1d2a44,#101321)!important;border:1px solid #6d4fc2!important;color:#cdb4ff!important;
+  box-shadow:0 5px 16px #0007,inset 0 0 0 1px #ffffff10;--glow:#b18cff;animation:emberIconGlow 2.6s ease-in-out infinite;
+  transition:transform .16s ease,filter .16s ease}
+html body header .hr>#bSetTop.hb:active{transform:translateY(-2px) scale(1.06);filter:brightness(1.25)}
+
+html body header .who .ember-lights,html body header .who .ember-signal{display:none!important}
+html body header .who .ember-title-grid{flex-direction:row!important;align-items:center!important;justify-content:center;gap:0!important;padding:5px 16px!important}
+html body header .who .ember-dot{
+  display:inline-block!important;flex:0 0 10px;width:10px;height:10px;margin:0 9px 0 0;border-radius:50%;
+  background:#2f8cff;box-shadow:0 0 6px #2f8cff,0 0 14px #2f8cff;
+  animation:emberDotFlash 1.2s ease-in-out infinite!important}
+@keyframes emberDotFlash{
+  0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 6px #2f8cff,0 0 16px #2f8cff}
+  50%{opacity:.15;transform:scale(.7);box-shadow:0 0 0 #2f8cff00}}

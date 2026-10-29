@@ -1,0 +1,3 @@
+EMBER 1.10.6 (repackage of 1.10.5, no feature changes)
+- Version bumped so the build is a real update over 1.10.5 / 1.10.4 (package.json, service-worker cache name, Settings version line).
+- Zip layout: package.json, .github/workflows/build.yml and www/ at the top level. Checked with ember_deploy.sh.

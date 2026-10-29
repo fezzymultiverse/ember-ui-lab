@@ -1,0 +1,125 @@
+EMBER V1.9.95 — COMPLETE SOURCE RELEASE
+Based on the uploaded ember-V1_9_94-routing-media.zip. No original project files deleted.
+
+WHAT CHANGED
+1. Floating Stop removed. Compact Stop sits at the right of the thinking row in
+   rotating, dropdown and timeline displays. Fallback reasoning has its own real
+   stop endpoint. Keyboard Enter/Space activates Stop instead of toggling its row.
+   Stop cancels chat routing, read-first retrieval, native response handoff and the
+   reasoning state machine; it releases the composer even if a provider ignores
+   abort. Late results are discarded. Cancellation does not undo remote writes,
+   already-dispatched Actions jobs or already-started independent media downloads.
+2. Provider indicator, provider name, Providers menu and AI shortcut now occupy a
+   compact bar below the message input, not the crowded header. Existing provider
+   status handlers remain attached to the same nodes. Menu opens upward and is
+   bounded to the viewport. No floating jump-to-bottom arrow is created.
+3. GitHub and Features now contain the SAME repository workspace, moved between
+   entry points, not duplicated forms. The existing token and settings namespaces
+   are retained. Apply Brain accepts owner/repo and GitHub URLs. A Brain change
+   updates all live knowledge tools and the runner manifest sources, invalidates
+   old read proofs, and retains other staged sources. Every source is whole-repo.
+4. Repo discovery offers authenticated Search, My repos, Previous/Next, Add whole
+   repo, Apply as Brain, and Use as Ember output when push permission is reported.
+   Direct owner/repo/URL entry also works. Results and linked sources use separate,
+   vertically spaced cards with wrapping action rows. Enter submits search/add.
+   Search, staging and local settings do not write to GitHub.
+5. Output selection persists and is shared by Repo Runner and Command Centre.
+   Save -> Install/update commits 3 managed files atomically on the default branch,
+   provisions an encrypted Actions secret and dispatches the whole-repo sync.
+   Sync verifies that the committed manifest matches the current sources/settings.
+   Run status reads GitHub workflow runs, not guessed success. Install/sync require
+   confirmation; errors and cancellation are shown. Whole sources remain isolated
+   snapshots under external/, not automatically merged into app entry points.
+6. Command Centre docks to the right without covering chat at >=1100px. Smaller
+   screens use a right-side drawer with backdrop, background inertness, focus
+   containment and Escape close. Resizing/rotation updates modal semantics.
+   Repository workspace and runner-status actions use the same saved config.
+7. New workspace files and previously missing routing/media/download modules are
+   included in the offline app shell, with a new cache version.
+
+SAFE REPOSITORY ROLES
+Brain = the complete repository used by live knowledge/file reads and an always-
+included runner source. Ember output = the existing repository receiving managed
+snapshot files and the build/sync workflows. Extra discovered repos = staged whole
+sources. Output cannot also be a source/Brain (prevents recursive self-copy).
+Applying a Brain is a local configuration change; Check access verifies its token
+permissions. Live reads/grep can disclose continuation limits, excluded secret,
+binary or oversized files, and submodules; no false unlimited-coverage claim.
+Private sources cannot be copied into a public output. No force-push. Source
+package hooks are not executed by the snapshot runner. Review licenses first.
+
+HOW TO USE
+- Unzip the complete ember-V1_9_95 folder. Use the included existing PWA/server or
+  Capacitor build workflow; this is source code, not a newly compiled APK.
+- Open Settings -> GitHub / Brain & Repo Runner (also accessible under Features).
+- Your existing saved GitHub token is reused on the same browser/app origin.
+  If starting on a new origin/device, paste it into GitHub token and Save token.
+  Check access. No real token is shipped in this release.
+- Apply the desired whole Brain using owner/repo or its GitHub URL.
+- Search repositories or choose My repos. Add whole sources; choose your existing
+  writable Ember output via Use as Ember output or the output field.
+- Select the existing build workflow filename. It must support workflow_dispatch.
+  If no build workflow exists, uncheck Dispatch build after source updates first.
+- Save settings, then Install/update + sync + build, and approve the GitHub writes.
+  Check Run status or the Command Centre terminal. Dispatch is not build success.
+- After changing sources/Brain/build settings, Install/update again before Sync.
+- Token access: source Contents read; output Contents, Workflows, Actions and
+  Secrets write (or corresponding classic token scopes). Protected branches,
+  disabled Actions or organization rules can still reject a live installation.
+- Browser run: npm install, then npm run serve. Tests: npx playwright install
+  --with-deps chromium, then npm run test:release. PW can override Playwright's
+  module location. Capacitor Android tooling remains as in the original project.
+
+VERIFICATION
+262 assertions passed across 11 release suites (tests/release95/release-tests.log):
+  23 new workspace configuration/security checks
+  35 Knowledge Brain checks
+  29 whole-repo/local-git integration checks
+  17 Command Centre static checks
+  23 routing/provider/security checks
+  12 local download bridge checks
+  44 new Chromium workspace/layout/cancellation checks
+  15 existing live-Brain Chromium checks
+  18 existing Repo Runner Chromium checks
+  24 Command Centre Chromium checks
+  22 routing/media/download Chromium checks
+All www/*.js files passed node --check. Layout checked at 320, 390, 768 and 1440px.
+Real bundled libsodium sealed-box encryption was exercised. Local git clone,
+commit, update and push behaviour was exercised against local bare test repos.
+GitHub, AI providers and media endpoints were MOCKED. No live user token was
+available here, no real repository was pushed, no paid media was generated, and
+no APK/native Android compilation or device execution was performed.
+
+LEGACY TEST NOTE
+The old npm test command still includes tests/app-test.js, whose hidden pre-
+accordion .stab click times out. The same failure was reproduced in the untouched
+uploaded V1.9.94 project; before/after logs are included. It is not represented as
+a passing full legacy suite. Use npm run test:release for the 11 verified release
+suites. Existing runner browser tests were updated to accept the new explicit
+write-confirmation dialogs. Command Centre tests now test desktop docking and
+mobile modal focus. Preservation hashes now reference the actual uploaded V1.9.94
+files; the deliberately modified Stop renderers are tested as modifications,
+not falsely labelled unchanged.
+
+DELIVERABLE CONTENTS
+Complete original project plus updated source, new regression tests, this change
+report, test logs, actual browser screenshots, and FILE_INTEGRITY_1_9_95.json.
+No node_modules, browser binaries, or development scratch scripts are included.
+
+CHANGED ORIGINAL FILES
+  package.json
+  www/ember_github.js
+  www/index.html
+  www/ember_think_inline.js
+  www/ember_github_ui.js
+  www/ember_repo_runner.js
+  www/style.css
+  www/ember_v79.js
+  www/ember_command_center.js
+  www/app.js
+  www/ember_timeline.js
+  www/sw.js
+  tests/v1992-repo-runner-browser-test.js
+  tests/command-center-test.js
+  tests/command-center-preservation.json
+  tests/command-center-browser-test.js

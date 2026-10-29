@@ -1,0 +1,15 @@
+const fs = require('fs');
+const path = require('path');
+const root = path.join(__dirname, '..', 'www');
+const css = fs.readFileSync(path.join(root, 'ember_v96.css'), 'utf8');
+const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const assert = require('assert');
+assert.match(css, /#settings\.sheet\s*\{[^}]*inset:0 0 0 auto!important/s, 'settings drawer must anchor to the right');
+assert.match(css, /#settings\.sheet\s*\{[^}]*transform:translateX\(105%\)/s, 'settings should enter from right');
+assert.match(css, /#settings\.sheet\.show\s*\{[^}]*transform:translateX\(0\)/s, 'settings should slide in when shown');
+assert.match(css, /#settings \.sb\s*\{[^}]*overflow:auto/s, 'settings content must scroll inside the panel');
+assert.match(css, /#settings \.acc-c svg\s*\{transform:rotate\(-90deg\)/, 'closed category indicators must point right');
+assert.match(css, /#settings \.acc-item\.open \.acc-c svg\s*\{transform:rotate\(0deg\)/, 'expanded category indicator must point down');
+assert.match(html, /id="eccTitle">Ember Command Centre</, 'right-side widget should be clearly labelled');
+assert.match(html, /id="emberCommandCenter" class="ecc-panel"/, 'existing command centre panel must remain');
+console.log('Settings right-panel tests passed');

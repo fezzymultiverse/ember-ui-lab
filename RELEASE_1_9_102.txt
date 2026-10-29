@@ -1,0 +1,23 @@
+Ember V1.10.0 (was 1.9.102) - Ember Hub (new right-hand side panel), on top of V1.9.101
+- NEW: tapping Settings in the header dropdown opens a right-hand side panel (Ember Hub). Existing Settings screen, tabs, cards and saved settings are NOT modified.
+- Ember Command Centre is pinned at the top of the panel as a live widget (memory files, terminal state, log lines, three-phase thought summary) with Open Command Centre and Repos & Brain buttons.
+- API Keys row drops down every provider with its logo, key count and state. Tap a provider to see its keys (masked only), Check keys, or Manage.
+  Search/scraping/GitHub/Audd keys are listed underneath (names and counts only).
+- All nine Settings sections are listed as option rows; each opens the original Settings screen on that section.
+- "Open classic settings (unchanged)" opens the original screen. Programmatic opens by other features still go to the classic screen.
+- Close: X, tap outside, Escape, or swipe right.
+- New files: www/ember_hub.js, www/ember_hub.css. Edited: www/index.html (2 tags), www/sw.js (cache name + file list), package.json (version).
+
+GitHub, one panel (added in the same release)
+- NEW: "GitHub · Brain & Repos" row in the Ember Hub, and the Command Centre's "Repositories & Brain" button, open ONE panel (www/ember_gitflow.js / .css):
+  1 Token & Brain  : save token, check access, set Brain repo, "Load brain into Ember" (sets it and runs a forced sync).
+  2 Find & add     : search GitHub or list your own repos, Add whole repos, add by URL, remove linked repos, "Use as output" for your own repos.
+  3 Clone & push   : set output repo, "Clone & push update" (two taps; publishes runner + repo list to the output repo and starts the clone on GitHub Actions), "Check run status".
+- Control Panel sync: the Command Centre gets a live "GitHub · Brain & Repos" card and the Hub widget shows the same line (brain, files, last sync, linked repos, output, token). Panel actions also write to the Command Centre terminal.
+- It only drives EmberGithub and EmberRepoRunner. The original GitHub tab and Features > Repo Runner are untouched (reachable via "Open classic GitHub settings").
+- Cloning/pushing happens on GitHub Actions in your output repo. A browser/phone cannot run git clone, and nothing is force-pushed.
+
+BUILD FIX (why no APK since 1.9.100)
+- scripts/apply_android_patch.py refuses any minor/patch above 99 (versionCode = major*10000 + minor*100 + patch).
+  package.json said 1.9.101, so the "Apply Ember native patch" CI step exited non-zero and no APK was built after 1.9.99.
+- package.json is now 1.10.0 (versionCode 11000, higher than the installed 1.9.95 = 10995). Next releases: 1.10.1, 1.10.2 ... up to 1.10.99.

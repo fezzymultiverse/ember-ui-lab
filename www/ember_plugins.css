@@ -1,0 +1,43 @@
+/* Ember V1.10.12 - ember_plugins.css: Plugins sheet, + menu plugin rows, even Command Centre page. Load LAST. */
+:root{--epl-bg:#0b111b;--epl-card:#0f1724;--epl-line:#263245;--epl-tx:#edf3fc;--epl-mut:#9daec4;--epl-blue:#2f8cff;--epl-ok:#33d17a;--epl-warn:#ffb347;--epl-row:56px}
+#plusMenu .pm-plug{border:1px solid var(--epl-line);border-radius:12px;margin:6px 8px;background:var(--epl-card);width:calc(100% - 16px)}
+#plusMenu .pm-go{margin-left:auto;font-size:20px;color:var(--epl-mut)}
+.epl-back{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000}
+.epl{position:fixed;left:0;right:0;bottom:0;z-index:9001;max-height:88vh;display:flex;flex-direction:column;background:var(--epl-bg);color:var(--epl-tx);border-radius:18px 18px 0 0;border-top:1px solid var(--epl-line);transform:translateY(100%);transition:transform .18s ease;padding-bottom:env(safe-area-inset-bottom)}
+.epl.show{transform:none}.epl[hidden]{display:none}
+.epl-grab{width:40px;height:4px;border-radius:2px;background:var(--epl-line);margin:8px auto 0}
+.epl-head{display:flex;align-items:center;justify-content:space-between;padding:10px 16px}.epl-head b{font-size:17px}
+.epl-x{width:40px;height:40px;border-radius:50%;border:1px solid var(--epl-line);background:transparent;color:var(--epl-tx);font-size:15px}
+.epl-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px 10px}
+.epl-tabs button{height:42px;border-radius:12px;border:1px solid var(--epl-line);background:transparent;color:var(--epl-mut);font-family:inherit;font-size:14px;font-weight:600}
+.epl-tabs button.on{border-color:var(--epl-blue);color:#cfe3ff;background:rgba(47,140,255,.14)}
+.epl-body{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:0 16px 18px}
+.epl-h{margin:16px 2px 8px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--epl-mut)}
+.epl-grp{border:1px solid var(--epl-line);border-radius:14px;overflow:hidden;background:var(--epl-card)}
+.epl-row{display:flex;align-items:center;gap:12px;width:100%;min-height:var(--epl-row);padding:8px 14px;border:0;border-bottom:1px solid var(--epl-line);background:transparent;color:var(--epl-tx);text-align:left;font-family:inherit}
+.epl-row:last-child{border-bottom:0}.epl-row:active{background:rgba(255,255,255,.04)}
+.epl-ic{flex:0 0 32px;height:32px;display:grid;place-items:center;font-size:18px}
+.epl-ini{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:#162236;font-size:12px;font-weight:700;color:#cfe3ff}
+.epl-tx{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px}
+.epl-tx b{font-size:15px;font-weight:600}
+.epl-tx small{font-size:12.5px;color:var(--epl-mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.epl-go{font-size:20px;color:var(--epl-mut)}
+.epl-sw{flex:0 0 44px;height:26px;border-radius:13px;background:#26324a;position:relative;transition:background .15s}
+.epl-sw::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#cfd8e6;transition:transform .15s}
+.epl-sw.on{background:var(--epl-blue)}.epl-sw.on::after{transform:translateX(18px);background:#fff}
+.epl-dot{flex:0 0 8px;height:8px;border-radius:50%;background:#4a5568}.epl-dot.ok{background:var(--epl-ok)}.epl-dot.warn{background:var(--epl-warn)}
+.epl-btns{display:grid;gap:10px;margin-top:14px}
+.epl-btn{height:48px;border-radius:12px;border:1px solid var(--epl-line);background:transparent;color:var(--epl-tx);font-family:inherit;font-size:15px;font-weight:600}
+.epl-btn.hot{background:var(--epl-blue);border-color:var(--epl-blue);color:#fff}
+/* Command Centre page in the right panel: one even grid, one type scale, one card style */
+#emberHub .ecx-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#emberHub .ecx-tile{min-height:78px;padding:12px;border:1px solid var(--epl-line);border-radius:14px;background:var(--epl-card);display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box}
+#emberHub .ecx-tile small,#emberHub .ecx-card small{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--epl-mut)}
+#emberHub .ecx-tile b{font-size:22px;font-weight:700;color:var(--epl-tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#emberHub .ecx-card{margin-top:10px;padding:12px 14px;border:1px solid var(--epl-line);border-radius:14px;background:var(--epl-card)}
+#emberHub .ecx-card p{margin:6px 0 0;font-size:13.5px;line-height:1.5;color:var(--epl-tx);word-break:break-word}
+#emberHub [data-view="cc"] .mgrp{margin-top:10px}
+#emberHub .ecx-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+#emberHub .ecx-btns .ehub-btn{height:48px;width:100%}
+@media (min-width:600px){#emberHub .ecx-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.epl{left:50%;right:auto;width:560px;transform:translate(-50%,100%)}.epl.show{transform:translate(-50%,0)}}
+@media (prefers-reduced-motion:reduce){.epl,.epl-sw,.epl-sw::after{transition:none}}

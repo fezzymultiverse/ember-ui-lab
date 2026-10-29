@@ -1,0 +1,13 @@
+'use strict';
+const fs = require('fs'), path = require('path'), assert = require('assert');
+const app = fs.readFileSync(path.join(__dirname, '..', 'www', 'app.js'), 'utf8');
+assert(app.includes('async function directNewPipe(t)'), 'direct NewPipe helper exists');
+assert(app.includes("A.dispatch('youtube_download'"), 'direct helper dispatches native video download');
+assert(app.includes("A.dispatch('playlist_download'"), 'direct helper dispatches native playlist download');
+assert(app.includes("A.dispatch('youtube_search'"), 'direct helper can resolve a title locally before downloading');
+assert(app.includes('if (await directNewPipe(t)) return;'), 'send exits before the AI reply path for direct downloads');
+const directStart = app.indexOf('async function directNewPipe(t)');
+const directEnd = app.indexOf('async function send()', directStart);
+const direct = app.slice(directStart, directEnd);
+assert(!/Prov\.run|resolveAddonCalls|reply\s*\(/.test(direct), 'direct helper contains no AI provider call or reply reroute');
+console.log('PASS V1.9.57 NewPipe direct-download routing checks');

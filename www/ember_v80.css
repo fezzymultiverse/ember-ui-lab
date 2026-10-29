@@ -1,0 +1,74 @@
+/* Ember V1.9.80 - visual repair 2. Loaded after ember_v79.css. Bubbles, reply actions, drawer vs music console, composer, egg logo, key list. */
+
+/* ---- 1. the egg is the Ember app logo (SVG), not a gradient blob ---- */
+html body .flame.ember-logo-hero{width:76px!important;height:76px!important;border-radius:20px!important;background:none!important;box-shadow:0 10px 34px rgba(255,106,0,.38)!important;filter:none!important;opacity:1!important;object-fit:contain;display:block;margin:0 auto;animation:ek-beat 2.4s ease-in-out infinite}
+@media(max-height:700px){html body .flame.ember-logo-hero{width:56px!important;height:56px!important}}
+
+/* ---- 2. chat bubbles: small, text and time share a line ---- */
+html body .msg.u{display:flex!important;flex-wrap:wrap;align-items:flex-end;justify-content:flex-end;column-gap:10px;row-gap:2px;width:fit-content;max-width:82%!important;margin-left:auto;padding:8px 13px!important;border-radius:18px 18px 5px 18px!important;font-size:15px!important;line-height:1.42!important}
+html body .msg.u>div:first-child{flex:0 1 auto;min-width:0;max-width:100%;overflow-wrap:anywhere}
+html body .msg.u>div:first-child p{margin:0}
+html body .msg.u>.mt{flex:0 0 auto;margin:0!important;padding:0!important;gap:6px!important;font-size:10.5px!important;opacity:.75;align-self:flex-end;border:0!important}
+html body .msg.u>.mt button[data-act=copy]{font-size:0!important;width:22px;height:22px;padding:0;background:none;border:0;display:inline-flex;align-items:center;justify-content:center}
+html body .msg.u>.mt button[data-act=copy]::after{content:"\29C9";font-size:13px;line-height:1}
+html body .msg.e{padding:10px 12px}
+
+/* ---- 3. Ember reply actions: one tidy row of equal pills, time on its own line ---- */
+html body .msg.a:not(.egg):not(.stream-preview)>.mt{display:flex!important;flex-wrap:wrap;align-items:center;gap:6px!important;margin:8px 0 0!important;padding:0!important;border:0!important;opacity:1!important}
+html body .msg.a:not(.egg):not(.stream-preview)>.mt>span{order:-1;flex:1 0 100%;font-size:11px;color:#8d8d93;margin:0 0 2px}
+html body .msg.a:not(.egg):not(.stream-preview)>.mt>.context-chip{order:-2;flex:0 0 auto;margin-right:6px}
+html body .msg.a:not(.egg):not(.stream-preview)>.mt button,html body .msg.e>.mt button{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:30px;min-width:34px;margin:0;padding:0 11px;border-radius:999px;border:1px solid #2e2e33;background:#151517;color:#c9c9ce!important;font-size:12px!important;font-weight:600!important;line-height:1;white-space:nowrap}
+html body .msg.a:not(.egg):not(.stream-preview)>.mt button:active,html body .msg.e>.mt button:active{background:#202023;border-color:var(--ac)}
+html body .msg.a>.mt [data-xs][data-on="1"]{color:#ffb27a!important;border-color:color-mix(in srgb,var(--ac) 55%,#2e2e33)}
+html body .msg.a>.mt button.talking{border-color:var(--ac);color:#ffb27a!important}
+html body .msg.e>.mt{display:flex;gap:6px;margin-top:8px}
+
+/* ---- 4. left panel: compact rows, the music console stays on top of the list and is the bigger target ---- */
+#drawer{padding-bottom:0!important}
+#drawer .dpane{gap:7px!important;padding:6px 2px 90px!important;-webkit-mask-image:linear-gradient(180deg,#000 calc(100% - 110px),transparent);mask-image:linear-gradient(180deg,#000 calc(100% - 110px),transparent)}
+#drawer .rcbtn{padding:8px 11px!important;border-radius:13px!important;gap:10px!important;min-height:0}
+#drawer .rcbtn .rci{width:32px!important;height:32px!important;border-radius:10px!important;font-size:16px!important}
+#drawer .rcbtn .rct b{font-size:13.5px!important}
+#drawer .rcbtn .rct small{font-size:11px!important;margin-top:1px!important}
+#drawer #bNew{min-height:46px!important;font-size:15px}
+#drawer .drawer-music{position:relative;z-index:5;flex:0 0 auto;margin:0 -14px!important;padding:10px 14px calc(12px + var(--safe,0px))!important;border-top:1px solid #4a2a0c!important;background:linear-gradient(180deg,rgba(5,5,5,0),#050505 14%,#050505)!important;box-shadow:0 -18px 26px #050505}
+#drawer .dm-console-btn{min-height:54px;padding:8px 12px!important;gap:10px!important;border-radius:16px!important;background:linear-gradient(135deg,#3a1d06,#1a0e05)!important;border:1.5px solid var(--ac)!important;box-shadow:0 6px 22px rgba(255,106,0,.28)}
+#drawer .dm-console-btn .dm-flame-logo{width:34px!important;height:34px!important;border-radius:9px!important}
+#drawer .dm-console-btn .dm-label{display:flex;flex-direction:column;gap:1px;min-width:0;font-size:14px!important;font-weight:800}
+#drawer .dm-console-btn .dm-label small{font-size:11px;font-weight:500;color:#e8b98e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+#drawer .dm-mini{flex:0 0 auto;width:36px;height:36px;border-radius:50%;border:0;background:var(--ac);color:#111;font-size:15px;display:inline-flex;align-items:center;justify-content:center}
+#drawer .dm-console{max-height:44vh;overflow-y:auto;border-radius:16px}
+
+/* ---- 5. composer: one slim dock, chips scroll sideways ---- */
+html body footer.comp{display:flex;flex-direction:column;gap:6px;padding:6px 10px calc(8px + var(--safe,0px))!important;max-height:none}
+html body footer.comp .mrow{margin:0!important;flex-wrap:nowrap!important;overflow-x:auto;overflow-y:hidden;gap:8px;scrollbar-width:none}
+html body footer.comp .mrow::-webkit-scrollbar{display:none}
+html body footer.comp .mrow .modes{flex-wrap:nowrap!important;flex:0 0 auto}
+html body footer.comp .modes button{min-height:32px!important;height:32px;padding:0 14px!important;font-size:13px!important;white-space:nowrap}
+html body footer.comp #bDocsQuick{flex:0 0 auto;min-height:32px;height:32px;padding:0 12px;white-space:nowrap}
+html body footer.comp #plusChips{display:flex;flex-wrap:nowrap!important;overflow-x:auto;gap:6px;margin:0!important;scrollbar-width:none}
+html body footer.comp #plusChips::-webkit-scrollbar{display:none}
+html body footer.comp #plusChips>*{flex:0 0 auto;min-height:30px;font-size:12.5px;padding:0 10px}
+html body footer.comp #plusChips.hidden{display:none}
+html body .comp .row{padding:4px 6px!important;border-radius:24px!important;min-height:0}
+html body .comp .row textarea#inp{min-height:40px!important;max-height:112px!important;padding:9px 6px!important;font-size:16px}
+html body .comp .row .side button,html body .comp .row>#bPlus.plus{width:36px!important;height:36px!important}
+body.kb-open footer.comp .mrow,body.kb-open footer.comp #plusChips{display:none!important}
+body.kb-open #log{scroll-padding-bottom:8px}
+
+/* ---- 6. Settings > Keys: groups and keys are fully readable ---- */
+html body .kgrp{margin-top:10px}
+html body .kghead{min-height:46px;font-size:14.5px!important;padding:10px 14px!important;gap:8px;text-align:left}
+html body .kghead.static{min-height:0;font-size:13px!important;padding:6px 2px!important;color:#d6d6d6}
+html body .kghead small{font-weight:500;color:var(--m);font-size:12.5px}
+html body .kghead .kg-sum{margin-left:auto;font-size:11.5px;font-weight:700;color:#7fe3a0;white-space:nowrap}
+html body .kghead .kg-sum.w{color:#ffb27a}html body .kghead .kg-sum.b{color:#ff8a80}
+html body .kr{flex-wrap:wrap;gap:8px 10px!important;padding:11px 12px!important}
+html body .kr .kt{flex:1 1 150px!important;min-width:0}
+html body .kr .kt b{font-size:14px!important;overflow-wrap:anywhere;word-break:break-all;letter-spacing:.02em}
+html body .kr .kt small{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;font-size:12px!important;line-height:1.4}
+html body .kr button{flex:0 0 auto;width:40px;height:40px;border-radius:11px}
+.pk-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.pk-row code{flex:1 1 100%;overflow-wrap:anywhere;word-break:break-all}
+.pk-name{overflow-wrap:anywhere}
+.pk-sel{flex:1 1 140px;min-width:0}

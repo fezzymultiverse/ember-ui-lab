@@ -1,0 +1,2 @@
+EMBER 1.10.7
+- Provider bar "Next <engine>" indicator: the spinning ring around the blue dot is gone. It is now a plain blue dot that flashes (faster while a reply is being made). No other UI changed.

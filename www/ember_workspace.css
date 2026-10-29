@@ -1,0 +1,101 @@
+/* Ember 1.9.95: scoped final layout; no floating chat controls. */
+html body #bStop,html body .comp .row .side #bStop:not(.hidden){display:none!important;position:static!important}
+html body #jumpEnd{display:none!important}
+html body #app>header{min-width:0;flex-wrap:nowrap}
+html body #app>header .hl,html body #app>header .hr{flex:0 0 auto}
+html body #app>header .who{min-width:0;flex:1}
+html body #app>header .who b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#chatProviderBar{position:relative;display:flex;align-items:center;gap:8px;min-width:0;margin-top:10px;padding:8px 0 0;border-top:1px solid #252a32;flex-wrap:nowrap}
+html body #chatProviderBar #bProv{display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;width:auto!important;height:32px!important;padding:0 10px!important;border:1px solid #354151!important;background:#111b27!important;border-radius:9px!important;color:#c8d7e9!important;font:600 11px system-ui}
+#chatProviderBar #bProv svg{width:15px;height:15px}
+html body #chatProviderBar #engs{position:static!important;display:inline-flex!important;align-items:center;justify-content:flex-start;gap:6px;width:auto!important;min-width:0!important;max-width:none!important;flex:1 1 auto;white-space:nowrap;font-size:11px!important;padding:5px 6px!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#chatProviderBar #engs>span:last-child{overflow:hidden;text-overflow:ellipsis;min-width:0}
+#chatProviderBar #engs i{flex:0 0 auto}
+html body #chatProviderBar #bAiFeatures{width:32px!important;height:32px!important;flex:0 0 32px;margin-left:auto;font:700 11px system-ui;color:#a8d6ff;border:1px solid #354151;background:#111b27;border-radius:9px}
+html body #chatProviderBar #provDrop{position:absolute!important;inset:auto 0 calc(100% + 8px) auto!important;width:min(430px,calc(100vw - 32px));max-width:100%;max-height:min(65dvh,600px);overflow:auto;overscroll-behavior:contain;z-index:65;transform-origin:bottom right;box-sizing:border-box}
+html body #chatProviderBar #provDrop.hidden{display:none!important}
+/* Stop is on the right of the thinking row, never over the composer. */
+html body .et-think .et-hdr,html body .et-think .tl-hdr{min-width:0;min-height:40px!important;height:auto!important;gap:7px!important;overflow:visible;contain:none}
+html body .et-think .et-stage{flex:1 1 70px;min-width:0}
+html body .et-think .tl-stop,html body #amber-think .tl-stop{position:static!important;flex:0 0 auto;min-height:32px;min-width:48px;padding:6px 9px!important;margin:0 0 0 auto!important;border:1px solid #774333!important;border-radius:9px!important;background:#2b1815!important;color:#ffb599!important;box-shadow:none!important;font:700 10px/1.2 system-ui;letter-spacing:.03em}
+html body .et-think .tl-stop:disabled{opacity:.65;cursor:wait}
+html body .et-think .et-shimmer{flex:1;min-width:0}
+html body .et-think .et-sw{flex:0 0 26px}
+/* The same DOM and storage back both settings entries: no divergent or stale clones. */
+#repoWorkspace{display:flex;flex-direction:column;gap:14px;min-width:0;width:100%;box-sizing:border-box}
+html body #settings #repoWorkspace>.card{display:flex!important;flex-direction:column;gap:14px;min-width:0;width:100%;margin:0!important;padding:16px!important;border:1px solid #2c3643!important;border-radius:14px!important;background:#0c1118!important;box-sizing:border-box}
+#repoWorkspace .gh-sec,#repoWorkspace .rr-section{display:flex;flex-direction:column;gap:10px;min-width:0;padding:16px 0;border-bottom:1px solid #27313f}
+#repoWorkspace .gh-sec:first-child,#repoWorkspace .rr-section:first-child{padding-top:0}
+#repoWorkspace .gh-sec:last-child,#repoWorkspace .rr-section:last-child{border-bottom:0;padding-bottom:0}
+#repoWorkspace .rr-section h3{font:650 14px/1.5 system-ui;color:#b9d9ff;margin:0 0 2px}
+#repoWorkspace .gh-sec>summary{display:list-item;cursor:pointer;min-height:36px}
+#repoWorkspace details.gh-sec:not([open])>*:not(summary){display:none}
+#repoWorkspace .ct{font:700 14px/1.5 system-ui;color:#e0edff;margin:0}
+#repoWorkspace input:not([type=checkbox]),#repoWorkspace select,#repoWorkspace textarea{box-sizing:border-box;width:100%;min-width:0;max-width:100%}
+html body #settings #repoWorkspace .btn{box-sizing:border-box;width:auto;max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;line-height:1.4;padding:10px 14px;min-height:42px;height:auto}
+#repoWorkspace .btnrow{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+#repoWorkspace .btnrow>.btn{flex:1 1 160px}
+#rrSources,#rrResults{display:flex;flex-direction:column;gap:12px;min-width:0}
+#repoWorkspace .rr-repo-card{display:flex;flex-direction:column;gap:9px;min-width:0;padding:15px;border:1px solid #334256;border-radius:12px;background:linear-gradient(140deg,#152333,#101722);overflow-wrap:anywhere;box-sizing:border-box}
+#repoWorkspace .rr-repo-card>b{font:650 14px/1.5 system-ui;color:#e5f0ff;overflow-wrap:anywhere;word-break:break-word}
+#repoWorkspace .rr-repo-card>small{font:12px/1.6 system-ui;color:#9eb3cd}
+#repoWorkspace .rr-role{font:700 9px/1.5 system-ui;letter-spacing:.09em;color:#8ac8ff}
+#repoWorkspace .rr-card-actions{display:flex;flex-wrap:wrap;gap:8px;min-width:0;margin-top:3px}
+#repoWorkspace .rr-card-actions>.btn{flex:1 1 140px}
+#repoWorkspace .rr-check{display:flex;align-items:flex-start;gap:10px;min-width:0;font:12px/1.6 system-ui;color:#b2c3d9}
+#repoWorkspace .rr-check input{flex:0 0 18px;width:18px!important;height:18px!important;margin-top:2px}
+#repoWorkspace .rr-pagination{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font:11px/1.5 system-ui;color:#9eb3cd}
+#repoWorkspace .gh-pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-width:100%;max-height:420px;overflow:auto;font:11px/1.7 ui-monospace,monospace;box-sizing:border-box}
+#rrStatus{min-height:56px;border-left:2px solid #6cbcff}
+#repoWorkspace [aria-busy=true]{cursor:progress}
+.ecc-workspace-actions{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:12px}
+.ecc-workspace-actions .btn{width:100%;min-height:40px;padding:8px 12px!important;white-space:normal}
+#eccRepoSummary,#eccActionStatus{white-space:pre-wrap;overflow-wrap:anywhere}
+.ecc-panel{height:100dvh;max-width:100vw;box-sizing:border-box;pointer-events:none}
+.ecc-panel.ecc-open{pointer-events:auto}
+.ecc-panel-content{min-height:0;overflow-x:hidden;scrollbar-gutter:stable}
+.ecc-panel-content>*{min-width:0;box-sizing:border-box}
+.ecc-card-title h3{min-width:0}
+@media(min-width:1100px){
+  body.ecc-docked #app{width:calc(100% - 410px);max-width:none;margin:0 410px 0 0}
+  body.ecc-docked #app>header,body.ecc-docked #log,body.ecc-docked #app>.comp{box-sizing:border-box;width:100%}
+  body.ecc-docked .ecc-panel{width:410px;box-shadow:none}
+  body.ecc-docked #empty{right:410px;width:auto}
+}
+@media(max-width:480px){
+  html body #app>header .hr .hb{width:32px!important;height:34px!important;font-size:15px!important}
+  html body #app>header .hr{gap:4px!important}
+  html body #app>header .who b{font-size:16px!important}
+  html body #settings #repoWorkspace>.card{padding:12px!important}
+  #repoWorkspace .rr-repo-card{padding:12px}
+  #repoWorkspace .rr-card-actions>.btn{flex-basis:100%}
+  #repoWorkspace .btnrow>.btn{flex-basis:100%}
+  html body .et-think .et-hdr{gap:5px!important}
+  html body .et-think .et-count{font-size:10px}
+  html body .et-think .et-drop-hint{display:none}
+}
+@media(prefers-reduced-motion:reduce){#chatProviderBar *,#repoWorkspace *{scroll-behavior:auto;animation:none!important}}
+/* Ember 1.10.13: the one GitHub card inside the Command Centre (tabs: Connect, Repos, Build & Run, Files, Activity). */
+.ecc-gtabs{display:flex;gap:2px;overflow-x:auto;border-bottom:1px solid var(--ecc-border);margin:6px 0 12px;scrollbar-width:none}
+.ecc-gtabs::-webkit-scrollbar{display:none}
+.ecc-gtabs button{flex:0 0 auto;background:none;border:0;border-bottom:2px solid transparent;color:var(--ecc-muted);font:600 12px system-ui,sans-serif;padding:10px 11px;min-height:40px;cursor:pointer}
+.ecc-gtabs button[aria-selected="true"]{color:var(--ecc-orange);border-bottom-color:var(--ecc-orange)}
+.ecc-gtabs button:focus-visible{outline:2px solid var(--ecc-blue);outline-offset:-2px}
+.ecc-gbody{display:flex;flex-direction:column;min-width:0}
+#eccGitHub[data-gtab="connect"] [data-ghp]:not([data-ghp~="connect"]),
+#eccGitHub[data-gtab="repos"] [data-ghp]:not([data-ghp~="repos"]),
+#eccGitHub[data-gtab="build"] [data-ghp]:not([data-ghp~="build"]),
+#eccGitHub[data-gtab="files"] [data-ghp]:not([data-ghp~="files"]),
+#eccGitHub[data-gtab="activity"] [data-ghp]:not([data-ghp~="activity"]){display:none!important}
+#eccGitHub #ghHub,#eccGitHub #repoRunnerFeature,#eccGitHub #ghRunnerCard{display:flex;flex-direction:column;gap:6px;min-width:0}
+#eccGitHub .gh-sec,#eccGitHub .rr-section,#eccGitHub #ghRunnerCard{display:flex;flex-direction:column;gap:10px;min-width:0;padding:12px 0!important;border:0!important;background:none!important}
+#eccGitHub details.gh-sec:not([open])>*:not(summary){display:none}
+#eccGitHub .gh-h,#eccGitHub .rr-section h3,#eccGitHub .ct{font:650 14px/1.5 system-ui,sans-serif;color:#e0edff;margin:0}
+#eccGitHub .lb{display:block;font:600 12px/1.4 system-ui,sans-serif;color:var(--ecc-muted);margin:4px 0 0}
+#eccGitHub .hint{font:12px/1.6 system-ui,sans-serif;color:var(--ecc-muted);margin:0}
+#eccGitHub input:not([type=checkbox]),#eccGitHub select,#eccGitHub textarea{box-sizing:border-box;width:100%;min-width:0;max-width:100%;min-height:42px;padding:9px 11px;border-radius:9px;border:1px solid var(--ecc-border);background:#080d15;color:#edf3fc;font:13px ui-monospace,SFMono-Regular,Consolas,monospace}
+#eccGitHub .btn{box-sizing:border-box;width:auto;max-width:100%;min-width:0;min-height:42px;height:auto;padding:10px 14px;border-radius:10px;white-space:normal;overflow-wrap:anywhere;line-height:1.4;font-size:13px}
+#eccGitHub .btnrow{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+#eccGitHub .btnrow>.btn{flex:1 1 140px}
+#eccGitHub .ecc-actions button{width:100%}
+@media(max-width:480px){#eccGitHub .btnrow>.btn{flex-basis:100%}}

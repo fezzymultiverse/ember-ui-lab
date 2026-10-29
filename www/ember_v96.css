@@ -1,0 +1,161 @@
+/* Ember V1.9.96 - ember_v96.css. Loaded LAST (after ember_workspace.css).
+   1) One size for every Settings option: rows and full-width controls = 56px, small actions inside a row = 44px.
+   2) Grouped Core Memory (details.mg). Layout only: no colours of the existing theme are changed. */
+
+#settings{--row-h:56px;--act-h:44px}
+
+/* ---- Tier 1: option rows and full-width controls, all the same height ---- */
+html body #settings .card .cr,
+html body #settings .card .mi,
+html body #settings .card .kr,
+html body #settings .card .prow,
+html body #settings .card details.mg>summary{
+  box-sizing:border-box;min-height:var(--row-h)!important;padding-top:8px!important;padding-bottom:8px!important;
+  font-size:14px;line-height:1.4;align-items:center}
+html body #settings .card .btn,
+html body #settings .card button.g,
+html body #settings .card select,
+html body #settings .card input[type=text],html body #settings .card input[type=password],
+html body #settings .card input[type=url],html body #settings .card input[type=number],
+html body #settings .card input[type=search]{
+  box-sizing:border-box;min-height:var(--row-h)!important;border-radius:14px!important;font-size:14.5px}
+html body #settings .card .btn,html body #settings .card button.g{
+  height:auto;padding:0 16px!important;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.3}
+/* the key rows keep their card look but share the same height and side padding */
+html body #settings .card .kr{padding-left:14px!important;padding-right:14px!important;margin-top:0!important}
+html body #settings .card #kList{display:flex;flex-direction:column;gap:10px}
+
+/* ---- Tier 2: small actions that sit inside a row (Edit, Request, Test, Check ...) ---- */
+html body #settings .card :is(.prow,.kr,.mi,.cr2) .btn,
+html body #settings .card :is(.prow,.kr,.mi,.cr2) button{
+  min-height:var(--act-h)!important;width:auto;padding:0 14px!important;font-size:13px;border-radius:12px!important}
+html body #settings .card .mi button{min-width:var(--act-h);padding:0 8px!important;background:none;border:none;box-shadow:none}
+
+/* ---- Grouped Core Memory ---- */
+#settings details.mg{display:block;margin:0 0 10px;border:1px solid var(--b,#1f1f23);border-radius:14px;background:var(--p2,#0a0a0a);overflow:hidden}
+#settings details.mg>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-left:14px!important;padding-right:14px!important;
+  cursor:pointer;list-style:none;font-weight:700;letter-spacing:.02em;-webkit-tap-highlight-color:transparent}
+#settings details.mg>summary::-webkit-details-marker{display:none}
+#settings details.mg>summary::after{content:'▾';margin-left:auto;font-size:12px;opacity:.7;transition:transform .15s}
+#settings details.mg:not([open])>summary::after{transform:rotate(-90deg)}
+#settings details.mg>summary b{order:2;min-width:26px;padding:2px 8px;border-radius:999px;border:1px solid var(--b,#1f1f23);font-size:12px;text-align:center;font-weight:700}
+#settings details.mg>summary span{order:1}
+#settings details.mg>summary::after{order:3;margin-left:0}
+#settings details.mg>.mi{padding-left:14px!important;padding-right:6px!important;border-top:1px solid var(--b,#1f1f23);border-bottom:none}
+#settings details.mg[open]>summary{border-bottom:none}
+@media(prefers-reduced-motion:reduce){#settings details.mg>summary::after{transition:none}}
+
+/* V1.9.97 header refinement: the blue pulse belongs to the chat header only. */
+header .who{display:flex;align-items:center;justify-content:center;gap:7px;flex:1 1 auto;min-width:0;text-align:center}
+header .who #pName{display:inline-block;position:relative;white-space:nowrap;line-height:1.2}
+header .who #pName::after{content:"";display:inline-block;width:8px;height:8px;margin-left:8px;vertical-align:middle;border-radius:50%;background:#258cff;box-shadow:0 0 5px #258cff,0 0 12px #258cff;animation:ember-chat-blue-pulse 1.7s ease-in-out infinite}
+@keyframes ember-chat-blue-pulse{0%,100%{opacity:.45;box-shadow:0 0 3px #258cff,0 0 7px #258cff;transform:scale(.88)}50%{opacity:1;box-shadow:0 0 7px #258cff,0 0 18px #258cff,0 0 26px #126dff;transform:scale(1.12)}}
+/* Keep the Settings title clean: no blue light is added to #setTitle. */
+#settings .sh-ember #setTitle::after{content:none!important;display:none!important}
+/* Stable, evenly spaced header action icons with no clipping or accidental overlap. */
+header .hr{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex:0 0 auto;min-width:max-content}
+header .hr .hb{display:inline-flex;align-items:center;justify-content:center;flex:0 0 38px;width:38px;min-width:38px;height:38px;padding:0;line-height:1;overflow:visible;text-align:center}
+header .hr .hb svg{display:block;width:20px;height:20px;flex:none}
+header .hr .hb:focus-visible,header .hl .hb:focus-visible{outline:2px solid var(--bl,#3d8bff);outline-offset:2px}
+@media(max-width:390px){header{gap:5px;padding-left:8px;padding-right:8px}header .hr{gap:4px}header .hr .hb{flex-basis:34px;width:34px;min-width:34px;height:34px}}
+@media(prefers-reduced-motion:reduce){header .who #pName::after{animation:none;opacity:1}}
+
+/* V1.9.98: Settings opens from the right as a readable side panel, not a drop-down sheet.
+   Existing cards, tabs, and the Command Centre panel remain intact. */
+#settings.sheet{
+  inset:0 0 0 auto!important;
+  width:min(560px,100vw)!important;
+  max-width:100vw;
+  height:100dvh;
+  z-index:181;
+  display:flex!important;
+  transform:translateX(105%);
+  visibility:hidden;
+  pointer-events:none;
+  transition:transform .24s ease,visibility .24s ease;
+  border-left:1px solid #30343d;
+  box-shadow:-18px 0 55px #0008;
+  overflow:hidden;
+}
+#settings.sheet.show{
+  transform:translateX(0);
+  visibility:visible;
+  pointer-events:auto;
+}
+#settings .stabs{flex:0 0 auto;overflow-x:auto;white-space:nowrap;}
+#settings .sb{min-height:0;overflow:auto;overscroll-behavior:contain;}
+@media(max-width:600px){
+  #settings.sheet{width:100vw!important;}
+}
+@media(prefers-reduced-motion:reduce){#settings.sheet{transition:none}}
+
+/* Keep settings navigation cues lateral: closed categories point right; the expanded one points down. */
+html body #settings .acc-c{transform:none!important}
+html body #settings .acc-c svg{transform:rotate(-90deg);transition:transform .2s ease,color .2s ease}
+html body #settings .acc-item.open .acc-c{transform:none!important}
+html body #settings .acc-item.open .acc-c svg{transform:rotate(0deg)}
+
+/* V1.9.99 visual refinement: right-entering settings pages, key-provider pages and actions menu. */
+#settings .sb{display:flex!important;flex:1 1 auto;min-height:0;overflow:hidden!important;padding-bottom:env(safe-area-inset-bottom,0px)!important}
+#settings .acc-wrap{position:relative;flex:1 1 auto;min-height:0;overflow:hidden}
+#settings .acc-wrap.acc-in-detail .acc-item:not(.open){display:none!important}
+#settings .acc-wrap.acc-in-detail .acc-item.open{display:flex!important;flex:1 1 auto;min-height:0;flex-direction:column;border:0;background:transparent}
+#settings .acc-wrap.acc-in-detail .acc-item.open>.acc-h{display:none!important}
+#settings .acc-wrap.acc-in-detail .acc-item.open>.acc-b{display:flex!important;flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;animation:emberPageFromRight .22s ease-out;padding:0 14px 24px}
+#settings .acc-backbar{position:sticky;top:0;z-index:4;display:flex;align-items:center;gap:14px;min-height:54px;margin:0 -14px 8px;padding:0 14px;background:#050506;border-bottom:1px solid #202024}
+#settings .acc-backbar button,.key-back{border:0;background:transparent;color:#90bfff;font:600 14px/1 system-ui;cursor:pointer;padding:10px 0;white-space:nowrap}
+#settings .acc-backbar b{font-size:15px;color:#f3f4f6}
+#settings .acc-backbar button span,.key-back span{margin-left:4px}
+@keyframes emberPageFromRight{from{opacity:.55;transform:translateX(18px)}to{opacity:1;transform:translateX(0)}}
+#kList.key-detail-mode .key-away{display:none!important}
+#kList .key-current{animation:emberPageFromRight .22s ease-out}
+#kList .key-back{display:flex;align-items:center;width:100%;min-height:48px;border-bottom:1px solid #2a2a30;margin-bottom:8px}
+#kList .key-current .kghead{width:100%;text-align:left;margin-bottom:8px;cursor:default}
+#kList .key-current .kghead .chev{display:none}
+#kList .kghead{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;cursor:pointer}
+#kList .kghead .chev{font-size:22px;color:#9abfff}
+#kList .kgbody{animation:emberPageFromRight .22s ease-out}
+.ef-badge.ef-logo{background:#f7f7f7!important;border:1px solid #e2e5e9;border-radius:9px!important;overflow:hidden;padding:3px;box-sizing:border-box}
+.ef-badge.ef-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.pdbrand.ef-badge{width:30px;height:30px;flex:0 0 30px;margin:0;background:#f7f7f7!important;border:1px solid #e2e5e9;border-radius:9px;overflow:hidden;padding:3px;box-sizing:border-box}
+.pdbrand.ef-badge img{width:100%;height:100%;object-fit:contain}
+.provider-title{font-weight:650;color:#f4f6f8}
+header .hr{position:relative}
+#bActionMenu.hb{display:flex!important;align-items:center;justify-content:center;gap:4px;flex:0 0 54px!important;width:54px!important;min-width:54px!important;height:46px!important;border:1px solid #365c95!important;border-radius:14px!important;background:linear-gradient(135deg,#172c50,#162035 65%,#2c1640)!important;color:#c5e2ff!important;font-size:25px!important;box-shadow:0 0 15px #327de333;animation:actionGlow 3s ease-in-out infinite}
+#bActionMenu .act-caret{font-size:10px;align-self:center;color:#b8d2ff}
+#bActionMenu.on{border-color:#70b5ff!important;box-shadow:0 0 19px #4aa5ff77!important}
+@keyframes actionGlow{50%{filter:brightness(1.22);box-shadow:0 0 19px #438dff66}}
+.header-actions-menu{position:absolute;right:0;top:calc(100% + 9px);z-index:300;width:min(300px,calc(100vw - 20px));max-height:min(76vh,600px);overflow:auto;padding:9px;border:1px solid #344966;border-radius:17px;background:linear-gradient(145deg,#101d31,#0b0d14 65%);box-shadow:0 18px 50px #000c;animation:emberPageFromRight .18s ease-out}
+.header-actions-menu.hidden{display:none}
+.action-item{display:flex;align-items:center;gap:13px;width:100%;min-height:52px;padding:9px 13px;margin:2px 0;border:1px solid transparent;border-radius:12px;background:transparent;color:#eef4ff;text-align:left;font:600 14px/1.3 system-ui;cursor:pointer}
+.action-item:hover,.action-item:focus-visible{background:#172640;border-color:#345784;outline:none}
+.action-emoji{flex:0 0 34px;width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#152b49;color:#cfe6ff;font-size:19px}
+#bAiFeatures.action-item{display:flex!important;flex:1 1 auto!important;width:100%!important;max-width:none!important;min-width:0!important;box-sizing:border-box;height:auto;min-height:52px;padding:9px 13px;margin:2px 0;border-radius:12px;color:#eef4ff!important;font-size:14px!important;background:transparent!important;border:1px solid transparent!important}
+#bAiFeatures.action-item:hover{background:#172640!important;border-color:#345784!important}
+.who{position:relative;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.who #engs{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
+.who #pName{line-height:1.12;letter-spacing:.03em}
+.ember-signal{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:9px}
+.ember-signal i{display:block;width:7px;height:7px;border-radius:50%;background:#55aaff;box-shadow:0 0 7px #369bff;animation:emberPulse 1.15s ease-in-out infinite}
+.ember-signal i:nth-child(2){width:5px;height:5px;animation-delay:.18s}
+.ember-signal i:nth-child(3){width:3px;height:3px;animation-delay:.36s}
+@keyframes emberPulse{0%,100%{opacity:.35;transform:scale(.72)}50%{opacity:1;transform:scale(1.2);background:#a8dbff}}
+@media(prefers-reduced-motion:reduce){#bActionMenu.hb,.ember-signal i,.header-actions-menu,#settings .acc-wrap.acc-in-detail .acc-item.open>.acc-b,#kList .key-current{animation:none!important}}
+/* Card headings now navigate to a focused right-side options page rather than folding controls downward. */
+#settings .acc-b.card-subpage>.card:not(.card-selected){display:none!important}
+#settings .acc-b.card-subpage>.card.card-selected{display:flex!important;flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;animation:emberPageFromRight .2s ease-out}
+#settings .acc-b.card-subpage>.card.card-selected>.ct{display:none!important}
+#settings .acc-card-backbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;min-height:48px;margin:-16px -14px 8px;padding:0 14px;background:#0b0b0c;border-bottom:1px solid #25252b}
+#settings .acc-card-backbar button{border:0;background:transparent;color:#90bfff;font:600 14px/1 system-ui;cursor:pointer;padding:10px 0}
+#settings .acc-card-backbar button span{margin-left:4px}
+#settings .acc-b.card-subpage .card.collapsed>.ct::after{transform:rotate(0deg)}
+#settings .acc-b:not(.card-subpage)>.card>.ct::after{content:'›';font-size:18px;opacity:.78;transition:transform .15s;margin-left:auto}
+#settings .acc-b:not(.card-subpage)>.card.collapsed>.ct::after{transform:none}
+#settings details.mg>summary::after{content:'›'!important;transform:none!important}
+
+/* Use only the requested three-light Ember header signal, not the former trailing single dot. */
+header .who #pName::after{content:none!important;display:none!important}
+/* Higher specificity than the original accordion stylesheet: isolate one selected card/page. */
+html body #settings .acc-b.card-subpage>.card:not(.card-selected){display:none!important}
+html body #settings .acc-b.card-subpage>.card.card-selected{display:flex!important;flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;animation:emberPageFromRight .2s ease-out}
+html body #settings .acc-b.card-subpage>.card.card-selected>.ct{display:none!important}

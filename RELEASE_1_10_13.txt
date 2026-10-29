@@ -1,0 +1,8 @@
+EMBER 1.10.13 - One GitHub place
+- GitHub and the Runner now live ONLY in the Command Centre: one "GitHub" card with tabs Connect, Repos, Build & Run, Files, Activity.
+- Removed: Settings > Keys GitHub card, Settings > GitHub tab, Settings > Features Repo Runner card, Settings > Advanced (Optional GitHub Runner), the separate GitHub side panel (ember_gitflow.js/.css), and the Brain / Find-and-write sections of the Settings chat widget.
+- The old Quick Actions (Run Build, Clear Cache, Push to GitHub, Check runner status) moved into Build & Run. "Repositories & Brain" button is gone.
+- Hub and chat widget keep one "GitHub" shortcut each that opens the Command Centre card (window.EmberGit.open / EmberWorkspace.open).
+- Same DOM nodes, IDs, storage and handlers as before; only moved and tagged with data-ghp for the tabs.
+- Messages that said "Settings > GitHub / Advanced" now say "Command Centre > GitHub".
+Not run on a phone or in a browser. Not tested.

@@ -1,0 +1,3 @@
+EMBER 1.10.8
+- Removed both "Get a key" cards (Engine Keys & Providers, Web Scraping).
+- Settings card titles no longer squash: the title sits on its own line and the provider list wraps underneath (ember_v104.css, ember_ui.js).

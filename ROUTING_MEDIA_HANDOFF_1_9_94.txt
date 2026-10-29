@@ -1,0 +1,94 @@
+EMBER 1.9.94 — ROUTING / MEDIA / DOWNLOAD HANDOFF
+Source patch built from the supplied ember-V1_9_93.zip. This is a development source release, not a signed APK or a claim of live-provider certification.
+
+GET STARTED
+1. Keep a backup of your existing project and Ember data. Replace your project files with this source, keeping your own signing secrets outside the archive.
+2. Use npm install and npm run serve for the web app. The AI button beside Providers opens Settings > Features > AI routing · media · downloads. A PWA update uses a new service-worker cache; close/reopen if the old UI is still shown.
+3. Paste keys in the existing Paste / Extract UI or choose the provider in the manual Add Key picker. OpenRouter sk-or-v1- and Plugsky sk-live- keys are recognized. Label generic Stability keys as STABILITY_API_KEY=... or Stability AI: ...; a generic sk- key cannot safely identify its issuer without a label.
+4. OpenRouter and Plugsky automatic fallback are OFF until you explicitly enable them in AI Features. Pinning either provider is also an explicit choice. Strict pin is preserved; disable it only if you want cross-provider fallback.
+5. Enable media generation separately. Select Stability AI image/audio, or Puter image/video/speech. Puter media has an explicit SDK sign-in, separate from stored Puter chat bearer tokens. Each generation requires review/confirmation. No media job ran against a real account during this patch.
+
+LOCAL YT-DLP ALTERNATIVE (BROWSER + ANDROID)
+Install a maintained yt-dlp and ffmpeg on the machine/device that will download. In Termux, typical installation is: pkg install nodejs python ffmpeg; python -m pip install -U yt-dlp. Follow the current upstream requirements for YouTube extraction (some formats/sites require a supported JavaScript runtime, challenge solver or account access). Restrictions/private content are not bypassed.
+Run npm run downloads in the source directory. The bridge binds only 127.0.0.1:8091 and prints a local token. Save its address and token under AI Features. Select yt-dlp and Audio or Video with audio. A stable token can be supplied with EMBER_DOWNLOAD_TOKEN; never share it publicly. EMBER_DOWNLOAD_DIR chooses the output directory. EMBER_ALLOWED_ORIGINS is a comma-separated allowlist for your exact Ember origins if you serve the web app on a different port.
+The web app uses the same resolver as chat and Music > Get. Paste a link, list its playlist first, then download one or the whole playlist (up to 100). Video mode reaches both single and playlist jobs. Bridge files are saved on the device running the bridge, not magically in the browser or Android Music library. Completed jobs show Save to this device buttons in AI Features. Those job links are session-local; the actual files remain in the bridge directory after a server restart. The bridge does not import cookies, carry provider keys, or use a public proxy. HTTPS-hosted web pages may be subject to browser mixed-content/private-network restrictions; use the local app origin or a trusted HTTPS reverse proxy configured with the exact allowed origin.
+NewPipe remains an APK option. Native video uses combined video/audio progressive streams and saves to Movies/Ember; audio saves to Music/Ember. Use yt-dlp for formats needing separate-stream merging. Browser/bridge audio must be saved/imported before native library playback; Ember does not falsely claim a remote file is already in your phone library. Download only material you have the right to keep.
+
+ROUTER FIXES
+* Model cooldowns are indexed by provider + credential + model; a model-level 429 does not rest every model on a key. Catalog failures and credential/balance failures retain broader key-level handling.
+* Retry-After seconds and HTTP dates are honored for chat routing without the previous fifteen-minute truncation. Round-robin credential selection, model fallback and strict provider pins are coordinated.
+* HTTP 401 invalidates only its key. Model access/moderation 403 is not automatically declared an invalid credential. HTTP 402 balance failures are distinct from OpenRouter transient in-flight budget metadata.
+* Successful replies persist status/counters; failures update actual request counters. Reported token totals are used only when the provider supplies them. Cooldown countdowns, last latency and counters refresh live. Listing models is labelled catalog/account access, not proof that paid generation worked.
+* Opening/refreshing Providers cannot clear active inference cooldowns. Health checks no longer submit paid chat pings just to add a key.
+* Explicit SSE errors are surfaced; a partial answer is not silently joined to another provider. Stream read stalls time out; stop prevents route fallback.
+* Stability is a media-only provider: saving only a Stability key does not pretend chat is configured. The engine dropdown excludes it.
+* Chat, utility jobs, agent follow-ups, Gemini voice capability loops and native background planning were reviewed. Native background plans include eligible alternative models, obey strict-pin free-fallback permission and share native model cooldowns. Native status events are reconciled into foreground counters when the app resumes. Proactive ping plans are drawn from supported OpenAI-compatible utility providers instead of always demanding one hard-coded Groq model.
+* JS cooldowns are session-local; native cooldowns live in app preferences. Foreground/native state is synchronized at handoff/result collection, not via a continuous cross-process lock. This is not an atomic server-side distributed router.
+
+MEDIA ARTIFACTS & UI
+Stability: Stable Image Core multipart generation and Stable Audio 2.5 text-to-audio. Generated binary files are saved in a dedicated IndexedDB artifact store, previewed and downloadable. They are not inserted into model context as base64. The AI can stage a media request and list saved artifact metadata; only an explicit UI confirmation starts generation. Storage failures preserve a recovery download while the page remains open. Cancel does not guarantee that a provider has stopped work or reversed billing.
+Puter: official SDK image/video/speech calls; explicit connection and provider confirmation; no silent cross-platform fallback.
+Stability's hosted Stable Video Diffusion API is retired. No dead video endpoint is wired, and video is not falsely presented as a Stability feature. Puter video is offered as an explicit alternative; self-hosted Stability video is not included.
+Plugsky: official quickstart at plugsky.com/v1 is used for chat. Its docs and OpenAPI advertise conflicting base URLs and inconsistent media coverage; unverified Plugsky media/video endpoints were NOT invented or silently enabled.
+Embedded provider monogram badges and full platform names appear in provider settings/status, the live right-panel routing summary and the active chat provider badge. These are local service-identification badges, not official trademark artwork.
+Permissions: fixed-width light-blue ON/OFF switches retain existing handlers, add keyboard/ARIA state and cannot stretch into long bars. System grants remain honest Request/Open controls; app code cannot silently revoke Android permissions. The original timeline, thought inspector and repository actions are retained.
+Delete Everything also removes new routing preferences, local bridge token and media artifact blobs. This release preserves the existing personal-device key storage architecture (localStorage/native private preferences); it does not introduce a production multi-user secrets vault or backend proxy for AI keys. Do not deploy your personal API keys in a public app.
+
+VERIFICATION
+Focused current suites: 80 checks passed in total, all with mocked AI providers / local fake downloader:
+  node tests/routing94-test.js                 23 passed
+  node tests/routing94-browser-test.js         22 passed
+  node tests/download94-test.js                12 passed
+  node tests/command-center-browser-test.js    23 passed
+All top-level application JS and tool .cjs files pass node --check; the Android patch Python script parses. The installed yt-dlp accepts the configured no-symlinks option. No real playlist/video was downloaded in verification. No actual AI generation, GitHub push or build was dispatched.
+Use npm run test:routing94, npm run test:routing94:browser and npm run test:downloads94 to reproduce. Browser tests require Playwright and its Chromium installation (npm install --no-save playwright; npx playwright install --with-deps chromium, or the equivalent on your development OS).
+
+BROADER LEGACY TEST STATUS — NOT ALL GREEN
+The attached legacy-regressions.json records the broader 21-suite run before the final playlist-label compatibility tweak. Fourteen suites passed in that run. A subsequent playlist label check was fixed without changing the test. The original uploaded source also fails v1915, v1929, v1930, v1987 and v1988 in this environment (including stale APIs, missing DOM fixtures and PDF-provider expectations). The old command-center static preservation test requires ai_agent.js to be byte-identical to the previous release; that is incompatible with the requested download/media changes. Its 23 actual browser behavior tests pass. Original timeline/think/react/steps source files remain unchanged.
+The full npm test command stops in app-test.js because it clicks the now-hidden legacy tab strip instead of the accordion; this is not represented as a passing run. agent-test.js reports the same 73 passes / 2 failures on original and patched builds. voice-cloud-test.js has three baseline failures against obsolete ElevenLabs/style expectations; patched execution also fails three immediate post-429 retry expectations because the new cooldown correctly stops those calls. This needs cooldown-aware fixture isolation before using that legacy test as a gate. Existing tests have not been altered to hide these results.
+Android Kotlin changes are SOURCE-ONLY here. No Android SDK project build, signed APK, real device permission test, NewPipe extraction or live provider credential verification was completed. Rebuild through the existing Capacitor/Android workflow and validate on your phone before replacing an installed stable build. No blanket claim that every old feature is production-verified is made.
+
+ENDPOINT SOURCES REVIEWED
+https://plugsky.com/docs/quickstart
+https://plugsky.com/docs/api-reference
+https://plugsky.com/v1/openapi.json
+https://openrouter.ai/docs/api_reference/limits
+https://docs.stability.ai/api-reference
+https://docs.stability.ai/api-reference/stable-audio-2/text-to-audio
+https://docs.stability.ai/release-notes
+https://docs.puter.com/AI/txt2vid/
+https://docs.puter.com/AI/txt2speech/
+https://github.com/yt-dlp/yt-dlp
+
+CHANGED / ADDED SOURCE FILES
+android_patch/app/src/main/java/com/fezzy/ember/DownloadWorker.kt
+android_patch/app/src/main/java/com/fezzy/ember/EmberAiPlugin.kt
+android_patch/app/src/main/java/com/fezzy/ember/EmberAiWorker.kt
+android_patch/app/src/main/java/com/fezzy/ember/EmberNotifyPlugin.kt
+android_patch/app/src/main/java/com/fezzy/ember/EmberPingWorker.kt
+android_patch/app/src/main/java/com/fezzy/ember/EmberRouteHealth.kt
+android_patch/app/src/main/java/com/fezzy/ember/EmberYoutubePlugin.kt
+package.json
+scripts/apply_android_patch.py
+serve.js
+tests/download94-test.js
+tests/routing94-browser-test.js
+tests/routing94-test.js
+tools/download-bridge.cjs
+www/ai_agent.js
+www/app.js
+www/ember_acc.js
+www/ember_downloads.js
+www/ember_features.js
+www/ember_getmusic.js
+www/ember_keys.js
+www/ember_keyscan.js
+www/ember_media.js
+www/ember_native.js
+www/ember_prov_ui.js
+www/ember_routing.css
+www/ember_voice.js
+www/index.html
+www/providers.js
+
+Syntax-checked JS/tool files: 64

@@ -1,6 +1,6 @@
 {
   "name": "ember",
-  "version": "1.10.11",
+  "version": "1.10.13",
   "private": true,
   "license": "UNLICENSED",
   "description": "Ember - a companion to talk to about anything (PWA, APK-ready via Capacitor)",

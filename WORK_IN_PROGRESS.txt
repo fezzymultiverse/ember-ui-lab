@@ -1,0 +1,20 @@
+EMBER - PARTIAL BUILD 4 (sent because of a rate limit, NOT finished, NOT tested)
+
+DONE
+- Free APIs: new www/ember_apis.js. + menu > Free APIs opens a panel with a master switch (OFF by default), key fields and Test buttons. ipify (public IP) and LanguageTool (grammar) need no key; Unsplash, WhoisJSON and WordsAPI (RapidAPI) take a key each; ChartLyrics (lyrics) needs none. Chat tools: get_public_ip, check_grammar, search_photos, get_whois, get_word_info, get_lyrics, offered to the AI only while the switch is on (key tools only with a saved key). Tested against stubbed responses in Node only: the real services have NOT been called. WhoisJSON (Authorization: TOKEN=key), WordsAPI headers and the ChartLyrics endpoint are from memory, so use the Test buttons first. Grammar is a chat tool, not a button on the text box.
+- Back button: new www/ember_back.js (loaded after ember_menu.js, listed in sw.js). Left panel, Settings, right Hub panel and + menu each add one history entry when they open; Android back closes the newest open one. History logic checked in a Node simulation only, NOT on a device. Pages inside Settings (rows that open to the right) are not tracked yet.
+- Load flicker: Live Terminal auto-open now waits for the first tap or keypress (ember_command_center.js), and index.html keeps the page hidden on a black background until load finishes (2 s safety timer). NOT verified on device.
+- Media rebuilt without Puter (ember_media.js, ember_mediaplus.js, ember_features.js, ember_cc_widget.js, ember_plus.js, ai_agent.js, app.js). Video = 4 Stability images (Ken Burns + crossfade on a canvas) + 1 Stability audio track, recorded on the phone with MediaRecorder, saved as .webm. Plays out in real time (about 20 s). Speech is no longer a media job (use Read aloud). UNTESTED on device.
+- Puter removed: providers.js (config, routing order, calls, models, prompt text, exports), index.html (card, dropdown option, script tag), ember_puter.js and puter icon deleted, key scanner/paste detection, settings text, sw.js cache list, CSS.
+- Old Puter tokens are erased from the phone on first launch.
+
+NOT DONE YET
+- Free PDF API (PDFShift works without a key: 10/day, watermarked), robust artifacts, Artifacts tab in left panel.
+- Right panel truncation, GitHub/runner into Command Centre, rotating provider chip, Settings restructure.
+- api-url.com integration (no docs reachable, endpoint unknown).
+
+FACTS FOUND
+- Load flicker cause: Live Terminal auto-opens at load (0.38 layout shift) plus an unstyled flash.
+- Back button cause: no history entry is pushed when the plus menu or panels open, so Android back leaves the app.
+- Stability retired its hosted video API on 24 July 2025. Stability = image + audio only. Video must be composed from Stability images + audio.
+- I could not load api-url.com or the ChartLyrics page, so I will not invent their endpoints.

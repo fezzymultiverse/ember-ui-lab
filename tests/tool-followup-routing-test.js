@@ -1,0 +1,14 @@
+'use strict';
+const fs = require('fs');
+const assert = require('assert');
+const providers = fs.readFileSync('www/providers.js', 'utf8');
+const app = fs.readFileSync('www/app.js', 'utf8');
+assert(providers.includes("const routeIds = o.routeProvider && CFG[o.routeProvider] ? [o.routeProvider] : orderFor(lane);"), 'follow-up route must restrict provider iteration to the original engine');
+assert(providers.includes("const routeModel = o.routeProvider === id && o.routeModel ? String(o.routeModel) : null;"), 'follow-up route must keep the original model');
+assert(providers.includes("if (pl && !o.routeProvider && !tried && !onlyPinned(lane))"), 'follow-up route must not fall back to Free Mode');
+assert(providers.includes("if (o.routeProvider && CFG[o.routeProvider]) {"), 'failure of a fixed-engine follow-up must stop instead of restarting general routing');
+assert(app.includes('async function resolveAddonCalls(text, L, route)'), 'tool resolution must accept the original route');
+assert(app.includes("{ provider: r.provider, model: r.model }"), 'tool resolution must receive the engine/model that produced the tool call');
+assert(app.includes('routeProvider: route.provider, routeModel: route.model'), 'tool-result synthesis must pass the original engine/model to the router');
+console.log('PASS tool-call follow-ups stay on the original provider/model');
+console.log('PASS fixed-engine follow-ups do not restart general routing');

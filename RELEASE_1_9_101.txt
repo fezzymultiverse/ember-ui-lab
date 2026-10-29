@@ -1,0 +1,7 @@
+Ember V1.9.101 - render fix on top of V1.9.100
+- Service worker cache renamed (ember-v1.9.101-right-panel) and now lists ember_v96_ui.css/js, so the new UI is no longer served from an old cache.
+- index.html loads ember_v96.css, ember_v96_ui.css and ember_v96_ui.js with ?v=1.9.101 to defeat stale WebView caches.
+- Header icon rules scoped to #bHist and #bActionMenu only (they were leaking into menu rows and the footer Providers button).
+- All six dropdown rows (Command Centre, API Keys, Browser, Termux, Settings, AI Features) share one layout: coloured emoji tile + text.
+- Footer Providers button: no more oversized clipped label.
+- Provider logos: bundled provider-icons SVGs shown on a full-size app-icon tile with the provider name beside them.

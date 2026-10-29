@@ -1,0 +1,36 @@
+/* Ember V1.9.87 - Media engines sheet. Layout and look only; loaded after the other Ember stylesheets. */
+#xengines .eg{display:flex;flex-direction:column;gap:16px;padding:16px 18px 64px}
+#xengines .eg-hero{padding:18px 16px 16px;border-radius:20px;border:1px solid #2b1a0d;background:radial-gradient(120% 140% at 0% 0%,rgba(255,106,0,.20),rgba(255,106,0,0) 60%),#0b0b0c}
+#xengines .eg-brand{display:inline-block;font:800 10.5px/1 system-ui,sans-serif;letter-spacing:.16em;color:#1a0800;background:linear-gradient(135deg,#ff6a00,#ffa05a);padding:6px 10px;border-radius:99px}
+#xengines .eg-hero h2{margin:12px 0 4px;font-size:22px;letter-spacing:-.01em}
+#xengines .eg-hero p{margin:0;color:var(--m,#a8a8a8);font-size:13.5px;line-height:1.55}
+#xengines .eg-card{background:#101010;border:1px solid #242424;border-top:2px solid var(--ac,#ff6a00);border-radius:18px;padding:16px}
+#xengines .eg-h{font-weight:800;font-size:15px;margin-bottom:12px}
+#xengines .eg-seg{display:flex;gap:6px;padding:4px;background:#070707;border:1px solid #242424;border-radius:14px}
+#xengines .eg-opt{flex:1;min-height:44px;border:0;border-radius:10px;background:transparent;color:#b5b5b5;font-weight:700;font-size:13px;cursor:pointer}
+#xengines .eg-opt.on{background:linear-gradient(135deg,#ff6a00,#c24e00);color:#fff;box-shadow:0 4px 14px rgba(255,106,0,.28)}
+#xengines .eg-eng{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid #1d1d1d}
+#xengines .eg-eng:first-of-type{border-top:0}
+#xengines .eg-eng b{display:block;font-size:14px}
+#xengines .eg-eng b em{font-style:normal;font-weight:600;font-size:11.5px;color:#ff9a4d;margin-left:6px}
+#xengines .eg-eng small{display:block;color:#8d8d8d;font-size:12px;line-height:1.5;margin-top:2px}
+#xengines .eg-eng .eg-last{color:#a8a8a8}
+#xengines .eg-dot{flex:0 0 11px;height:11px;margin-top:5px;border-radius:50%;background:#555;box-shadow:0 0 0 3px rgba(255,255,255,.04)}
+#xengines .eg-dot.ok{background:#2ee86b;box-shadow:0 0 0 3px rgba(46,232,107,.16)}
+#xengines .eg-dot.bad{background:#ff3b30;box-shadow:0 0 0 3px rgba(255,59,48,.16)}
+#xengines .eg-row{margin-top:12px}
+#xengines .eg-row .btn{min-height:48px}
+#xengines .eg-sw{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;min-height:56px;padding:10px 14px;border-radius:14px;border:1px solid #262626;background:#0a0a0a;color:#fff;text-align:left;font-size:13.5px;line-height:1.4;cursor:pointer}
+#xengines .eg-sw i{flex:0 0 46px;height:26px;border-radius:99px;background:#2a2a2a;position:relative;transition:background .2s}
+#xengines .eg-sw i::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s}
+#xengines .eg-sw.on i{background:#ff6a00}
+#xengines .eg-sw.on i::after{transform:translateX(20px)}
+#xengines .eg-log{list-style:none;margin:0;padding:0}
+#xengines .eg-log li{display:grid;grid-template-columns:auto 1fr auto;gap:2px 10px;align-items:baseline;padding:9px 0;border-top:1px solid #1d1d1d;font-size:12.5px}
+#xengines .eg-log li:first-child{border-top:0}
+#xengines .eg-log b{font-size:12px;letter-spacing:.04em;color:#2ee86b}
+#xengines .eg-log li.bad b{color:#ff6b61}
+#xengines .eg-log span{color:#cfcfcf;overflow-wrap:anywhere}
+#xengines .eg-log small{color:#777;white-space:nowrap}
+#xengines .eg-foot{margin:0;text-align:center;color:#6f6f6f;font-size:11.5px;line-height:1.6;letter-spacing:.02em}
+@media (prefers-reduced-motion:reduce){#xengines .eg-sw i,#xengines .eg-sw i::after{transition:none}}

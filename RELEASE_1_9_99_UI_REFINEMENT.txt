@@ -1,0 +1,9 @@
+Ember UI refinement (based on the complete supplied project)
+
+- Header controls are now in one animated actions dropdown, including the Ember Command Centre, Browser, Termux, Settings and AI Features.
+- Settings categories and individual settings cards navigate into right-side detail views with back navigation. Existing right-hand Command Centre widget and bottom chat layout are retained.
+- API-key provider rows open isolated right-side detail views. Provider marks are bundled locally with provider names, and work offline.
+- Removed the AI/status chip from the lower-left chat footer. Added a centered Ember title with three blue lights pulsing left-to-right from larger to smaller.
+- Added the new action-menu script and provider marks to the service-worker offline cache; cache version bumped.
+
+Checks: UI refinement, settings right-panel, Command Centre, and workspace regression suites passed. Browser smoke checks verified the action menu, Command Centre, Settings and provider-key navigation. The pre-existing Node browser-test script could not run because it hardcodes a Playwright module path unavailable in this sandbox; equivalent interaction smoke checks were run with Python Playwright.

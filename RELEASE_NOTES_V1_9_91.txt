@@ -1,0 +1,58 @@
+EMBER 1.9.91 — WEB ROUTING AND PRIVATE DELIVERABLES
+
+WHAT CHANGED
+- Keys-only installs with no explicit scraping preference expose scraping automatically.
+- Explicit OFF remains OFF. When a page read is requested with saved keys but scraping OFF, Ember asks permission before turning it on.
+- Explicit read/scrape/summarise/review requests with URLs run a real page fetch BEFORE the answer model. Up to two links are prefetched per turn. Other links and saved-site names retain the existing tool route.
+- Existing saved-key rotation/failover remains in place. A named provider is forced through the existing via parameter. The free reader remains a fallback, not a replacement for saved keys.
+- Actual provider/cached status appears on the thinking timeline. Source provenance is recorded with the answer. Provider secrets are never injected into prompts.
+- The scraper tool no longer disappears merely because the saved-sites module is absent.
+- PDF/Word/report requests get a 4096-token output allowance, including post-tool synthesis, rather than the former 350/450-token limits. Complete prose-only deliverables can be repaired into artifact cards; refusal/missing-input messages and malformed JSON are not packaged as completed files.
+- Ordinary report citations and document artifact filenames no longer trigger the code-answer read-first blocker. User code questions and executable code artifacts still require the existing repository proof.
+- Ember PDF uses bundled pdfmake 0.2.20 plus embedded Roboto fonts, with the original basic PDF writer as fallback.
+- Ember Documents exports genuine Office Open XML .docx using bundled docx 9.5.1. A clearly announced legacy .doc HTML fallback remains if that engine fails.
+- Original Markdown, HTML, JSON, CSV, SVG and code artifacts remain available.
+- Removed the unverified anonymous cloud PDF endpoints. Document EXPORT does not upload the document to a renderer. AI drafting still uses the configured chat provider and its existing terms/quotas.
+- App/service-worker version updated; all 76 cached assets exist, including the local export libraries. No CDN fetch is required at runtime.
+
+FREE / NO-SIGNUP MEANING
+The PDF and DOCX exporters are local open-source libraries, not a supposedly unlimited hosted API. No exporter account or key is needed, and no per-export service charge is introduced. Existing chat/scraping providers still have their own signup, access, billing and rate-limit rules. Jina/public readers are third-party limited fallbacks, not guaranteed unlimited services. Font coverage is not universal.
+
+BRANDING
+The UI can call these capabilities Ember PDF and Ember Documents: Ember owns the integration/workflow. pdfmake, docx and Roboto attributions/licenses are retained under www/vendor. Do not claim Ember invented those underlying engines or that third-party scraping results are an Ember-owned web service.
+
+RUN / UPDATE
+This is a source release, NOT a compiled APK or an update already installed on your device.
+For the browser/PWA: extract the project and run node serve.js 8080, then open http://localhost:8080. Use the same origin/port as before to retain that origin's stored settings. Refresh once online so the new service worker can cache the assets.
+For an existing Android project: apply these source changes, keep your signing identity and existing native setup, then use your normal Capacitor sync/build process. The original android_patch/ and build instructions are preserved. See docs/ANDROID_BUILD.md. Do not uninstall the installed app or clear storage just to apply this patch; that can delete saved keys/documents.
+If scraping is explicitly OFF, turn on Settings > Scraping or accept Ember's permission prompt when requesting a page read.
+If network providers fail in a browser because of CORS, provider access controls or quota, the app reports failure/fallback. No unauthenticated proxy or access-control bypass was added.
+
+TRY
+Read https://example.com using Firecrawl and summarize what the page says.
+Create a Word document with a title, sections and a comparison table.
+Create a PDF report from this text: [your content].
+Open a document artifact: Save PDF or Word .docx.
+
+VERIFICATION
+- 32 new routing/consent/artifact unit checks passed.
+- 13 new real-Chromium integration checks passed: real saved-key request with mocked service, source text reaches model, 4096-token budget, artifact repair, real PDF and DOCX buttons, no document upload, no runtime errors, offline exports, and a fresh offline reload loading the providers from the service-worker cache.
+- Binary verification: PDF text extracted successfully, Cyrillic/Greek/accented Latin preserved with bundled fonts, DOCX ZIP/XML/table/hyperlink structure validated.
+- Existing scraper suite: 74 passed; existing repository unit checks: 35 passed; existing repository browser checks: 15 passed.
+- Other targeted existing suites passed: artifact parser, provider fallback, streaming/cancellation, document context, safety, key extraction, background handoff.
+- The full legacy npm test run is NOT all-green: app-test.js times out on an obsolete hidden Keys-tab selector. Reproduced on the original untouched 1.9.90 archive. The agent suite retains two pre-existing failed expectations (YouTube tool list and person-search wording), also reproduced on original 1.9.90. Its OFF-state fixture was updated to explicitly turn scraping OFF because keys-only mode now auto-enables.
+- Historical cloud-PDF integration tests target the removed endpoints and are not certification of this release.
+- Your real API credentials, account limits, live provider permissions, and Android APK compilation/device save flows were NOT tested. Service calls in browser tests use fake credentials and mocked responses. Test those on your device before deployment.
+- Very large documents can still hit the chat model's context/output limits; split larger work into sections. Artifact repair cannot make weak or incomplete model writing factually correct.
+
+TEST COMMANDS
+npm run test:deliverables
+npm run test:deliverables:browser  (requires Playwright and its Chromium/system dependencies; PW can point to an existing Playwright module)
+npm run test:brain
+npm run test:brain:browser
+node tests/scrape-test.js
+
+SOURCES
+https://github.com/bpampuch/pdfmake
+https://github.com/dolanmiu/docx
+https://jina.ai/reader/

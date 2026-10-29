@@ -1,0 +1,13 @@
+EMBER 1.10.11 - Settings menus rebuilt
+- Every menu now works the same way: a row opens a page to the RIGHT, the arrow in the header comes back. Nothing drops down.
+  Gear > side panel > section (list of rows) > one row = one page.
+- Side panel: API keys opens a provider list, a provider opens its own page (keys, Check, Manage). Command Centre opens as a page.
+- Settings sections are now a short list of compact rows (icon, name, one line) in one rounded group. Pages are flat: no box inside a box.
+- One header on every Settings page: back arrow, title and where you are, close. The second back bar under it is gone.
+- Core Memory groups open as pages (no <details> drop-downs).
+- Slimmer controls everywhere: rows, inputs, selects and buttons are 42px, small actions 34px (was 56px / 50px / 44px).
+- Permissions rows: name and status on the left, the action on the right.
+- New: ember_menu.js / ember_menu.css (menu controller + look), ember_icons.js (one icon set), ember_hub.js / ember_hub.css rewritten.
+- app.js: old card "subpage" code removed (key provider drill and Memory groups now use the same page system).
+- Brand: S.O.I. x Bojack line at the bottom of the side panel, Ember-accent to blue hairline under the headers.
+Not run on a phone or in a browser (no test pass this build).

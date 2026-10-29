@@ -1,0 +1,5 @@
+EMBER 1.10.5
+- Command Centre widget (bottom of Settings): token, brain repo, search, write to brain and push, media, live terminal
+- + menu: Create audio, Create video, Stability bridge toggle
+- Brain can be the push target
+NOT run on a phone or against live providers. Browser test (tests/v1105-browser-test.js) passed 27 of 28 checks before the last fix; last check not re-run.

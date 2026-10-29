@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Ember">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#1c1c1c"/>
+      <stop offset="1" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="fl" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ff5a00"/>
+      <stop offset="0.6" stop-color="#ff8a00"/>
+      <stop offset="1" stop-color="#ffb347"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ffd9a0"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="300" r="170" fill="#ff6a00" opacity="0.14"/>
+  <path d="M256 70c20 58 96 104 96 192 0 62-43 110-96 110s-96-48-96-110c0-38 18-66 40-92 4 28 18 44 34 50-10-58 6-106 22-150z" fill="url(#fl)"/>
+  <path d="M256 232c10 30 52 56 52 104 0 34-23 58-52 58s-52-24-52-58c0-22 10-38 22-52 3 16 11 25 20 28-6-32 2-58 10-80z" fill="url(#core)"/>
+  <circle cx="256" cy="414" r="6" fill="#ff6a00" opacity="0.9"/>
+  <circle cx="214" cy="430" r="4" fill="#ff8a00" opacity="0.7"/>
+  <circle cx="300" cy="426" r="4" fill="#ffffff" opacity="0.6"/>
+</svg>

@@ -1,0 +1,13 @@
+const fs = require('fs');
+const assert = require('assert');
+const css = fs.readFileSync('www/style.css', 'utf8');
+const plus = fs.readFileSync('www/ember_plus.js', 'utf8');
+const timeline = fs.readFileSync('www/ember_timeline.js', 'utf8');
+assert(css.includes('background:#0b0b0b!important'));
+assert(css.includes('.comp .tools{display:none!important}'));
+assert(plus.includes('data-action='));
+assert(plus.includes("{ id: 'bPasteIn'"));
+assert(timeline.includes("case 'youtube_search'"));
+assert(timeline.includes("case 'youtube_download'"));
+assert(timeline.includes("const empty = $('empty'); if (empty) empty.classList.add('hidden');"));
+console.log('PASS V1.9.40 UI regression checks');

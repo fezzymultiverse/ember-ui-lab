@@ -1,0 +1,5 @@
+Ember V1.10.4 (on V1.10.3)
+IMPLEMENTED + browser-checked (headless Chromium 360x780): Settings scroll fix (ember_v104.css). Cause: ember_acc.css display:block!important beat ember_v96.css flex/overflow:hidden, so Settings pages could not scroll.
+IMPLEMENTED, syntax-checked only: Live Terminal richer (ticker, tags, ms timings, filters, Copy, auto-open) fed by ember_v104.js from tool calls, engine tries/skips/switches, picture/PDF/web/GitHub steps; app.js emits ember-tool-log.
+IMPLEMENTED, syntax-checked only: + > Create PDF (one-shot PDF artifact; Save PDF builds the file); + > Create image now always beats the AI Features media hand-off.
+NOT DONE (planned): Stability in the image router; media button feedback/confirm fix; GitHub + Features merged into Command Centre and removed from Settings; brain repo as push target (runner rule brain != output unchanged). No live provider, GitHub or APK test.

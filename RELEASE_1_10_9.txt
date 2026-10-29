@@ -1,0 +1,5 @@
+EMBER 1.10.9
+- One Settings: the old "All Settings" list no longer appears. Side-panel rows open straight to their page; Back returns to the side panel.
+- Media engines (and any sheet opened from Settings) now opens ABOVE the Settings panel. It was opening underneath, which is why it looked dead.
+- Permissions, Voice & Background rows rebuilt as clean two-line rows.
+Not run on a phone.

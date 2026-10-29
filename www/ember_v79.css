@@ -1,0 +1,70 @@
+/* Ember V1.9.79 - visual repair. Loaded after style.css so it wins without editing it. */
+:root{--f-bg:#1c1c1e;--f-bd:#5a5a5e;--f-bd-h:#8a8a90;--f-tx:#fff;--f-ph:#9a9aa0}
+
+/* ---- every text field is visibly a field ---- */
+html body .card input[type=text],html body .card input[type=url],html body .card input[type=number],html body .card input[type=password],html body .card input[type=search],html body .card select,html body .card textarea,html body .sb>input,html body .sb>select,html body .sb>textarea,html body #pjForm input,html body #pjForm textarea,html body #pForm input,html body #pForm textarea{
+  background:var(--f-bg)!important;color:var(--f-tx)!important;border:1.5px solid var(--f-bd)!important;border-radius:14px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+html body input::placeholder,html body textarea::placeholder{color:var(--f-ph)!important;opacity:1!important}
+html body input:focus,html body select:focus,html body textarea:focus{border-color:var(--ac)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 28%,transparent)!important;outline:0}
+
+/* ---- Provider names: plain padded list, styled in ember_v83.css ---- */
+
+/* ---- Music: tabs keep a solid band so nothing shows through ---- */
+.sheet .sb>.mtabs{position:sticky;top:0;z-index:8;isolation:isolate}
+.sheet .sb>.mtabs::before{content:"";position:absolute;inset:-18px -18px -10px;background:var(--bg,#000);z-index:-1;border-bottom:1px solid var(--line)}
+.mtab{min-height:44px}
+
+/* ---- Download cards: nothing is cut off ---- */
+#gtJobs{display:flex;flex-direction:column;gap:12px}
+.dj{padding:14px 16px;border-radius:18px;background:var(--card);border:1px solid var(--line2)}
+.dj-done{border-color:color-mix(in srgb,var(--gr) 45%,var(--line2))}
+.dj-failed{border-color:color-mix(in srgb,var(--rd) 50%,var(--line2))}
+.dj-head{display:flex;align-items:flex-start;gap:10px}
+.dj-title{flex:1 1 auto;min-width:0;font-size:15px;font-weight:700;line-height:1.35;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.dj-chip{flex:0 0 auto;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:800;background:color-mix(in srgb,var(--ac) 20%,#111);color:#ffb27a;white-space:nowrap}
+.dj-done .dj-chip{background:rgba(46,232,107,.16);color:#46e981}
+.dj-failed .dj-chip{background:rgba(255,59,48,.18);color:#ff8a80}
+.dj-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:8px 0 10px;font-size:13px;line-height:1.45;color:#c4c4c8}
+.dj-eng{padding:2px 8px;border-radius:6px;background:#26262a;color:#e8e8ea;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.dj-err{margin:0 0 10px;padding:9px 12px;border-radius:10px;background:rgba(255,59,48,.1);color:#ff9a90;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.dj-seg{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.dj-s{height:6px;border-radius:99px;background:#2e2e32;display:block}
+.dj-s-done{background:var(--gr)}.dj-s-active{background:var(--ac)}.dj-s-err{background:var(--rd)}
+.dj-bar{height:5px;border-radius:99px;background:#2a2a2e;overflow:hidden;margin-top:9px}
+.dj-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--ac),#ffb27a);transition:width .4s}
+.dj-more{margin-top:10px}
+.dj-more summary{cursor:pointer;font-size:13px;color:var(--soft);padding:4px 0;list-style:none}
+.dj-more summary::-webkit-details-marker{display:none}
+.dj-more summary::before{content:"▸ "}.dj-more[open] summary::before{content:"▾ "}
+.dj-more ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:8px 0 2px}
+.dj-l{display:flex;align-items:center;gap:10px;font-size:14px;color:#9a9aa0}
+.dj-li{width:22px;height:22px;flex:0 0 22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;background:#222226}
+.dj-l-done{color:#d8f8e4}.dj-l-done .dj-li{background:rgba(46,232,107,.18);color:var(--gr)}
+.dj-l-active{color:#fff;font-weight:700}.dj-l-active .dj-li{background:color-mix(in srgb,var(--ac) 25%,#111);color:#ffb27a}
+.dj-l-err{color:#ff8a80}.dj-l-err .dj-li{background:rgba(255,59,48,.18);color:var(--rd)}
+
+/* ---- Saved / thinking rows: text and pill wrap instead of crushing ---- */
+.ek-row{flex-wrap:wrap;align-items:flex-start}
+.ek-txt{flex:1 1 160px;min-width:0;font-size:14px;line-height:1.5}
+.ek-row .tl-pill{flex:0 0 auto;margin:2px 0 0 32px!important;padding:3px 10px!important;font-size:11px!important;font-weight:800;letter-spacing:.05em;border-radius:999px!important;white-space:nowrap}
+.ek-bar{max-width:none!important;width:100%;margin-left:32px;flex:1 0 100%;height:5px!important}
+.ek-saved .et-lines{max-height:none!important}
+
+/* ---- Chat box ---- */
+html body .comp{background:#0a0a0b!important;border-top:1px solid #2c2c30!important}
+html body .comp .row{background:#151517!important;border:1.5px solid #4a4a50!important;border-radius:26px!important;padding:6px 8px!important;align-items:flex-end;transition:border-color .15s,box-shadow .15s}
+html body .comp .row:focus-within{border-color:var(--ac)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 22%,transparent),0 8px 30px rgba(0,0,0,.4)!important}
+html body .comp .row textarea#inp{min-height:44px;max-height:160px;padding:12px 8px!important;font-size:16px;line-height:1.45;color:#fff!important;background:transparent!important;border:0!important;box-shadow:none!important;overflow-y:auto}
+html body .comp .row .side button:not(#bSend):not(#bStop),html body .comp .row>#bPlus.plus{border:1.5px solid #4a4a50!important;background:#1e1e21!important}
+html body .comp .modes button{min-height:38px;padding:0 18px;border:1.5px solid #3c3c42!important;color:#d0d0d4!important;font-weight:700}
+html body .comp .modes button.on{border-color:var(--ac)!important}
+#inpCount{position:absolute;right:20px;bottom:calc(100% + 4px);font-size:11px;color:var(--soft);pointer-events:none}
+.comp{position:relative}
+#jumpEnd{position:fixed;right:16px;bottom:calc(var(--dock,150px) + 14px);width:42px;height:42px;border-radius:50%;border:1.5px solid #4a4a50;background:#1a1a1d;color:#fff;font-size:18px;z-index:30;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+#jumpEnd.hidden{display:none}
+
+/* ---- Empty state sits below the banners ---- */
+.empty{top:var(--empty-top,90px)!important}
+html body .fbadge{position:relative;z-index:2}
+
+html body .empty{overflow-y:auto!important;justify-content:flex-start!important}

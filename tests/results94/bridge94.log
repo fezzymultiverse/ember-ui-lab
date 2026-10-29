@@ -1,0 +1,14 @@
+PASS bridge launches on loopback and executable health works
+PASS unauthenticated clients refused
+PASS foreign web origins refused
+PASS arbitrary internal URLs refused
+PASS playlist metadata normalized to HTTPS video links
+PASS audio job saves a file and completes
+PASS audio playlist and format flags preserved
+PASS audio file can be downloaded with authentication
+PASS video job saves a file and completes
+PASS video playlist and format flags preserved
+PASS video file can be downloaded with authentication
+PASS path traversal file lookup refused
+
+12 bridge integration checks passed; no real media downloaded.

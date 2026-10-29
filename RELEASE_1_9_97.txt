@@ -1,0 +1,8 @@
+Ember V1.9.97 — Header placement refinement
+
+- Added a pulsing blue status light after Ember's name in the main chat header only.
+- Kept the Settings title free of the blue light.
+- Improved right-side header action alignment, spacing, icon sizing, focus visibility, and narrow-screen fit.
+- Preserved the existing theme colours and existing button IDs/actions.
+
+Verification: CSS syntax/selector review and ZIP integrity checks performed. Full browser and Android runtime testing has not been performed.

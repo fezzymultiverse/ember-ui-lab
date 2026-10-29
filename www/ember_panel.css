@@ -1,0 +1,41 @@
+/* Right-panel-only overrides, deliberately loaded after the existing theme. */
+html body #app > header .hr > .ember-panel-button,
+html body #etHead > .ember-panel-button {
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  min-width:54px;min-height:44px;padding:0 9px;border:1px solid #334563;
+  border-radius:11px;background:#101a2b;color:#d6e6ff;font:600 12px/1 system-ui;cursor:pointer;
+}
+.ember-panel-button[aria-expanded="true"]{outline:2px solid var(--ac,#ff7a1a);outline-offset:1px}
+.ember-panel-button:focus-visible{outline:2px solid #66aaff;outline-offset:2px}
+html body #emberHub,html body #emberCommandCenter {
+  box-sizing:border-box;top:var(--ember-panel-top,0px);bottom:auto;
+  height:var(--ember-panel-height,100dvh);max-height:var(--ember-panel-vh,100dvh);
+  width:min(390px,calc(100vw - 24px));padding-top:0;
+}
+html body #emberHub .ehub-head,html body #emberCommandCenter .ecc-panel-head{flex-shrink:0;min-height:58px;padding:10px 14px}
+html body #ehubClose,html body #ehubBack,html body #eccClose{width:44px;height:44px;flex:0 0 44px}
+html body #emberHub .ehub-body,html body #emberCommandCenter .ecc-panel-content{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y}
+html body #emberCommandCenter .ecc-panel-content{align-content:start}
+.ehub-context-group{display:flex;flex-direction:column;gap:12px;min-width:0}
+.ehub-context-group[hidden]{display:none}
+.ehub-context-details{padding:12px;border:1px solid #263245;border-radius:12px;background:#0d1017;min-width:0}
+.ehub-context-details summary{cursor:pointer;min-height:24px;font:600 13px/1.6 system-ui;color:#dfe5f0}
+.ehub-context-details summary:focus-visible{outline:2px solid #66aaff;outline-offset:3px}
+.ehub-context-details ul{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px}
+.ehub-context-details li{font:12px/1.6 system-ui;color:#adbed5;overflow-wrap:anywhere;padding:8px;border:1px solid #263245;border-radius:8px}
+#ehubRecentActivity{white-space:pre-wrap;overflow-wrap:anywhere}
+/* Both chat elements use the same readable measure, without touching message rendering. */
+html body #app > #log,html body #app > footer.comp{
+  box-sizing:border-box;width:100%;padding-left:max(12px,calc((100% - 760px)/2))!important;padding-right:max(12px,calc((100% - 760px)/2))!important;
+}
+@media(min-width:1100px){
+  body.ehub-docked #app{width:calc(100% - 390px);max-width:none;margin:0 390px 0 0}
+  html body.ehub-docked #emberHub{top:0;height:100dvh;width:390px;max-height:100dvh;padding-top:env(safe-area-inset-top,0px);box-shadow:none}
+  body.ehub-docked #empty{right:390px;width:auto}
+  html body.ecc-docked #emberCommandCenter{top:0;height:100dvh;max-height:100dvh;width:410px;padding-top:env(safe-area-inset-top,0px)}
+}
+@media(max-width:360px){
+  html body #app > header .hr > .ember-panel-button{min-width:48px;padding:0 6px;font-size:11px}
+  html body #app > header .who .ember-title-grid{padding-left:3px!important;padding-right:3px!important}
+}
+@media(prefers-reduced-motion:reduce){html body #emberHub,html body #emberCommandCenter{transition:none}}

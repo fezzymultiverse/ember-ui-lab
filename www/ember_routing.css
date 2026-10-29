@@ -1,0 +1,20 @@
+/* Compact, light-blue controls matching Ember. Existing handlers and panel remain intact. */
+#settings .sw{box-sizing:border-box!important;position:relative!important;flex:0 0 66px!important;width:66px!important;min-width:66px!important;max-width:66px!important;height:30px!important;min-height:30px!important;border-radius:18px!important;background:#223347!important;border:1px solid #536378!important;cursor:pointer!important;box-shadow:none!important;transform:none!important}
+#settings .sw::before{content:'OFF'!important;position:absolute!important;left:auto!important;right:8px!important;top:6px!important;width:auto!important;height:auto!important;font:700 10px/16px system-ui!important;color:#d2dfec!important;background:none!important;transform:none!important;inset-block-end:auto!important}
+#settings .sw::after{content:''!important;position:absolute!important;left:4px!important;top:4px!important;width:20px!important;height:20px!important;background:#dbeafe!important;border-radius:50%!important;transform:none!important;box-shadow:none!important}
+#settings .sw.on{background:#7dd3fc!important;border-color:#bae6fd!important;box-shadow:0 0 10px #7dd3fc38!important}
+#settings .sw.on::before{content:'ON'!important;left:8px!important;right:auto!important;color:#082f49!important}
+#settings .sw.on::after{left:40px!important;background:#082f49!important}
+.sw:focus-visible,.ef-switch:focus-visible{outline:2px solid #bae6fd!important;outline-offset:4px}
+#settings [data-tab=permissions] .prow{flex-wrap:wrap!important;gap:8px!important}
+#settings [data-tab=permissions] .prow>span:first-child{flex:1 1 125px!important;overflow-wrap:anywhere}
+#settings [data-tab=permissions] .prow>.btn{flex:0 0 auto!important;max-width:140px!important}
+#efRouting h3{color:#bae6fd;font-size:15px;margin:20px 0 10px}
+#efRouting .hint{line-height:1.6;overflow-wrap:anywhere}
+.ef-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;flex:0 0 28px;border:1px solid #7dd3fc60;background:#0c4a6e66;border-radius:9px;color:#bae6fd;font:700 11px/1 system-ui;margin-right:8px;vertical-align:middle}
+.ef-provider{display:flex;align-items:flex-start;padding:10px 0;gap:3px;border-bottom:1px solid #7dd3fc22;min-width:0}
+.ef-provider>div{min-width:0}.ef-provider b{font-size:13px}.ef-provider small{display:block;color:#b3c7db;font-size:11px;line-height:1.55;overflow-wrap:anywhere}
+.ef-switch-row{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #7dd3fc22;font-size:13px}
+.ef-switch-row>span{flex:1;min-width:0}.ef-switch{flex:0 0 66px;border:1px solid #536378;background:#223347;color:#d2dfec;border-radius:18px;height:30px;font-weight:700;font-size:11px;cursor:pointer}.ef-switch.on{color:#082f49;background:#7dd3fc;border-color:#bae6fd;box-shadow:0 0 10px #7dd3fc38}
+.ef-form{display:grid;gap:10px}.ef-form label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#bae6fd}.ef-form [hidden]{display:none!important}.ef-form input,.ef-form select,.ef-form textarea{box-sizing:border-box;width:100%;min-width:0;border:1px solid #7dd3fc44;background:#091a2b;color:#e0f2fe;border-radius:9px;padding:10px;font:inherit}.ef-form select{white-space:normal}#efRouting .btnrow{flex-wrap:wrap;margin-top:12px;gap:8px}.ef-artifact{padding:12px;margin:10px 0;border:1px solid #7dd3fc44;border-radius:12px;display:grid;gap:9px;overflow:hidden}.ef-artifact b{font-size:12px;overflow-wrap:anywhere}.ef-artifact img,.ef-artifact video,.ef-artifact audio{max-width:100%;width:100%;max-height:320px;object-fit:contain}.ef-job{font-size:12px;padding:8px;overflow-wrap:anywhere}.ef-panel{padding:16px;overflow:auto;flex:0 0 auto}.ef-panel h3{font-size:14px;color:#bae6fd}.ef-download-result{display:grid;gap:7px;margin:12px 0}.ef-download-result b{overflow-wrap:anywhere}#efStats{max-height:420px;overflow:auto}#efPanelStats{max-height:220px;overflow:auto}
+@media(max-width:420px){#settings [data-tab=permissions] .pstatus{font-size:10px;max-width:100px;overflow-wrap:anywhere}#efRouting .btnrow .btn{width:100%}.ef-switch-row{font-size:12px}}

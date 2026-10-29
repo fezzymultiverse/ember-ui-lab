@@ -1,0 +1,17 @@
+/* Ember V1.10.4: Settings scroll repair + live terminal badges. */
+html body #settings .sb{display:flex!important;flex-direction:column;overflow:hidden!important;min-height:0}
+html body #settings .acc-wrap{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+html body #settings .acc-wrap.acc-in-detail{overflow:hidden}
+html body #settings .acc-wrap.acc-in-detail .acc-item.open>.acc-b{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.ecc-ticker{display:inline-block;max-width:44vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom;color:#9daec4;font-size:11px}
+.ecc-badge{display:inline-block;font:700 9px/1 system-ui;letter-spacing:.06em;padding:2px 5px;border-radius:5px;background:#1c2a40;color:#9cc7ff;vertical-align:1px}
+.ecc-tag-tool .ecc-badge{background:#2a1c40;color:#c9a6ff}.ecc-tag-route .ecc-badge{background:#2f2410;color:#ffc46b}
+.ecc-tag-create .ecc-badge{background:#3a1c10;color:#ff9a57}.ecc-tag-git .ecc-badge{background:#10301c;color:#7be3a0}
+.ecc-tag-web .ecc-badge{background:#10303a;color:#7bd8e3}.ecc-ms{color:#7f8da3;font-size:11px}
+#eccTerminalOutput{max-height:38vh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+
+/* V1.10.8: card titles in Settings no longer squash. Title on its own line, any detail text (e.g. the provider list) wraps underneath. */
+html body #settings .acc-b>.card>.ct{flex-wrap:wrap;align-items:center;justify-content:flex-start;row-gap:6px;column-gap:10px;line-height:1.35}
+html body #settings .acc-b>.card>.ct>span,html body #settings .acc-b>.card>.ct>small{flex:1 1 100%;order:3;margin:0;font-size:12.5px;font-weight:500;letter-spacing:0;text-transform:none;line-height:1.5;color:#8d8d94;white-space:normal;overflow-wrap:anywhere}
+html body #settings .acc-b>.card>.ct::after{margin-left:auto}
+html body #settings .acc-b>.card{padding:18px 16px!important}

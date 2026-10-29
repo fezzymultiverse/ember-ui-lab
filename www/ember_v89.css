@@ -1,0 +1,3 @@
+/* Ember V1.9.89 - ember_v89.css: the toast (including "Switched to ...") sits just above the message box, never over the header or the engine pill. */
+#toast{top:auto!important;bottom:calc(var(--ember-toast-b,96px) + env(safe-area-inset-bottom,0px))!important;transform:translateX(-50%) translateY(6px)!important;white-space:normal!important;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;max-width:88vw!important;width:max-content;line-height:1.35;border-radius:16px!important;z-index:400}
+#toast.show{transform:translateX(-50%) translateY(0)!important}

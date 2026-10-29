@@ -1,0 +1,96 @@
+EMBER 1.9.93 — COMMAND CENTER PATCH
+Based on the supplied ember-V1_9_92.zip. This is source code, not a compiled APK.
+
+INSTALL
+Extract ember-V1_9_93-command-center.zip and use the extracted project as the updated source tree. Run npm run serve to open the existing local PWA. For Android, follow the project's existing Capacitor/build instructions. The updated service-worker cache includes both new UI assets.
+No GitHub build, repository push, or live-device action was performed during implementation.
+
+UI
+The header's new square/panel button opens the right-hand Command Center. Escape, the backdrop, or its close button dismisses it; keyboard focus returns to the header. Mobile layouts, reduced-motion preference, focus trapping and ARIA state are included.
+Cards: Thought Inspector, Memory Matrix, Quick Actions.
+The separate bottom-of-chat Live Terminal drawer supports stdout, stderr, status, and merged-log filters; follow scrolling; clear display; a 1,000-line buffer; and text-only rendering. Logs are ephemeral, not saved in localStorage.
+
+THINKING TIMELINE PRESERVATION
+These original modules are byte-for-byte identical to the uploaded version:
+www/ember_timeline.js
+www/ember_think_inline.js
+www/ember_react.js
+www/ember_steps.js
+www/ai_agent.js
+The existing begin/note/tool/snapshot/drop wiring remains in app.js. Existing timeline event emitters were not removed, renamed, or replaced. New terminal telemetry uses distinct event names and never calls or wraps timeline methods.
+The preservation test includes original SHA-256 hashes.
+
+3-PHASE PUBLIC SUMMARY
+For coding answers, the main system prompt requests these exact headings, in this order, before code:
+Phase 1: Architecture/Constraint Check.
+Phase 2: Tactical Execution Plan.
+Phase 3: Edge-Case Mitigation.
+One short outcome-focused sentence follows each heading, then Implementation: and the requested code/artifacts. The inspector renders that actual public response text, during streaming where available and from the final response otherwise. It never reads provider hidden-reasoning fields and does not fabricate a plan if the provider omits it. This is a public decision summary, not a private chain of thought. Tool-only outputs retain their existing formats; crisis handling and ordinary chat remain exempt. Coding replies have a larger output budget.
+A prompt contract cannot guarantee every provider follows formatting. Missing/nonconforming phases stay absent rather than being invented.
+
+MEMORY MATRIX
+The observer inspects the actual app-level provider request (system plus message contents), not the list of all stored documents. It shows observed document excerpts, parsed file-bearing tool results, and repo read-first files whose provenance markers are in that request. Source content is not copied into the panel. Files absent from the next observed request disappear.
+This is a latest-observed-request inventory, not a tokenizer-level view of a provider's internal context. External/native model calls that bypass the browser's Prov.run entry point cannot be observed by this UI.
+
+QUICK ACTIONS
+Run Build: resolve the existing configured output repo/branch; confirm; validate and dispatch the configured workflow via GitHub's existing restricted managerRequest interface; poll run/job/step status. Dispatch is explicitly not reported as build success. Monitoring pauses while hidden/offline and is bounded to an hour.
+Push to GitHub: confirm and reuse EmberRepoRunner.sync(). This dispatches the existing installed whole-repository sync/push workflow. It does NOT commit arbitrary chat artifacts or install workflows/secrets automatically. Install/update the runner first in Features > Repo Runner if needed.
+Clear Cache: confirm and clear the existing GitHub repository read caches only. It refuses while a repo sync is active. Chats, document library, settings, saved keys, and offline app assets are preserved. The terminal's separate Clear button clears only the display.
+Buttons are locked during an operation and errors are displayed. Existing token, permissions, branch restrictions, and runner manifest checks remain authoritative. Concurrent external dispatches or clock skew can make workflow-run correlation ambiguous; the GitHub Actions run page is the source of truth.
+
+LIVE TERMINAL: WHAT WORKS NOW
+1. NewPipe: subscribes to the existing ember-dl events without changing their producer or the timeline listener. Displays real native state, title, percent, and detail updates. The existing native implementation does not expose process stdout/stderr.
+2. Ember GitHub command runner: mirrors existing real status updates using separate new telemetry. When its existing published log tail is returned, the terminal labels it MERGED because the original workflow joins stdout and stderr with 2>&1. It never pretends to split a merged log.
+3. Repo Runner install/sync and Command Center quick actions: observe real GitHub run/job/step status using the existing restricted API client. Full workflow logs remain available on the GitHub run page.
+4. Raw real-time stdout/stderr: a tested front-end EventSource adapter and direct event API are included. A real authenticated backend/native producer is REQUIRED to supply those bytes. No backend relay is implemented or deployed in this source patch. The current static server has no live GitHub shell-stream endpoint. Do not connect the adapter to a nonexistent URL and expect logs.
+
+CONNECT AN EXISTING SAME-ORIGIN SSE BACKEND
+From your trusted app bootstrap, only after your backend provides the endpoint:
+  EmberCommandCenter.connectStream('/api/terminal/stream');
+Disconnect explicitly:
+  EmberCommandCenter.disconnectStream();
+Use same-origin session/cookie authentication, not secrets or tokens in the URL. The browser adapter rejects external origins, URL credentials, query strings and fragments. Stop the stream on an SSE event named end. It closes streams and polling on pagehide. Reconnect explicitly after navigation/BFCache restoration when needed.
+
+SSE wire examples (each frame ends in a blank line):
+  event: stdout
+  data: {"source":"GitHub Runner","text":"compiler output line"}
+
+  event: stderr
+  data: {"source":"GitHub Runner","text":"compiler error line"}
+
+  event: end
+  data: {}
+
+Unnamed message events can carry {"source":"NewPipe","stream":"stdout","text":"..."}.
+The producer must authenticate and authorize job access, redact secrets BEFORE transmission, emit keepalives, and terminate streams for completed jobs. Browser-side common-token redaction is defense-in-depth, not a guarantee against arbitrary secret formats. Never emit credentials, entire environments or API response headers.
+The bridge receives data only; printed text cannot execute commands.
+
+DIRECT IN-PROCESS / NATIVE BRIDGE
+A trusted bridge can forward already-authorized output without SSE:
+  window.dispatchEvent(new CustomEvent('ember-terminal', {
+    detail: { source: 'GitHub Runner', stream: 'stdout', text: chunk }
+  }));
+  // stream may be stdout, stderr, status, or merged.
+Or call EmberCommandCenter.write(...) with the same data object.
+These examples are wiring contracts, not evidence that a remote process was run.
+
+TESTS AND VERIFICATION
+New command-center-test.js: 17 static/preservation checks passed.
+New command-center-browser-test.js: 23 Chromium checks passed, including a real local SSE test endpoint, simulated NewPipe events, timeline preservation, keyboard behavior, context eviction, bounded log buffer, safe rendering, token masking, and mocked quick actions. Remote GitHub writes are mocked; no real build/push occurred.
+Existing v1992-repo-runner-test.js: 29 checks passed.
+Existing v1992-repo-runner-browser-test.js: 18 Chromium checks passed.
+Existing v1991-deliverables-test.js: 32 checks passed.
+The legacy npm test chain is NOT fully green: tests/app-test.js times out clicking a hidden old .stab[data-st="keys"] Settings tab. The same timeout was independently reproduced against the unmodified uploaded V1.9.92. No claim of a full-suite pass is made.
+
+Run:
+  npm run test:command-center
+  npm install --no-save playwright
+  npx playwright install chromium
+  npm run test:command-center:browser
+On Linux CI, Chromium may also need: npx playwright install-deps chromium
+Existing test files may expect a historical Playwright installation path; set PW to your installed Playwright module path for those files.
+
+DELIVERY
+Full updated source project: ember-V1_9_93-command-center.zip
+Optional unified patch against original root: ember-command-center.patch
+New UI source: www/ember_command_center.css and www/ember_command_center.js; component markup lives in www/index.html.

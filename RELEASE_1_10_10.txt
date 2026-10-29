@@ -1,0 +1,5 @@
+EMBER 1.10.10
+- One Settings button in the header (gear). The 5-card Actions dropdown is gone. The gear opens the side panel; the side panel routes to every sub-option.
+- "Open classic settings" button removed from the side panel. The old keys side panel no longer opens.
+- Ember now shows a flashing blue dot IN FRONT of her name (a real element, not a pseudo-element, and not stopped by reduce-motion). The three lights under the name are hidden.
+Not run on a phone.

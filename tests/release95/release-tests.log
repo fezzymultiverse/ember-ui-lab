@@ -1,0 +1,302 @@
+
+> ember@1.9.95 test:release
+> node tests/workspace95-test.js && node tests/knowledge-brain-test.js && node tests/v1992-repo-runner-test.js && node tests/command-center-test.js && node tests/routing94-test.js && node tests/download94-test.js && node tests/workspace95-browser-test.js && node tests/knowledge-brain-browser-test.js && node tests/v1992-repo-runner-browser-test.js && node tests/command-center-browser-test.js && node tests/routing94-browser-test.js
+
+PASS whole default Brain is always the first source
+PASS Ember URL canonicalizes once for every runner surface
+PASS Apply Brain changes live reader and runner atomically
+PASS source duplicates are deduplicated case-insensitively
+PASS output cannot be applied as Brain
+PASS Brain cannot be used as output even with different case
+PASS output cannot enter its own snapshot sources
+PASS invalid Brain leaves valid configuration intact
+PASS switching Brain removes old implicit source but retains staged sources
+PASS save cannot accidentally omit whole Brain
+PASS search uses authenticated GitHub API and actual page
+PASS discovery and local configuration perform no writes
+PASS manager rejects unconfigured repo reads
+PASS manager blocks writes to configured Brain
+PASS manager blocks writes to staged source
+PASS manager rejects credential-bearing arbitrary URLs
+PASS model state and manifest do not contain saved token
+PASS late read response after cancellation is rejected
+PASS legacy malformed source list does not break configuration
+PASS invalid replacement preserves valid saved token
+PASS token removal invalidates live read evidence
+PASS offline assets contain new workspace modules
+PASS old floating Stop rule no longer positions above input
+
+23 unified workspace unit/security checks passed.
+PASS defaults to Super Repo and migrates old repositories without losing token
+PASS no slot limit, list or mutation API remains
+PASS only one repository is reported
+PASS general programming, identifiers and follow-up questions require read first
+PASS ordinary greetings are not classified as code
+PASS read tool ignores alternate repo and reads live with token
+PASS list tool reads live without prior sync or runner
+PASS repository map is also live and needs no sync
+PASS Runner install stays disabled outside Advanced opt-in
+PASS path search uses fresh authenticated GitHub tree
+PASS code search cannot inject repository qualifiers or leak cross-repo results
+PASS pre-answer read runs live without sync and records genuine provenance
+PASS tokens never appear in prompt or provenance
+PASS runner is off and absent from tool catalog by default
+PASS legacy chat-off and sync-off cannot bypass read first
+PASS long file read discloses truncation and supports continuation
+PASS continuation returns remaining file text
+PASS empty text file handled correctly
+PASS invalid/protected file blocked: ../outside.js
+PASS invalid/protected file blocked: .env
+PASS offline reads fail rather than using cached code
+PASS failed next turn resets previous proof and blocks answer
+PASS 403 fails closed with actionable error
+PASS invalid token/access status fails rather than claiming success
+PASS empty repository cannot satisfy read-first
+PASS truncated tree whose subtrees cannot be read fails closed
+PASS no token blocks code before any network call
+PASS ordinary chat can continue without token
+PASS invalid replacement does not erase saved token
+PASS single setting persists, invalid values rejected and switching invalidates proof
+PASS no alternate repository was ever fetched
+PASS one labelled repository field and no repository slot UI
+PASS Runner has its own Settings Advanced section
+PASS read-first gate precedes model call and sits inside failure handling
+PASS Last Read chip and proof are saved per assistant answer
+
+35 Knowledge Brain checks passed.
+PASS whole-repo grep is exposed to Ember without runner enablement
+PASS grep resumably scans more than a single batch
+PASS grep finds unranked vendor/new-extension text files with line evidence
+PASS grep discloses binary/protected/oversized coverage exclusions
+PASS truncated recursive tree is fully expanded through subtrees
+PASS failed subtree traversal cannot claim absence
+PASS blob read failure preserves a retry cursor and never reports complete
+PASS cursor query cannot be silently changed
+PASS repository manager rejects unconfigured repos
+PASS repository discovery is read-only and works
+PASS model cannot import repos without explicit user intent
+PASS explicit request adds a whole source without altering brain
+PASS repo-manager writes cannot touch the brain
+PASS token-accessible output repository discovery works
+PASS runner state contains no token
+Cloning entire source owner/brain
+Cloning entire source owner/addon
+Pushed snapshots to me/output:main
+Build dispatched: https://github.com/me/output/actions/workflows/build.yml
+PASS install clones whole sources, commits and pushes with real local git
+PASS original app code survives runner installation
+PASS brain and addon snapshots are separately included
+PASS forced tracked files remain included despite upstream gitignore
+PASS source package hooks are never executed
+PASS managed script, workflow and configuration are committed
+PASS build is actually dispatched after committing the sources
+PASS no token in generated configs, source scripts or git remote URL
+Cloning entire source owner/brain
+Cloning entire source owner/addon
+All whole-repo snapshots are already current.
+PASS unchanged sync is a no-op with no new commit/build
+Cloning entire source owner/brain
+Cloning entire source owner/addon
+Pushed snapshots to me/output:main
+Build dispatched: https://github.com/me/output/actions/workflows/build.yml
+PASS later upstream additions and removals sync without file selection
+Cloning entire source owner/brain
+Pushed snapshots to me/output:main
+Build dispatched: https://github.com/me/output/actions/workflows/build.yml
+PASS removed source only deletes its runner-owned snapshot
+Automatic repo sync is disabled in ember-repos.json.
+PASS scheduled sync is opt-in
+PASS source/output identity collision rejected
+Cloning entire source owner/brain
+PASS symlink source fails closed without pushing partial data
+
+29 repo-runner/whole-brain checks passed.
+PASS separate component markup outside chat log
+PASS timeline script still included
+PASS inspector has no timeline side effects
+PASS no raw hidden-reasoning fields inspected
+PASS public three-phase contract has exact required headings
+PASS tool-only formats explicitly preserved
+PASS bounded output and explicit backend adapter
+PASS no innerHTML sinks in new components
+PASS same-origin streams without credentials in query
+PASS styles isolated and reduced-motion accessible
+PASS new assets included in offline shell
+PASS timeline event emitters remain present
+PASS requested in-row Stop added to ember_timeline.js
+PASS requested in-row Stop added to ember_think_inline.js
+PASS unchanged uploaded V1.9.94 ember_react.js
+PASS unchanged uploaded V1.9.94 ember_steps.js
+PASS unchanged uploaded V1.9.94 ai_agent.js
+17 Command Center static checks passed.
+PASS healthy keys round-robin across requests
+PASS successful stats persist immediately
+PASS usage tokens reflect provider-reported totals only
+PASS live provider status event emitted
+PASS model 429 proceeds to another model on same key
+PASS Retry-After longer than fifteen minutes respected
+PASS cooldown stats never expose raw keys
+PASS opening provider health preserves cooldown
+PASS 401 rejects only affected key and rotates
+PASS model permission 403 does not poison valid key
+PASS strict pin does not leak to paid providers or free mode
+PASS new aggregators require automatic routing opt-in
+PASS OpenRouter appears in fallback after opt-in
+PASS Stability never joins chat routing
+PASS media provider cannot be pinned as chat
+PASS OpenRouter correct completion endpoint
+PASS Plugsky documented quickstart endpoint
+PASS mid-stream error is surfaced without mixing providers
+PASS paste scanner detects OpenRouter prefix
+PASS paste scanner detects Plugsky prefix
+PASS labelled Stability sk key never filed as OpenAI
+PASS download bridge accepts expected video and playlist links
+PASS download bridge blocks SSRF and disguised hosts
+
+23 routing/provider/security checks passed. All provider traffic mocked.
+PASS bridge launches on loopback and executable health works
+PASS unauthenticated clients refused
+PASS foreign web origins refused
+PASS arbitrary internal URLs refused
+PASS playlist metadata normalized to HTTPS video links
+PASS audio job saves a file and completes
+PASS audio playlist and format flags preserved
+PASS audio file can be downloaded with authentication
+PASS video job saves a file and completes
+PASS video playlist and format flags preserved
+PASS video file can be downloaded with authentication
+PASS path traversal file lookup refused
+
+12 bridge integration checks passed; no real media downloaded.
+PASS provider status and menu live below chat, not in header
+PASS floating jump-to-latest button removed
+PASS stop endpoint cannot float even when active
+PASS provider menu still works in relocated bar
+PASS provider dropdown stays inside viewport and above its bar
+PASS missing token gives actionable visible error
+PASS saved token input cleared and shared with runner
+PASS Apply Brain accepts repository URL and updates live scope plus runner sources
+PASS search uses saved token and escapes repository descriptions
+PASS search pagination requests actual next GitHub page
+PASS whole source appears in spaced cards
+PASS Ember repo selection saves output without redirecting Brain
+PASS self-copy collision rejected without altering valid Brain
+PASS GitHub and Features expose same single workspace nodes
+PASS discovery, Brain apply, staging and settings make no remote writes
+PASS cancelled install performs no GitHub writes
+PASS install atomically commits three managed files against existing tree
+PASS manifest contains whole Brain plus all staged sources
+PASS token never embedded in managed code, config or encrypted payload
+PASS real sealed-box encryption preserves exact Actions credential
+PASS successful dispatch is not falsely reported as completed build
+PASS sync checks installed manifest before dispatch
+PASS Run status reads real-shaped workflow status API response
+PASS unpublished source changes cannot silently dispatch stale manifest
+PASS private Brain cannot be copied into public output
+PASS repository workspace fits at 320px
+PASS repository workspace fits at 390px
+PASS repository workspace fits at 768px
+PASS mobile Command Centre is right-side modal with background inert
+PASS Command Centre runner status uses same saved output
+PASS desktop Command Centre docks right without covering chat
+PASS thinking style claude has visible in-row Stop
+PASS thinking style claude Stop does not overlap composer
+PASS thinking style dd has visible in-row Stop
+PASS thinking style dd Stop does not overlap composer
+PASS thinking style tl has visible in-row Stop
+PASS thinking style tl Stop does not overlap composer
+PASS in-row Stop cancels pending Brain read before model call
+PASS cancelled turn resets thinking state and composer
+PASS keyboard Stop releases composer even when provider ignores abort
+PASS late provider response after Stop is discarded
+PASS fallback reasoning Stop calls actual reasoning stop endpoint
+PASS no browser runtime errors across all workflows
+PASS no live token leaked in rendered workspace
+
+44 unified workspace Chromium checks passed.
+PASS Settings GitHub shows exactly one defaulted Knowledge Brain Repo field
+PASS repository slot controls are absent
+PASS Runner controls are outside GitHub settings
+PASS Runner appears under Advanced and is off by default
+PASS token saves without exposing its value in the UI
+PASS access check succeeds against the sole Super Repo
+PASS file browsing reads live without sync or Runner
+PASS code answer has real Last Read chip
+PASS chip carries revision and read timestamp
+PASS all GitHub requests use saved token and the sole repository
+PASS reading never triggered Actions or workflow requests
+PASS failed GitHub read blocks code before contacting any model
+PASS failed read does not add a forged Last Read chip
+PASS missing token fails closed and leaves Send usable
+PASS full app has no JavaScript runtime errors
+
+15 Chromium integration checks passed.
+PASS Features accordion exposes Repo Runner controls
+PASS whole brain is always included without file-selection UI
+PASS repo search renders untrusted description safely
+PASS adding a result includes its entire repo
+PASS output selection does not redirect brain reads
+PASS search, add and settings save make no GitHub writes
+PASS Add runner to output generates a standalone valid script without token
+PASS install provisions an encrypted Actions secret with real libsodium
+PASS encrypted runner secret decrypts to the exact saved token
+PASS install commits three managed files atomically on existing base tree
+PASS workflow extraction preserves GitHub expressions exactly
+PASS runner workflow is dispatched on the explicit default branch
+PASS install result does not pretend the remote build already succeeded
+PASS sync uses the committed manifest
+PASS sync refuses unpublished source changes instead of silently syncing old repos
+PASS private-to-public export is blocked before any secret or commit write
+PASS whole-repo grep UI shows fresh nonstandard-extension content and line numbers
+PASS browser has no runtime errors including encryption loader
+
+18 repo-runner Chromium checks passed.
+PASS app loads with original timeline and separate new components
+PASS panel initially inert and terminal collapsed
+PASS header button opens sliding panel
+PASS desktop workspace docks without making chat inert
+PASS panel focus trap loops to close
+PASS escape closes and restores header focus
+PASS thought inspector shows actual public phase block only
+PASS panel and inspector leave timeline content intact
+PASS matrix includes actual request excerpt, not unused library file
+PASS matrix removes files evicted from latest payload
+PASS tool-injected chunk appears in matrix
+PASS real NewPipe and runner events stream to distinct terminal
+PASS terminal escapes markup and redacts common secrets
+PASS stderr filter excludes stdout
+PASS SSE stdout and stderr arrive from a real test server
+PASS published runner logs are labelled merged
+PASS live stream rejects external URLs and query credentials
+PASS cancelled build performs no network writes
+PASS build dispatches configured workflow and ref
+PASS push reuses installed repo sync, not arbitrary writes
+PASS clear cache preserves saved settings
+PASS terminal buffer stays bounded
+PASS mobile panel fits viewport
+PASS no uncaught browser errors
+24 Command Center browser checks passed. All GitHub operations mocked; no real build or push performed.
+PASS new media and downloader modules loaded
+PASS AI Features accessible from main UI
+PASS Stability full name and embedded badge visible
+PASS chat provider list excludes media-only Stability
+PASS default Stability media has no dead video option
+PASS Puter explicitly offers video
+PASS AI stages media request without paid submission
+PASS adding Stability key tests account without generation
+PASS unconfirmed media generation blocked
+PASS Stability image request uses multipart official endpoint
+PASS generated image stored as downloadable binary artifact
+PASS Stability audio correct model duration and endpoint
+PASS media output is kept outside conversation context
+PASS binary artifacts persist across reload
+PASS permission switches compact at mobile width
+PASS permission switches expose accessible state
+PASS system permission grants remain honest Request controls
+PASS download engine and video mode saved
+PASS playlist download reaches yt-dlp as full video mode
+PASS AI video download uses same resolver
+PASS pasted YouTube playlist is recognized for AI download
+PASS no uncaught page errors
+
+22 browser integration checks passed. All providers and bridge mocked.

@@ -1,0 +1,80 @@
+/* Ember V1.10.11 - ember_hub.css: the right-hand side panel (first level of Settings).
+   Rows, groups and tiles (.mrow .mgrp .em-tile) are shared with Settings and live in ember_menu.css. */
+.ehub,.ehub-backdrop{--h-bg:#06070a;--h-line:#1c212c;--h-mut:#8b93a3;--h-or:var(--ac,#ff7a1a);--h-bl:#3d8bff;--h-gr:#4ade80}
+.ehub-backdrop{position:fixed;inset:0;z-index:199;border:0;padding:0;background:#000a;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.ehub-backdrop[hidden]{display:none}
+.ehub{position:fixed;top:0;right:0;bottom:0;z-index:200;width:min(430px,92vw);height:100dvh;display:flex;flex-direction:column;
+  background:radial-gradient(ellipse at 100% 0,#1a2438aa,transparent 55%),var(--h-bg);color:#eceff4;
+  font-family:system-ui,-apple-system,Roboto,sans-serif;border-left:1px solid #232a38;box-shadow:-18px 0 65px #000a;
+  transform:translateX(105%);visibility:hidden;pointer-events:none;transition:transform .24s ease,visibility .24s ease;
+  padding-top:env(safe-area-inset-top,0px)}
+.ehub.ehub-open{transform:translateX(0);visibility:visible;pointer-events:auto}
+.ehub button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ehub button:focus-visible{outline:2px solid var(--h-bl);outline-offset:2px}
+
+/* header: back (only on inner pages) + title with a small crumb + close; brand hairline underneath */
+.ehub-head{position:relative;display:flex;align-items:center;gap:10px;padding:12px 14px;flex:0 0 auto;min-height:60px;box-sizing:border-box}
+.ehub-head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,var(--h-or),#3d8bff 60%,transparent)}
+.ehub-ttl{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:1px}
+.ehub-head h2{margin:0;font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ehub-ttl small{font-size:12px;color:var(--h-mut);line-height:1.3}
+.ehub-x{width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;padding:0;border:1px solid var(--h-line);background:#0d1017;border-radius:11px;color:#d4d9e4}
+.ehub-x[hidden]{display:none}
+.ehub-x:active{border-color:var(--h-bl)}
+
+.ehub-body{position:relative;flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;padding:14px 14px calc(22px + env(safe-area-inset-bottom,0px))}
+.ehub-view{display:flex;flex-direction:column;gap:12px}
+.ehub-view[hidden]{display:none}
+.ehub-in-fwd{animation:ehubFwd .24s ease-out}
+.ehub-in-back{animation:ehubBack .24s ease-out}
+@keyframes ehubFwd{from{opacity:0;transform:translateX(34px)}to{opacity:1;transform:none}}
+@keyframes ehubBack{from{opacity:0;transform:translateX(-34px)}to{opacity:1;transform:none}}
+.ehub-h{margin:6px 2px -4px;font-size:13px;font-weight:600;color:var(--h-mut);letter-spacing:.01em}
+
+/* live chip on the Command Centre row */
+.ehub-chip{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.06em;border:1px solid #2a3a55;background:#101a2b;padding:3px 7px;border-radius:7px;color:#a7cdfa;flex:0 0 auto}
+.ehub-live{width:6px;height:6px;border-radius:50%;background:#67809c;display:inline-block}
+.ehub-live.busy{background:var(--h-or);box-shadow:0 0 8px var(--h-or);animation:ehubPulse 1s ease-in-out infinite}
+@keyframes ehubPulse{50%{opacity:.35}}
+
+/* provider status dot, logo fallback */
+.ehub-dot{flex:0 0 9px;width:9px;height:9px;border-radius:50%;background:#4a5163}
+.ehub-dot.ok{background:var(--h-gr);box-shadow:0 0 7px #4ade8088}
+.ehub-dot.limited{background:#f5b84a}
+.ehub-dot.bad{background:#ff6b5e}
+.ehub-dot.unknown{background:#7f8aa0}
+.ehub-dot.none{background:#2b3140}
+.mrow.dim{opacity:.7}
+.ehub-fallback{flex:0 0 30px;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:11px;font-weight:700;background:#141a26;border:1px solid #232a3a;color:#9fb0cc}
+.ehub .ef-badge{flex:0 0 30px}
+
+/* one provider page */
+.ehub-prov{display:flex;flex-direction:column;gap:12px}
+.ehub-prov-head{display:flex;align-items:center;gap:12px;padding:2px 2px 4px}
+.ehub-key{cursor:default}
+.ehub-kn{flex:0 0 auto;font-size:12px;color:var(--h-mut)}
+.ehub-key code{font:12.5px/1.3 ui-monospace,Menlo,monospace;color:#dfe5f0;overflow-wrap:anywhere}
+.ehub-kst{flex:0 0 auto;font-size:11.5px;color:var(--h-mut);text-align:right;max-width:46%}
+.ehub-kst.ok{color:var(--h-gr)}.ehub-kst.limited{color:#f5b84a}.ehub-kst.bad{color:#ff8f85}
+.ehub-pact,.ehub-cc-btns{display:flex;gap:8px}
+.ehub-btn{flex:1 1 0;min-width:0;height:42px;padding:0 12px;border-radius:11px;font-size:13.5px;font-weight:600;border:1px solid #272d3b;background:#10131a;color:#d4d9e4}
+.ehub-btn:disabled{opacity:.5}
+.ehub-btn-hot{background:#14233d;border-color:#2b5aa8;color:#d6e6ff}
+.ehub-note{margin:2px 2px 0;font-size:12px;line-height:1.55;color:var(--h-mut)}
+
+/* Command Centre page */
+.ehub-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ehub-tile{padding:10px;border:1px solid var(--h-line);border-radius:12px;background:#0d1017}
+.ehub-tile small{display:block;font-size:11.5px;color:var(--h-mut)}
+.ehub-tile b{display:block;margin-top:3px;font-size:15px;font-weight:650}
+.ehub-note-box{padding:11px 12px;border:1px solid var(--h-line);border-radius:12px;background:#0d1017}
+.ehub-note-box small{display:block;font-size:12px;font-weight:600;color:var(--h-mut)}
+.ehub-note-box p{margin:5px 0 0;font-size:13px;line-height:1.5;color:#dfe5f0;overflow-wrap:anywhere}
+
+/* brand footer */
+.ehub-brand{margin-top:8px;padding:14px 0 2px;text-align:center;display:flex;flex-direction:column;gap:3px}
+.ehub-brand b{font-size:12.5px;font-weight:700;letter-spacing:.04em;background:linear-gradient(90deg,var(--h-or),#6fa8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ehub-brand small{font-size:11.5px;color:#677086}
+
+@media(max-width:600px){.ehub{width:100vw}}
+@media(prefers-reduced-motion:reduce){.ehub,.ehub-in-fwd,.ehub-in-back,.ehub-live.busy{animation:none;transition:none}}

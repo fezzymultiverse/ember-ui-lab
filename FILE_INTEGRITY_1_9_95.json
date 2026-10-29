@@ -1,0 +1,1030 @@
+{
+  "release": "1.9.95",
+  "original_archive": "ember-V1_9_94-routing-media.zip",
+  "original_file_count": 238,
+  "deleted_original_files": [],
+  "changed_original_files": [
+    "package.json",
+    "www/ember_github.js",
+    "www/index.html",
+    "www/ember_think_inline.js",
+    "www/ember_github_ui.js",
+    "www/ember_repo_runner.js",
+    "www/style.css",
+    "www/ember_v79.js",
+    "www/ember_command_center.js",
+    "www/app.js",
+    "www/ember_timeline.js",
+    "www/sw.js",
+    "tests/v1992-repo-runner-browser-test.js",
+    "tests/command-center-test.js",
+    "tests/command-center-preservation.json",
+    "tests/command-center-browser-test.js"
+  ],
+  "files": {
+    ".github/workflows/build.yml": {
+      "bytes": 1429,
+      "sha256": "c73bc77f5f83c91ac6fa3cc6352bcb885065264b358f9115182b845b828358f5"
+    },
+    ".github/workflows/newpipe-update.yml": {
+      "bytes": 2399,
+      "sha256": "c30b4ed8f5e881cf5c787813b1133984273f8ce0f457a82b7c8cc88dd4eba4f8"
+    },
+    "AIFREEFOREVER_PLAN_V1_9_80.md": {
+      "bytes": 2177,
+      "sha256": "53b338d1313e632cd42a11f39f7dde770043c8d808d1340e9a982334beee3001"
+    },
+    "API_AUDIT_REPORT.md": {
+      "bytes": 2090,
+      "sha256": "c3343732209800ef3d0b72e0b6e13070348d8f58576d28e49188f62a2ab2f5c4"
+    },
+    "API_AUDIT_SOURCES.md": {
+      "bytes": 1063,
+      "sha256": "638a9aa7edcb7202e658bd3848bbbbafc991218bd988f900c9769a8b6c01247d"
+    },
+    "API_PROFILE_V1_9_55.md": {
+      "bytes": 2227,
+      "sha256": "4a949f3ddf3f36982bc3997c15c127c22d897ccfb53139329b896d8d817da52c"
+    },
+    "CHANGELOG_V1_9_48.md": {
+      "bytes": 2286,
+      "sha256": "9d3b7615d1ac70902f6ea7dada926c47df19cee3fa5cc060dfba8b617d47e6f4"
+    },
+    "CHANGELOG_V1_9_50.md": {
+      "bytes": 3250,
+      "sha256": "e46e62698b86d278288a3afc1e497997c8c3bcd0f5733535fb40aef9dc846aba"
+    },
+    "COMMAND_CENTER_RELEASE_NOTES.txt": {
+      "bytes": 8656,
+      "sha256": "38d64645672cf7f251145e6a40e1aa08a51246dc0f294444b472aa431fa6d53e"
+    },
+    "DOWNLOAD_THINKING_V1_9_53.md": {
+      "bytes": 875,
+      "sha256": "dc6dee493adecd9b939af2e2e1c8cbfbc8af7617c4d40c81a95583c90ba98426"
+    },
+    "HANDOVER.md": {
+      "bytes": 9506,
+      "sha256": "21a03928b283ab05ad408d887f96127969ce6407053b6cb8fb4b7fd7bd030cbc"
+    },
+    "KNOWLEDGE_GRAPH_V1_9_54.md": {
+      "bytes": 842,
+      "sha256": "13d6cd103b37ced1a84188be5f94938233c8e3a65adfe4ef416aa2232d011b41"
+    },
+    "MUSIC_STACK_V1_9_60.md": {
+      "bytes": 1055,
+      "sha256": "f2b75dfdef08d17b547aea94c691b039f94ca0299603b037b10ccd56cfac475f"
+    },
+    "NEWPIPE_DIRECT_V1_9_57.md": {
+      "bytes": 869,
+      "sha256": "09a9ee1ad8851ed8bb45a99ff6dde766614f5153bea827b74afd2d99f37646e9"
+    },
+    "PRE_PUSH_ROUTING_PATCH_REPORT.md": {
+      "bytes": 1664,
+      "sha256": "7826b07a69ce40151dd648ac8c5ed2368162a6753358a1a285d6126ac9c91a75"
+    },
+    "PRE_PUSH_THINKING_DROPDOWN_FIX.md": {
+      "bytes": 713,
+      "sha256": "9ef4c86b884c7be00fadb1f1aab4f517bc10199ac5e13afd520a458072166270"
+    },
+    "README.md": {
+      "bytes": 9294,
+      "sha256": "c9912dbf52c0cc13dee32e14485f07e20f79a7702f52ecafe93755f65e00995b"
+    },
+    "RELEASE_1_9_95.txt": {
+      "bytes": 7550,
+      "sha256": "56257dab8a63893a142e0c3b0d1146bf12f6d380dfb1a08c5aaabe94fef27cc8"
+    },
+    "RELEASE_NOTES_V1_9_91.txt": {
+      "bytes": 6353,
+      "sha256": "c8afff18f5bab62dc726619770780baf3d41b6dce72b977dabada41ba3a92245"
+    },
+    "ROUTING_MEDIA_HANDOFF_1_9_94.txt": {
+      "bytes": 11751,
+      "sha256": "f239b48154a2763041ce5ac3446d724c3542c4af0fa39bc1d7a76115f93a1fce"
+    },
+    "THINKING_DUTIES_V1_9_59.md": {
+      "bytes": 1065,
+      "sha256": "1e29528df66930064ef9c91bcd3dec01832dadf29ec65ac5a77e528327de4618"
+    },
+    "THINKING_OPEN_V1_9_58.md": {
+      "bytes": 431,
+      "sha256": "70557fe8ad0d835f50b9ab9f18fc6b9c4f2f697c0b0f0e596502315245ce2e7a"
+    },
+    "TODO.md": {
+      "bytes": 434,
+      "sha256": "8761205e50d0fc73a5db16b68cf029977a30e1cf40ba6fdf8cc40bfb1462fc8d"
+    },
+    "UI_1_9_52_NOTES.md": {
+      "bytes": 755,
+      "sha256": "6078219bf234bb9d7d8cdc942026bc3050b3678824745a4f94e53de7f3678c39"
+    },
+    "UI_1_9_56_NOTES.md": {
+      "bytes": 636,
+      "sha256": "4a81f256a59cb33dd2fca72876a7bcd49be112055151c69285c0a31856b8c88f"
+    },
+    "UI_FIX_VERIFICATION.md": {
+      "bytes": 1502,
+      "sha256": "2255c0efaf29b16dde3827b1189da603eb1399f126db996ab425f0bacc6b8017"
+    },
+    "android_patch/AndroidManifest.additions.xml": {
+      "bytes": 2390,
+      "sha256": "5ec9ed3344013e36d6f3453d9f5e610deed14128f585eef34c205b71c7807827"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/DownloadWorker.kt": {
+      "bytes": 13172,
+      "sha256": "825e914fd0d64e0be1b43f1466945ab9a121734fd16357ea6c06c13fd46a7c70"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberAiPlugin.kt": {
+      "bytes": 3387,
+      "sha256": "89e4a58a2e269869ae91b4cd1d14f439db0e57fba90f81474ea1036d206baff8"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberAiWorker.kt": {
+      "bytes": 9656,
+      "sha256": "ce3a556a1218a03c5882a7fd1988bb38efba80e9ff7d57dd5d711a23534f7146"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberDevicePlugin.kt": {
+      "bytes": 7908,
+      "sha256": "380e3b7b08bc0f6837c291b7aaef47c869b0e0df76080efc77890fec8887adeb"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberKeepAliveService.kt": {
+      "bytes": 4141,
+      "sha256": "62b6f8593bbaa6105e1160ea51f1f51606a2640074442341fbdbd465e80b8424"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberMediaPlugin.kt": {
+      "bytes": 7091,
+      "sha256": "14ca3c50e838cf78d89d3e3e58c3c59834ea0e42518854fcdf4bb4390c104d65"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberMediaSession.kt": {
+      "bytes": 6310,
+      "sha256": "d6f6018873a6df3e66c81549db37626602d0909dddd0c7885f376b2621dbb9bf"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberNotifyPlugin.kt": {
+      "bytes": 9396,
+      "sha256": "6722005863b90580d4b10582bf3d2c6c63b4f2db853462689a5f83466a0e85cc"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberPingWorker.kt": {
+      "bytes": 6658,
+      "sha256": "570ff2c7ce520231302cace9a5bc5fa586a01d35bec59417def269c8552727f8"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberRouteHealth.kt": {
+      "bytes": 2313,
+      "sha256": "1e7f3c8f5acd89fb596354b27f16cdf84629b560febfd54225394e4dec2dd467"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberWebPlugin.kt": {
+      "bytes": 16872,
+      "sha256": "03f1d26b88bcf19ac0c69c35ac9e19b43492508d3690ca21bf3f96f4081e4983"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberYoutubePlugin.kt": {
+      "bytes": 8619,
+      "sha256": "1a57f665f490017b93dcbab445a14093c35b742a8dec7c1d7f6a9ab353f37374"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/EmberYtCore.kt": {
+      "bytes": 2281,
+      "sha256": "d217ddfe449721248c372891da2ed525d9ea7441d5bfd4af45d9ef269e569e69"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/MainActivity.kt": {
+      "bytes": 1978,
+      "sha256": "0b37a99408e2e6ccef7d8f189688c310e6b10514be26bf7199183ca0d8f0bd98"
+    },
+    "android_patch/app/src/main/java/com/fezzy/ember/ReplyReceiver.kt": {
+      "bytes": 1202,
+      "sha256": "fb9ce49a2636f3cac89e3b3878fe74d428191ee840bc0b2eb4cf0cd1d1aea603"
+    },
+    "android_patch/res/drawable/ember_fg.xml": {
+      "bytes": 746,
+      "sha256": "258c1adb0dea960adfb396194ac0e1009a41658425d747779e6b5fec2487e7a8"
+    },
+    "android_patch/res/drawable/ember_notif.xml": {
+      "bytes": 747,
+      "sha256": "ceacf165326b62e7b28f7e3b2b23349e83be0d7b7cb46ef087f692559678b09b"
+    },
+    "android_patch/res/mipmap-anydpi-v26/ic_launcher.xml": {
+      "bytes": 242,
+      "sha256": "a629fb47eaa34add4f455d9315157e1691dc32d34ec8fa7e3912034e357adb53"
+    },
+    "android_patch/res/mipmap-anydpi-v26/ic_launcher_round.xml": {
+      "bytes": 242,
+      "sha256": "a629fb47eaa34add4f455d9315157e1691dc32d34ec8fa7e3912034e357adb53"
+    },
+    "android_patch/res/values/ember_colors.xml": {
+      "bytes": 107,
+      "sha256": "103a54162bcdaa72d7abf5295c889304fb5494844f93cbcb62a80adf298319b1"
+    },
+    "capacitor.config.json": {
+      "bytes": 332,
+      "sha256": "878d6a9d73960e53353b2ca6981f13c6cd0be92f53a3fe2c8788007a39119c8d"
+    },
+    "docs/ANDROID_BUILD.md": {
+      "bytes": 2354,
+      "sha256": "ec7f9e6277663556c6f40147ea8c384bafd11bd2632508dfa0fc07ff7cdbbb72"
+    },
+    "docs/ANDROID_PERMISSIONS.md": {
+      "bytes": 5140,
+      "sha256": "21d0b25420ff0255eea2da02f055fa6345243e7d98236ea0055fbcb63c658e62"
+    },
+    "docs/ARCHITECTURE.md": {
+      "bytes": 6896,
+      "sha256": "e86906fe41974de0e5c65edd785155176de3d02477bd196edbcd1ad6f6ff9b52"
+    },
+    "docs/CHANGELOG.md": {
+      "bytes": 116046,
+      "sha256": "b0cd6aeb89c9da94fe71979e1ca932a9e1caac8d83cf21b0cc6f2d271cac0cdd"
+    },
+    "docs/CONTRIBUTING.md": {
+      "bytes": 2868,
+      "sha256": "549e336f8e021261e81e65f6dbcb89fcff1741ad64f102e5d44fa04065a8bea1"
+    },
+    "docs/CRISIS_PROTOCOL.md": {
+      "bytes": 3573,
+      "sha256": "d04996d50246e09f931eb4e1616b61a4849bd3a981730209783eb36fbbfaa387"
+    },
+    "docs/DATA_FLOW.md": {
+      "bytes": 3978,
+      "sha256": "13d822ceb851dd4218b24dd9ad351e2431214a1a3100299bacdb24d81ac3e4a7"
+    },
+    "docs/FEATURES.md": {
+      "bytes": 5580,
+      "sha256": "3a8b262024dd09fbcf7e918683ecd916341eba22d3c19a0467ba25f4e1f3c849"
+    },
+    "docs/LICENSE_NOTES.md": {
+      "bytes": 2419,
+      "sha256": "719a5ac6b4778a70e864b9757a447ff7e69971e85e6fde6e382cd725286a34fe"
+    },
+    "docs/LIMITATIONS.md": {
+      "bytes": 3751,
+      "sha256": "cfd8c5d789922fc75c2c3d76d4c52a12d267d147086c8bce5e21587383bfec14"
+    },
+    "docs/MEMORY.md": {
+      "bytes": 3736,
+      "sha256": "e1568c0dfa5d7b89a62a2341a77a6f50d9cc56dddd934075657aec0d223c3dcd"
+    },
+    "docs/PRIVACY.md": {
+      "bytes": 9828,
+      "sha256": "d304e8e40b98b769f6caa3f74ca0d02eb412e6bfcc094d946169a776e35da468"
+    },
+    "docs/README.md": {
+      "bytes": 3151,
+      "sha256": "e93452945bddf7bf92de6c9e8ef5c2ce0007e3550c45f719105e72862ea20d74"
+    },
+    "docs/REVIEW_CHECKLIST.md": {
+      "bytes": 1507,
+      "sha256": "74c0f06e4e581f95137688b83fabc1e608e970dd71d34ed9a6629a4511f6c083"
+    },
+    "docs/SAFETY.md": {
+      "bytes": 5787,
+      "sha256": "a5fe0147f93e140bc8e391d37880f270c32602e000edf229a8c2ac571ab60329"
+    },
+    "docs/TERMUX_PANEL.md": {
+      "bytes": 1281,
+      "sha256": "2b5201c228a8b5c2283f34a16eb17c57d2f5debb86b743075e50d717a049d30a"
+    },
+    "docs/TESTING.md": {
+      "bytes": 5513,
+      "sha256": "1e8f61d5253c140f1a76c05a432647805bea11c85e94333fb85e305609426b93"
+    },
+    "docs/THREAT_MODEL.md": {
+      "bytes": 4506,
+      "sha256": "89856aa4d14db94944a179b0a8d29554035fa3e83453bf6c4bf9e86327ef89e1"
+    },
+    "docs/V1_9_0_PLAN.md": {
+      "bytes": 909,
+      "sha256": "fdb8f0a66d3059602ae77b3f8623bdb066bc535f2b228d1b9bddecb7a77381e4"
+    },
+    "package.json": {
+      "bytes": 3389,
+      "sha256": "ef79b4833a8708eb47b7965303887955d43f40fdb6b3c911297340cb5d865986"
+    },
+    "scripts/apply_android_patch.py": {
+      "bytes": 14629,
+      "sha256": "3a48ce5714028a4df9b7486b62b07638e252d8ea5730c5cdb89eebdd50d6911c"
+    },
+    "scripts/newpipe.version": {
+      "bytes": 8,
+      "sha256": "0221acf30705ee2929ecc4d46c31af6bb4f167046d85fa243f9b7b1740891c51"
+    },
+    "serve.js": {
+      "bytes": 1135,
+      "sha256": "3e368aa05f84554f828a534aa365303b8e5831cdd8d7adfca316739a628eed63"
+    },
+    "tests/agent-test.js": {
+      "bytes": 30170,
+      "sha256": "9c9bd58ef211028200bf8cf329909b8971cb8517015e6367a02064834557347d"
+    },
+    "tests/app-test.js": {
+      "bytes": 30181,
+      "sha256": "0227682c29fc01817bac5d25f54b69157885cc376a33b094e275ee490fc79cbb"
+    },
+    "tests/artifact-test.js": {
+      "bytes": 2211,
+      "sha256": "0085b5f137c6bc09cc08e192b748f19a48cb45b4dc1b9f78fea8918a7c88925c"
+    },
+    "tests/command-center-browser-test.js": {
+      "bytes": 10872,
+      "sha256": "1b86176ea48ce774ab95bc29a7adb2981101a18002c1af1a06257ff4fbfe690e"
+    },
+    "tests/command-center-preservation.json": {
+      "bytes": 450,
+      "sha256": "1c81615b9380d4b7fdc4b6c1bdbcbb3865e1da2d32cea158e191c76f94d3dcd4"
+    },
+    "tests/command-center-test.js": {
+      "bytes": 2692,
+      "sha256": "9647b7148729ba039fa5ca46481dcf4b74281f3c03dd28c70e6b80df8c67e387"
+    },
+    "tests/context-test.js": {
+      "bytes": 19680,
+      "sha256": "e46ebc9111c086a686435dbd267101587834112ecd49ccac9dc42fa44d722c2b"
+    },
+    "tests/download94-test.js": {
+      "bytes": 3564,
+      "sha256": "d0d9e8db8ade825a6dbbe8b9aae9bdfee6f7dc994c70deeaa2394c56af1701b7"
+    },
+    "tests/handoff-test.js": {
+      "bytes": 4343,
+      "sha256": "2cc01856a2e02ab0a0aa6e75149f0fbe7557250f1ec4fe474a2d17ff9c871194"
+    },
+    "tests/keyscan-test.js": {
+      "bytes": 14010,
+      "sha256": "ce9e0a453bcfec649dbcbeaf6c145078b337b7aaf2e7d303fd192fb05fac487b"
+    },
+    "tests/knowledge-brain-browser-test.js": {
+      "bytes": 8414,
+      "sha256": "099eba204b545519cf0526616eb116ef0f62ffb636cabbb9a072800e002ee2ae"
+    },
+    "tests/knowledge-brain-test.js": {
+      "bytes": 12009,
+      "sha256": "75c70a3de8308842d4a808e8c77fbc385a9f03adb37e9996f0882c4a107a7df9"
+    },
+    "tests/legacy-regressions.json": {
+      "bytes": 2587,
+      "sha256": "762203215407302f124b054850ca600a6d7af0cd1f81de5b5dd2dea7f524c299"
+    },
+    "tests/lyrics-test.js": {
+      "bytes": 10374,
+      "sha256": "2105334992b8c6fb78d7234f3cd79f99d447fa6db762cfe3ac1db229fe9a99f5"
+    },
+    "tests/music-test.js": {
+      "bytes": 14485,
+      "sha256": "fe178ea0594ea5b20f6c164b2e99b02bfddbfd2adfdc08b5b13dca2a406f9d93"
+    },
+    "tests/release95/baseline-app-test.log": {
+      "bytes": 1847,
+      "sha256": "c0709b08cb045614137e1aa0a2932188f12cd8466e165bea7de4ebce29902e16"
+    },
+    "tests/release95/npm-test-with-browser.log": {
+      "bytes": 4641,
+      "sha256": "70bcaf630c3357e2593f7b37151f1b0fc92b814ce6b0d85a57f210eb674c6965"
+    },
+    "tests/release95/previews/chat-mobile.png": {
+      "bytes": 36847,
+      "sha256": "f2de32a3b64274e1e912c57acb3ed3a62bcc947777aedcfc114d7cae49e175d6"
+    },
+    "tests/release95/previews/command-centre-desktop.png": {
+      "bytes": 265094,
+      "sha256": "57febc768c5164a5a489402def34146e1dfb706e8fed0c8f4f05c48364cc9f56"
+    },
+    "tests/release95/previews/command-centre-mobile.png": {
+      "bytes": 159767,
+      "sha256": "f5928682013f499e115b9db7ae2372f93b756a93f833db01672d44ca59e33c2a"
+    },
+    "tests/release95/previews/repositories-mobile.png": {
+      "bytes": 136574,
+      "sha256": "d59a3d86a6c993c3dce336beeab64847cbd513e87ff9bbaa2006fe828f36db4b"
+    },
+    "tests/release95/previews/thinking-mobile.png": {
+      "bytes": 41254,
+      "sha256": "4762c8ed31fcf36ac80c7186dca09ba0795a0f13d401ed1ec40dc47f839ee050"
+    },
+    "tests/release95/release-tests.log": {
+      "bytes": 15992,
+      "sha256": "10f9f5c6c050d2726e15124987aaeaec720e81a0fa7dd917b216965de5ed7c5e"
+    },
+    "tests/results94/agent-original.log": {
+      "bytes": 5626,
+      "sha256": "7cd81281a8441929147bf665fef482c725f2d4ac6984266a477f8e0257a14c7b"
+    },
+    "tests/results94/agent.log": {
+      "bytes": 5626,
+      "sha256": "7cd81281a8441929147bf665fef482c725f2d4ac6984266a477f8e0257a14c7b"
+    },
+    "tests/results94/bridge94.log": {
+      "bytes": 613,
+      "sha256": "1e1c828ad3546eb11982bf8e075a568a6eba1138f0a8c4b97ccc9031fe8730ce"
+    },
+    "tests/results94/cc-browser.log": {
+      "bytes": 1241,
+      "sha256": "c670fb33ee26f47556bfd38d6589f527dfeadaed2ace2a66821361473eb65344"
+    },
+    "tests/results94/router94.log": {
+      "bytes": 1207,
+      "sha256": "81ef2f6fa245a98a1b42356eb27b34a1045f49f89a2e138a2ab020f378dd1431"
+    },
+    "tests/results94/ui94.log": {
+      "bytes": 1173,
+      "sha256": "b3575a06f3bdb910547f9a780313c1a9a23b61810354c9dd8ed97cc4ed726cd3"
+    },
+    "tests/results94/voice-original.log": {
+      "bytes": 1360,
+      "sha256": "41ef15a09b6bcde7c32c20501c2c68820a73b95d54a1e11424d2543c67fe610c"
+    },
+    "tests/results94/voice.log": {
+      "bytes": 1520,
+      "sha256": "a74214bb658e594edb81f2de5c7efd98e05922eaf449d53025617f4563060268"
+    },
+    "tests/router-test.js": {
+      "bytes": 5877,
+      "sha256": "0e19471d2c3498acbb0d6c3192edacb87396b0e078f3670c823f12c6ccffb149"
+    },
+    "tests/routing-fallback-test.js": {
+      "bytes": 4750,
+      "sha256": "1684240a4d69c9c3f74f5aa84dac08e55008654b05e6a0eb5111f8f2f38436b4"
+    },
+    "tests/routing94-browser-test.js": {
+      "bytes": 8354,
+      "sha256": "b79dc34d6837ad1ea0b9e93ef3432acd55b763dcc9f71d5ca8133515911585bd"
+    },
+    "tests/routing94-test.js": {
+      "bytes": 6458,
+      "sha256": "fff5d7245c9d5049a261c7c771caa6649e35aaee56baf71a52ada2c5a7bdfd04"
+    },
+    "tests/safety-test.js": {
+      "bytes": 2798,
+      "sha256": "5316c6d3401dbf6f9f10fe60a01adc2b08334e7a1fa851fd7bcd8af539a18a02"
+    },
+    "tests/scrape-test.js": {
+      "bytes": 23727,
+      "sha256": "5f6c4110ba965cd1c3ad4d3567ecdd217a40d27d0251c506c096a1e4cce126a5"
+    },
+    "tests/shots/01-chat.png": {
+      "bytes": 178423,
+      "sha256": "853f950deec83ad5f3c9bfa00f8114b256eb006a59097557d2b7b7a6da62a275"
+    },
+    "tests/shots/02-settings-keys.png": {
+      "bytes": 244493,
+      "sha256": "cf297b863886dfd68cf71aa7654e235703001bbe82c42af73e19ea9de204c460"
+    },
+    "tests/shots/03-settings-memory.png": {
+      "bytes": 200128,
+      "sha256": "3619c444de79dc1312fbbf6069c03bd20f4abf3aae0b700a60a76f7005db4467"
+    },
+    "tests/shots/routing94-features.png": {
+      "bytes": 74925,
+      "sha256": "40b048357b2eeeba8466278103cdd56171cd754b5314cba0b8715bb3eb832428"
+    },
+    "tests/shots/term-chat.png": {
+      "bytes": 81294,
+      "sha256": "38314cc7d6ee5913d2f43cd795698d0f315e233cb9397d2812254df61ac257eb"
+    },
+    "tests/shots/term-half.png": {
+      "bytes": 66999,
+      "sha256": "5677705e522997ab7275e3148027a3f572e94e9fac4bfabcbd84c4b913c40c09"
+    },
+    "tests/speaker-test.js": {
+      "bytes": 9131,
+      "sha256": "55a7efa7452bd69d9bb32a961b0e1753cb9c5633ccc8ce5763499d2407246581"
+    },
+    "tests/streaming-routing-test.js": {
+      "bytes": 3030,
+      "sha256": "b02ea1b6822f056022a65d66e17c5fea71523bb62a388f3b4a92cafff400593c"
+    },
+    "tests/term-test.js": {
+      "bytes": 11962,
+      "sha256": "46aeb64bface8e15b5caf87f77e2a7ac5b616d2e7850cfad103116f726548492"
+    },
+    "tests/tool-followup-routing-test.js": {
+      "bytes": 1439,
+      "sha256": "0e68ba580fc5f0f68ef89ab91d971d3b70937756dfa350f53e1dea2cad1ad4da"
+    },
+    "tests/v168-test.js": {
+      "bytes": 6970,
+      "sha256": "6f8594a601aaebfb5fd6aa4a22a4cde29651eb12746dad7afdd06248376f983d"
+    },
+    "tests/v183-test.js": {
+      "bytes": 8372,
+      "sha256": "d2d9e3c3efdb30f9db7e23fc79b77bbb731281fd3020d81e2528bb2e5ad767c9"
+    },
+    "tests/v1915-test.js": {
+      "bytes": 13418,
+      "sha256": "378131894ffb5037819fbe81914966cca18e4c05003adf6d595c9cc5bbfb8d36"
+    },
+    "tests/v1924-test.js": {
+      "bytes": 3663,
+      "sha256": "3ffd858450135738f5b386274f5a5e36ce58fccfaabbb2ff53a075fbc0b8187c"
+    },
+    "tests/v1925-test.js": {
+      "bytes": 3041,
+      "sha256": "ffa87fcfb29e51e5e6d5e6139118d97f953ef6374d858d75e76dd76dcefd0504"
+    },
+    "tests/v1927-test.js": {
+      "bytes": 6823,
+      "sha256": "a03a76ac2b4b2d5fc68d2defdc1428127e7e20f43b37c39e17605f5289ecb02c"
+    },
+    "tests/v1927b-test.js": {
+      "bytes": 4627,
+      "sha256": "6ec03774df98a5200d777b39b05e717731135843e52dd759b8a3af1be1bcbce0"
+    },
+    "tests/v1928-test.js": {
+      "bytes": 5201,
+      "sha256": "10a24b7ba160b7bd4142ec269c8742fec83d2ed42fb754d025078947c5df68c3"
+    },
+    "tests/v1929-test.js": {
+      "bytes": 4433,
+      "sha256": "fe172b018d71b3cc9530d310215ad8922083d54fe916f651047ad747b6dd2140"
+    },
+    "tests/v1930-test.js": {
+      "bytes": 3634,
+      "sha256": "db9b4ae8f715a920b155e483862a5c8a887fccdd5e9b6d93d94006373e40034d"
+    },
+    "tests/v1932-test.js": {
+      "bytes": 4342,
+      "sha256": "eff61d9b2898466149512db0492d98ef59d40ede8d243125ac0d3bc90d86159f"
+    },
+    "tests/v1933-test.js": {
+      "bytes": 2331,
+      "sha256": "cd3e56077c5897754fedde8bb3c0e5bb5b3b252ee2b0b623b28d5a797e4d7f40"
+    },
+    "tests/v1940-ui-test.js": {
+      "bytes": 692,
+      "sha256": "fefcd47056d54080e533a9845ecf95024d9615a4f57fb8f9e6eac3e752feace8"
+    },
+    "tests/v1941-thought-test.js": {
+      "bytes": 1222,
+      "sha256": "dec3f09868e828e2457d73bd1ac73926b0edac30b8d2c82285fec753dff74238"
+    },
+    "tests/v1942-thought-test.js": {
+      "bytes": 2643,
+      "sha256": "57fbbd1b95a112595af233710088da7beff951ae4e97c2ddc2e566a7942595fe"
+    },
+    "tests/v1945-motion-test.js": {
+      "bytes": 3839,
+      "sha256": "784a5487c20ddd36acd3748f90a9bc47ab7764e64a2f62e5e069d5f089fcbf63"
+    },
+    "tests/v1950-ui-stability-test.js": {
+      "bytes": 15094,
+      "sha256": "e4b78afc546fb05ff0cf292fef2153c5f978c027620f807a6096a950a8088b46"
+    },
+    "tests/v1951-api-audit-test.js": {
+      "bytes": 3161,
+      "sha256": "f985c6a6823c867a69412d2a68a5db17482ae7b4a0eb2ee4f6a080c22dcd197c"
+    },
+    "tests/v1955-api-profile-test.js": {
+      "bytes": 1722,
+      "sha256": "372292f56fb0be5ef1493f30b1bbfc88479ffa5d573c3862eac77b22887d7fa5"
+    },
+    "tests/v1957-newpipe-direct-test.js": {
+      "bytes": 1097,
+      "sha256": "f8a32ac3702be9eaa40bfd67f05056f882cdce2424693d3a25a7097d71b94c69"
+    },
+    "tests/v1973-test.js": {
+      "bytes": 7077,
+      "sha256": "d0617d59f8ec9af9062143e9609a570718201cfe0c91e1a1c9319c2ab6080d09"
+    },
+    "tests/v1974-test.js": {
+      "bytes": 4423,
+      "sha256": "fed0affb46acf1ce9ce781650c334624e0cb4535c4d09cd0cf50c788d307eec2"
+    },
+    "tests/v1978-steps-test.js": {
+      "bytes": 2109,
+      "sha256": "f1fc291acee00a6360d10f0f734a487927f0c1adb73402840eb14caf4980d164"
+    },
+    "tests/v198-test.js": {
+      "bytes": 7628,
+      "sha256": "450ca2a3aad9d693a5feddff552818397d9337acac055dc48ffa9a9cd99b41f7"
+    },
+    "tests/v1980-puter-key-test.js": {
+      "bytes": 4553,
+      "sha256": "e9f20771063272e45f91907e6cad7888872fa591714c2bf41d4e22ab0b4a7fa2"
+    },
+    "tests/v1987-test.js": {
+      "bytes": 17280,
+      "sha256": "96996b3c40b9ea2f81cef5e087630bade42a9d13140440d0ff1f96a6b3c0ebe3"
+    },
+    "tests/v1988-test.js": {
+      "bytes": 12774,
+      "sha256": "b2b1e899db1512cbfc8433a204a957be5ac04c5428db451f2c606cb22bec6545"
+    },
+    "tests/v1989-test.js": {
+      "bytes": 2320,
+      "sha256": "bc597bb57fed9f69038ecdc38cb0a390d2130916a755f53c02daa93e7ba7debd"
+    },
+    "tests/v1991-browser-test.js": {
+      "bytes": 8899,
+      "sha256": "5c419fce30dfed7577ad2f4f890c6c0f3dcc2bea929a580d61fbf13740aa3b95"
+    },
+    "tests/v1991-deliverables-test.js": {
+      "bytes": 6407,
+      "sha256": "dd7a51401e47a2f7d28b382f9c230c76308ae410b3ab2a5d9f3b81e581a6d785"
+    },
+    "tests/v1992-repo-runner-browser-test.js": {
+      "bytes": 9742,
+      "sha256": "f3f76de64239f0af09b9937e6ab10b5fbd1ad6ac00c07938fa12102ea303ab86"
+    },
+    "tests/v1992-repo-runner-test.js": {
+      "bytes": 13065,
+      "sha256": "e0034ee72370811aca7b9a690e709cea78816af2101f1437b7f7161df8a69f96"
+    },
+    "tests/voice-cloud-test.js": {
+      "bytes": 12573,
+      "sha256": "4fb9e602a2a6edf26443494af0345dd38c6a118119b6b03ed16bca10ba92ac70"
+    },
+    "tests/voice-native-test.js": {
+      "bytes": 5655,
+      "sha256": "9c61dc3e16d95606eb89bdc97a3bc13186db57d4b4346ef17b367610128b3dba"
+    },
+    "tests/workspace95-browser-test.js": {
+      "bytes": 18641,
+      "sha256": "f11bbd59c2b35e4b4374d0ec981aae5d391bf641e4a7d2949ad32057725a810d"
+    },
+    "tests/workspace95-test.js": {
+      "bytes": 5912,
+      "sha256": "80fa656eb2b6cf35d1744b3390c3360b08f9de1e18a243eacd9b5c7a8a58a052"
+    },
+    "tools/diag.js": {
+      "bytes": 5670,
+      "sha256": "ace7b72e019f0b1699577d7a4cc921ec65eeb50c671a12e74b63560d8c6089cc"
+    },
+    "tools/download-bridge.cjs": {
+      "bytes": 8090,
+      "sha256": "d51b348ea14c5a4543fbef9f6fdadb650274d39274938f98b400defc458e0d18"
+    },
+    "tools/scan_diag.js": {
+      "bytes": 4295,
+      "sha256": "c855ef548546089ea4be7bfef11126423c964ae33f8b2a25ea831478eb1d5a07"
+    },
+    "www/ai.js": {
+      "bytes": 20389,
+      "sha256": "2581c05640814306372d3a0fd4a03591b5fa25a4f8cbe65ba53b22a4138a4415"
+    },
+    "www/ai_agent.js": {
+      "bytes": 44532,
+      "sha256": "375ae3346b60e1af1e30530abee1eb0b90ac471df80ac152c928f070c9e473d6"
+    },
+    "www/ai_docs.js": {
+      "bytes": 5544,
+      "sha256": "2207c58875330f0fe80fd67132cfdcb4eb283edcc5f87d2a4677ba02dd68ec67"
+    },
+    "www/ai_music.js": {
+      "bytes": 13461,
+      "sha256": "50b2c3a051412544dc219227888d020bdcaebec6a8f268ffb1b6a8e211249d02"
+    },
+    "www/ai_scraper.js": {
+      "bytes": 43505,
+      "sha256": "8fca7b54e42985d21ad0983c92a67284e04c2dcf3baba28cdc4fd604d2dfba6b"
+    },
+    "www/ai_sites.js": {
+      "bytes": 2422,
+      "sha256": "752f2ae2aec184cc42e8cbb0a4c903ca28b72e18d2e607202d31cff49930a014"
+    },
+    "www/app.js": {
+      "bytes": 117436,
+      "sha256": "1f83c922c05ce4fc13905d96bc2f4e42747ffee44a5c4c6cf2c1aef3f1fd2855"
+    },
+    "www/ember-icon.svg": {
+      "bytes": 1314,
+      "sha256": "ff9ec980e646d2210a84a0605fb237f660a673cbba5d5e1c93d685d1d3629fa3"
+    },
+    "www/ember_acc.css": {
+      "bytes": 5171,
+      "sha256": "7b70324ce223629cbf31a62bc2dd32ff03955218ce945132c177fc2a5aa6a03a"
+    },
+    "www/ember_acc.js": {
+      "bytes": 5106,
+      "sha256": "aeea7718f0ffddf8d7252f69398236455d91237a0838b87e721698d6975c936c"
+    },
+    "www/ember_artifacts.js": {
+      "bytes": 21835,
+      "sha256": "ae29fd5b6b1e851c1d44769842f388afaa2d2b236f28cb2a368e11119d7f8899"
+    },
+    "www/ember_audd.js": {
+      "bytes": 7254,
+      "sha256": "83c895368d869e70eec52dc6b106a004bbc8d51a6caaf3341a2df50a5c98f6df"
+    },
+    "www/ember_blue.css": {
+      "bytes": 2996,
+      "sha256": "10dddfa4ed8c5047f57a9760abc5bd85c32568dc04138272a07d9f03c71c0435"
+    },
+    "www/ember_browser.js": {
+      "bytes": 14578,
+      "sha256": "68fbbfaf5866ec2b8bfaf180efe06715bcff41c0d91bb4e4c399aac1c4b7187b"
+    },
+    "www/ember_command_center.css": {
+      "bytes": 5899,
+      "sha256": "f053c71e0977d12c9203b35fa5fa89e76fdf40fcad7bdf8f1d430a6bd3cb2ccf"
+    },
+    "www/ember_command_center.js": {
+      "bytes": 20871,
+      "sha256": "ada1a71341ed7c4cb79774066159149fe392f0e3e48810541048a7143ed94530"
+    },
+    "www/ember_context.js": {
+      "bytes": 17963,
+      "sha256": "ba52359202da202008f30007ad7796aa306c779b545e5a6ee77f62fba881fe84"
+    },
+    "www/ember_create.js": {
+      "bytes": 20419,
+      "sha256": "e3e58d380da7d5b54179598483f6b7742aef4c138f3a0bad936c591a73b1335e"
+    },
+    "www/ember_deliverables.js": {
+      "bytes": 10882,
+      "sha256": "d6bc48fa89ace7afdf868749549891268cf66b763e45c858c7279ce9dfd46e0d"
+    },
+    "www/ember_device.js": {
+      "bytes": 18144,
+      "sha256": "73c26cd53c678e0cf5d02ce3d19f72d58890d2be708f7bbd59975de42edf2535"
+    },
+    "www/ember_docs_lib.js": {
+      "bytes": 4784,
+      "sha256": "eecd003d5d2b40f6114a8fe6a30a06ad93e76db6ac342e1783e73b622810e86a"
+    },
+    "www/ember_downloads.js": {
+      "bytes": 5127,
+      "sha256": "a0518701fc3df3cf79e790bbd917dd2c074a77b94e974b59ad7b2dcab3e67a61"
+    },
+    "www/ember_engine.js": {
+      "bytes": 13507,
+      "sha256": "e35d6cf8cecf0f619f01930cf59e84660005e2ca52c01cb52e9e6e05df8d3a4f"
+    },
+    "www/ember_engines.css": {
+      "bytes": 3532,
+      "sha256": "222b011cbc01b83180f29f698398733bc993e62c0af2d06d2b73044ae280ae30"
+    },
+    "www/ember_engines.js": {
+      "bytes": 28884,
+      "sha256": "f862deed692020d2430d53357fe982d8b903ff0bacd07afeada585ea1f8685ac"
+    },
+    "www/ember_extras.js": {
+      "bytes": 12733,
+      "sha256": "785991aa0209947e42d8a17cefef8704f15da73088e9f8cc883f56eee6bf8f1d"
+    },
+    "www/ember_features.js": {
+      "bytes": 14871,
+      "sha256": "c9eaa1a4995743f593704c31fcd369ba231c236fcb4217c8c2bc1b6b4ffb9d48"
+    },
+    "www/ember_find.js": {
+      "bytes": 12519,
+      "sha256": "82595ffef8ac4693a59c4e172d21373ce031b102c15c3175aabb6384e76355cf"
+    },
+    "www/ember_getmusic.js": {
+      "bytes": 12457,
+      "sha256": "7b950f76c63f67c05e923e3f9e76d9a24c2728fa1973deac8194ec23e4ead533"
+    },
+    "www/ember_github.js": {
+      "bytes": 87204,
+      "sha256": "f97c69c300d106a028938c34ac71a5d140069bf1f0f328a7a8cd1852bccb4cab"
+    },
+    "www/ember_github_ui.js": {
+      "bytes": 13032,
+      "sha256": "13e4aada6a8f7001381d023c4851ecc4024b6884cd1e33ee6e83d27eb9a8d30c"
+    },
+    "www/ember_graph.js": {
+      "bytes": 8722,
+      "sha256": "e8407cae9bd7abf924c1084e2e86d17bf6b2f556bd2ebb92122dfd2279e0101e"
+    },
+    "www/ember_keys.js": {
+      "bytes": 7237,
+      "sha256": "ee9e41a743060b8fc9d94c5e736a4c6c5bb2c65b11f4e0d83b0f2ee9637810bd"
+    },
+    "www/ember_keyscan.js": {
+      "bytes": 23680,
+      "sha256": "c15205154749134c2c9fece34ee666b39fb7f30c1fbfc2b021f8a264b75a7bf8"
+    },
+    "www/ember_learn.js": {
+      "bytes": 18624,
+      "sha256": "d81acf05a05e8e9df92b7d76e0addfcb9419c7dfb2afbb339fd9aa71dce6a269"
+    },
+    "www/ember_lyric_thoughts.js": {
+      "bytes": 8509,
+      "sha256": "99d458564a556b521c6802648286d6c1209d3ca601385bf9aa9f62dc1ae7e899"
+    },
+    "www/ember_lyrics.js": {
+      "bytes": 6910,
+      "sha256": "c8e5668733419cf2e01f4d9695ceefa00b270e8b9c0c2a4a2347398abe09e13f"
+    },
+    "www/ember_media.js": {
+      "bytes": 7868,
+      "sha256": "7de9727d7fa81aecb7bca4781fe2221daa1a4978c3cddbd3ab3317f72ebf6c52"
+    },
+    "www/ember_music_ui.js": {
+      "bytes": 20768,
+      "sha256": "1dbef7db3bcb3610a7d7620875a11b1d9c6e97adb70fadb6d5371bd20586b41b"
+    },
+    "www/ember_native.js": {
+      "bytes": 20757,
+      "sha256": "0740158c11c69fe4103a8429e1ad9e2e9c91c41b140066a78b3a15eea7b11942"
+    },
+    "www/ember_pastekeys.js": {
+      "bytes": 9191,
+      "sha256": "7b60820c964cf1cdd3f598922ab532a9f1f7002348e89f8b66bb75fbffced395"
+    },
+    "www/ember_pdf.js": {
+      "bytes": 22400,
+      "sha256": "da9fae44a10fa278c903e4430455e6a309481e311bb1ceacb388322895b87298"
+    },
+    "www/ember_player.js": {
+      "bytes": 33357,
+      "sha256": "2f108dae37fb847bf66a7381badf043e393e592adc93152623a46fe30fb2e32d"
+    },
+    "www/ember_plus.js": {
+      "bytes": 13965,
+      "sha256": "3b422fbc3841e32bbac8b49fb9dd482f32410373ce64f5e33e3d6a2462fd924b"
+    },
+    "www/ember_projects.js": {
+      "bytes": 10532,
+      "sha256": "0873c8c577848f0d50851d2095fdaef3e0fa1d03370c2567cbf2b16da1770f04"
+    },
+    "www/ember_prov_ui.js": {
+      "bytes": 5935,
+      "sha256": "2b76173f3111129353e228297fd472b8afed114c12a76303ca5aec67cd69a274"
+    },
+    "www/ember_puter.js": {
+      "bytes": 4116,
+      "sha256": "76e5ca2626438abf1a94e3a35832bfab077ad26d4da90d62a2c0b4ea86dd9537"
+    },
+    "www/ember_react.js": {
+      "bytes": 23292,
+      "sha256": "ea0e6b5e28ed05905f1d57ed0bc8e334c18dc9cb454139d15a8291692514a228"
+    },
+    "www/ember_react_ui.js": {
+      "bytes": 7626,
+      "sha256": "7284a879c6c4565c91652d625766b9cb7279c1b7a9e2d71b37e3d097fc6e76d8"
+    },
+    "www/ember_repo_runner.js": {
+      "bytes": 26567,
+      "sha256": "dce264366bfd20a43a06ba22d885279c5a3936da4dac321468974ceb3dcaaa6a"
+    },
+    "www/ember_routing.css": {
+      "bytes": 4120,
+      "sha256": "2ff3d295b392bb4a65cbe1c6f9c58fc4f88f0cfaf75c4c5254c732a4cccc0f11"
+    },
+    "www/ember_schema.js": {
+      "bytes": 5153,
+      "sha256": "5b0eca0d13a90abb7b33748d637a9876a1c66dcdf9bdfa9dc202d7b15a5adfbb"
+    },
+    "www/ember_steps.js": {
+      "bytes": 2421,
+      "sha256": "974299ea2bbcfa53317d23bf5871d885b27a1f98efb0edcded8aacf8d7068110"
+    },
+    "www/ember_tasks.js": {
+      "bytes": 4991,
+      "sha256": "4af5881a1d3e9a8ae1e6aad0c8b478d693ebdd15b80d681db174f2ba63954e22"
+    },
+    "www/ember_term.js": {
+      "bytes": 55177,
+      "sha256": "422deaf28f092971c46b7f7ca6f36d4672e4cdda4a4abcfe5b79d10e0e69c2b8"
+    },
+    "www/ember_think_inline.js": {
+      "bytes": 11733,
+      "sha256": "54409ee2f0d304c3358417bd040fe6d691067453fdba9d5b3901d92076a95be5"
+    },
+    "www/ember_timeline.js": {
+      "bytes": 35871,
+      "sha256": "806497d868056ee707ce7405ee51460166097253d3e60e1568dc60810b657cb3"
+    },
+    "www/ember_ui.js": {
+      "bytes": 6305,
+      "sha256": "e1399c6ec01aab640fd6a2c6e3fe5ccdbff2e6d99b064a466f84034dedb4b472"
+    },
+    "www/ember_v79.css": {
+      "bytes": 6444,
+      "sha256": "f0563152687fabb2f653ba7ec27b3c873e626fa9c1f055475795bfa6750d8fc1"
+    },
+    "www/ember_v79.js": {
+      "bytes": 1247,
+      "sha256": "71ce732d7e92873c8f4def072b63536938f577ddb3bd3d6990a359e40beff193"
+    },
+    "www/ember_v80.css": {
+      "bytes": 7799,
+      "sha256": "ec6d6e595c61db6c4998b864ef074e6070c8489d0baa46786ecff2e8a2eb4abb"
+    },
+    "www/ember_v80.js": {
+      "bytes": 3048,
+      "sha256": "b6d2017f20423fb984e3ea39b081fb17c35dc671d515000d3587f9d2f07c808e"
+    },
+    "www/ember_v81.css": {
+      "bytes": 4703,
+      "sha256": "17129105e3658161146edf1945cb7d397d6cc6a1d338b0739367fd3638fe1b94"
+    },
+    "www/ember_v82.css": {
+      "bytes": 2317,
+      "sha256": "15cca935bf13665d7dcbde82984b58b260a44961ea6b996729a174de80ed5da5"
+    },
+    "www/ember_v83.css": {
+      "bytes": 6433,
+      "sha256": "915081aacaa4e4ec1401aeaf98733e1652fc9786e4cdb7ea4a6ac8f5992877a9"
+    },
+    "www/ember_v83.js": {
+      "bytes": 2709,
+      "sha256": "7c201843b45db76d2dd253e6d3b22d42d2356921ba6aad6c9db1c68ea5d4ca4c"
+    },
+    "www/ember_v89.css": {
+      "bytes": 594,
+      "sha256": "cedaf05412989fd73f6b286ac53ac834908a7e4f052ddfba2a416d1ee52f3f6a"
+    },
+    "www/ember_v89.js": {
+      "bytes": 1133,
+      "sha256": "0e4828fe1fbc5942b67161be9c87f63610570680bb64c47208aa36165052fd75"
+    },
+    "www/ember_voice.js": {
+      "bytes": 23315,
+      "sha256": "2d5d55d83ec5e38499a0e1f741a1c31c6a7ce9ce84fc0759f91d907229d8b192"
+    },
+    "www/ember_workspace.css": {
+      "bytes": 7544,
+      "sha256": "90d163d419e850edb684ca2a4ef5f370ff0c099a28cab4f9aeb3d97d91fa87c1"
+    },
+    "www/ember_workspace.js": {
+      "bytes": 5795,
+      "sha256": "254060a30aeef52af187f97c34b5b058b3c6b9587ec38d9167f0b8a090358408"
+    },
+    "www/icon-192.png": {
+      "bytes": 13726,
+      "sha256": "13a7b684f4db04d2f730cc9277e7ec408d1a1c13d49fe71e69ee423762e20385"
+    },
+    "www/icon-512.png": {
+      "bytes": 56766,
+      "sha256": "fff1e3d8a1f15fe48388e21411bb10d40c2ef3d5842ae7972abcc52ed20169a5"
+    },
+    "www/index.html": {
+      "bytes": 81225,
+      "sha256": "c3e4ecf96c6f4f6cc3e10fb30d376b9dccb8aa106417a57ad1b557f7d8663fd1"
+    },
+    "www/manifest.webmanifest": {
+      "bytes": 655,
+      "sha256": "602a06ae8102a4e9d747f4ee615306dd315d168e3f202b3144b3f30a577673c7"
+    },
+    "www/nine_nine.js": {
+      "bytes": 3110,
+      "sha256": "300d1cc3575df58ec9791d6b3411f2b06e552421857debf26d72bd78296c010d"
+    },
+    "www/persona.js": {
+      "bytes": 41556,
+      "sha256": "b98dc46937f759b60a352e6a2cfe3f2a7d524f75f849ac330f5f20aa042f35e3"
+    },
+    "www/providers.js": {
+      "bytes": 67417,
+      "sha256": "df7873dd2e7d00af9809f9a61f319823fc378b2ba190a31303446bddf20d1485"
+    },
+    "www/repo-runner-template.cjs": {
+      "bytes": 13690,
+      "sha256": "63eadcbbdfd91766f1b8dfcd27232030357f6cdb0342ea88d88e692ef1b81114"
+    },
+    "www/safety.js": {
+      "bytes": 5538,
+      "sha256": "1de3f5fa9c73ff526389580b7a9e01aa7bfca47a07e6bc5aaf9d5259cb86dbf4"
+    },
+    "www/store.js": {
+      "bytes": 3159,
+      "sha256": "c833e04ead17a3347687614b27d944b1980cb81bd01fafe070240fa571db6cc6"
+    },
+    "www/style.css": {
+      "bytes": 170512,
+      "sha256": "9f6f67aed184ef79e98e954210b15dd09f3251a9332e9c8fd3c01d13d5b7e867"
+    },
+    "www/sw.js": {
+      "bytes": 2540,
+      "sha256": "8b5fbdc2f1c981749fd8b49f2de9672a35b92f0374b50a6baeeb7c2cc173f249"
+    },
+    "www/vendor/Roboto-LICENSE.txt": {
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "www/vendor/SOURCE_MANIFEST.json": {
+      "bytes": 1119,
+      "sha256": "cfc8b76704e3e08ee589b8b2ab30229fbe4609e72545c70f966113adb99031cc"
+    },
+    "www/vendor/docx-9.5.1.iife.js": {
+      "bytes": 807605,
+      "sha256": "bb2908d72ffd8a3d896b455563733d3a2e708e1384a5140e05b3c6dd0b2f676d"
+    },
+    "www/vendor/docx-LICENSE.txt": {
+      "bytes": 1072,
+      "sha256": "b5b2364c0c95a26b2a2399d7e706a61acac680be1d5b180b00592ee85830bffb"
+    },
+    "www/vendor/libsodium-0.7.15.js": {
+      "bytes": 638900,
+      "sha256": "8abec6b42fafb418f58bff3fd665005b3e700ee02dae5042ce5704d27e6fcb23"
+    },
+    "www/vendor/libsodium-LICENSE.txt": {
+      "bytes": 839,
+      "sha256": "051795a65af6a45e1022e56b01123e399d28c4d2680681d3e207df2669da5d85"
+    },
+    "www/vendor/libsodium-wrappers-0.7.15.js": {
+      "bytes": 101748,
+      "sha256": "828884732c06fa4443688b33ceb4ab42e6e1b99200e4749be375faa289e94158"
+    },
+    "www/vendor/libsodium-wrappers-LICENSE.txt": {
+      "bytes": 839,
+      "sha256": "051795a65af6a45e1022e56b01123e399d28c4d2680681d3e207df2669da5d85"
+    },
+    "www/vendor/pdfmake-0.2.20-fonts.js": {
+      "bytes": 830090,
+      "sha256": "f91db5690400fc851536c3a9322f822619f8e9f681abe42013e572d88d3c1f38"
+    },
+    "www/vendor/pdfmake-0.2.20.min.js": {
+      "bytes": 1402214,
+      "sha256": "c2fd3a5e24db096c9139bb7d266765de433b0b866d03ba356c2ef4d9ae1a53b7"
+    },
+    "www/vendor/pdfmake-LICENSE.txt": {
+      "bytes": 1134,
+      "sha256": "009e509bbd25a0f7572b184781707263f5df9e89d2ed751c46e0f6edf0c5d42e"
+    }
+  }
+}

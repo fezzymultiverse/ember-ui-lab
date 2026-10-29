@@ -1,0 +1,24 @@
+PASS app loads with original timeline and separate new components
+PASS panel initially inert and terminal collapsed
+PASS header button opens sliding panel
+PASS panel focus trap loops to close
+PASS escape closes and restores header focus
+PASS thought inspector shows actual public phase block only
+PASS panel and inspector leave timeline content intact
+PASS matrix includes actual request excerpt, not unused library file
+PASS matrix removes files evicted from latest payload
+PASS tool-injected chunk appears in matrix
+PASS real NewPipe and runner events stream to distinct terminal
+PASS terminal escapes markup and redacts common secrets
+PASS stderr filter excludes stdout
+PASS SSE stdout and stderr arrive from a real test server
+PASS published runner logs are labelled merged
+PASS live stream rejects external URLs and query credentials
+PASS cancelled build performs no network writes
+PASS build dispatches configured workflow and ref
+PASS push reuses installed repo sync, not arbitrary writes
+PASS clear cache preserves saved settings
+PASS terminal buffer stays bounded
+PASS mobile panel fits viewport
+PASS no uncaught browser errors
+23 Command Center browser checks passed. All GitHub operations mocked; no real build or push performed.

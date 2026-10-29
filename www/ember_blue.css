@@ -1,0 +1,35 @@
+/* Ember V1.9.88 - ember_blue.css: one blue for every toggle and every selection (same look as the Think / Search pills).
+   Loaded LAST so it wins over the older orange rules. Selected pill/tab = blue tint + blue border + light-blue text. Switch = solid blue track.
+   The terminal keeps its own green/cyan console colours on purpose. */
+:root{--blue:#3d8bff;--blue-soft:#8fbaff;--blue-bg:color-mix(in srgb,var(--blue) 18%,#161618)}
+
+/* selected pills, tabs, chips, segmented buttons */
+html body .stab.on,html body .mtab.on,html body .wtab.on,html body .dtab.on,html body .dvtab.on,html body .ptag.on,
+html body .gh-tab.on,html body .gh-chipb.on,html body .modes button.on,html body .comp .modes button.on,html body .comp .tools button.on,
+html body .tools button.on,html body .npc button.on,html body .chips .chip.on,html body #bProv.on,html body .xa-cat.on,
+html body #xengines .eg-opt.on,html body button[aria-pressed="true"]:not(.sw):not(.hb),html body button[aria-selected="true"]:not(.sw){
+  background:var(--blue-bg)!important;background-image:none!important;border-color:var(--blue)!important;color:var(--blue-soft)!important;
+  box-shadow:0 0 10px color-mix(in srgb,var(--blue) 28%,transparent)!important;font-weight:600}
+html body .stab.on *,html body .mtab.on *,html body .wtab.on *,html body .dtab.on *,html body .gh-tab.on *{color:inherit}
+
+/* the Modes pop-up and "+" menu rows */
+html body #modes.mpop button.on{background:var(--blue-bg)!important;border-color:var(--blue)!important;color:#fff!important}
+html body #modes.mpop button.on small{color:var(--blue-soft)}
+html body .pm-i.on,html body .pm-i[aria-checked="true"]{background:color-mix(in srgb,var(--blue) 12%,transparent)}
+html body .pm-i.on .pm-ic,html body .pm-i[aria-checked="true"] .pm-ic,html body .pm-i.on b{color:var(--blue-soft)}
+html body .pm-i.on .pm-sw{background:color-mix(in srgb,var(--blue) 45%,#000)}
+html body .pm-i.on .pm-sw::after{background:var(--blue)}
+html body .pchip{border-color:var(--blue)!important;color:var(--blue-soft)!important;background:var(--blue-bg)!important}
+
+/* switches */
+html body .sw.on{background:var(--blue)!important;border-color:var(--blue)!important;box-shadow:0 0 12px color-mix(in srgb,var(--blue) 50%,transparent)!important}
+html body .sw.on::after{background:#fff!important}
+html body .gh-sw input:checked+span{background:var(--blue)!important;border-color:var(--blue)!important}
+html body .gh-sw input:checked+span::after{background:#fff!important}
+html body #xengines .eg-sw.on i{background:var(--blue)!important}
+html body input[type="checkbox"],html body input[type="radio"],html body input[type="range"]{accent-color:var(--blue)}
+
+/* selected cards and rows */
+html body .hi.on,html body .pj.on{border-color:var(--blue)!important;box-shadow:0 0 14px color-mix(in srgb,var(--blue) 25%,transparent)!important}
+html body .trk.on>button:first-child{color:var(--blue-soft)!important}
+html body .gh-slot:focus-within{border-color:color-mix(in srgb,var(--blue) 60%,#333)}
