@@ -1,6 +1,8 @@
 {
-  "appId": "com.fezzymultiverse.ember",
+  "appId": "com.fezzy.ember",
   "appName": "Ember",
-  "webDir": "dist",
-  "bundledWebRuntime": false
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
 }
