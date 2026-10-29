@@ -1,7 +1,7 @@
 // Ember V1.9.14 key finder test: pure Node, no network. Covers ember_keyscan.js (every case the handover found missed), the providers.js adapter,
 // the multi-key store with failover in ai_scraper.js, Bright Data (SERP + Web Unlocker), zones, and ingestAll for every paste box.
 const fs = require('fs'), path = require('path'), vm = require('vm');
-const { K, rnd, B62, HEX } = require('../tools/diag.js');
+const { K, rnd, B62, HEX } = require('../diag.js');
 let pass = 0, fail = 0;
 const ok = (n, c, x) => { c ? pass++ : fail++; console.log(c ? 'PASS' : 'FAIL', n, c ? '' : (typeof x == 'string' ? x : JSON.stringify(x))); };
 const W = f => fs.readFileSync(path.join(__dirname, '..', 'www', f), 'utf8');

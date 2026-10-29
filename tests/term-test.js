@@ -63,14 +63,14 @@ mock.on('upgrade', (q, s) => {
 const www = path.join(__dirname, '..', 'www');
 const web = http.createServer((q, r) => { const p = q.url.split('?')[0] === '/' ? 'index.html' : q.url.split('?')[0]; fs.readFile(path.join(www, p), (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, { 'content-type': p.endsWith('.js') ? 'text/javascript' : p.endsWith('.css') ? 'text/css' : p.endsWith('.svg') ? 'image/svg+xml' : 'text/html' }); r.end(d); }); });
 (async () => {
-  let chromium; try { chromium = require(process.env.PW || '/home/claude/.npm-global/lib/node_modules/playwright').chromium; } catch (e) { try { chromium = require('playwright').chromium; } catch (e2) { console.log('SKIP UI part (no playwright)'); return done(); } }
+  let chromium; try { chromium = require(process.env.PW || 'playwright').chromium; } catch (e) { try { chromium = require('playwright').chromium; } catch (e2) { console.log('SKIP UI part (no playwright)'); return done(); } }
   await new Promise(r => mock.listen(0, '127.0.0.1', r)); wsPort = mock.address().port;
   await new Promise(r => web.listen(0, '127.0.0.1', r)); const wp = web.address().port;
   const br = await chromium.launch(), ctx = await br.newContext({ viewport: { width: 412, height: 860 } }), pg = await ctx.newPage();
   const errs = []; pg.on('pageerror', e => errs.push(e.message));
   await pg.addInitScript(p => { localStorage.setItem('ember_term', JSON.stringify({ port: p, base: '/etest123456', enter: true, share: true, auto: false, state: 'half' })); }, wsPort);
   await pg.goto('http://127.0.0.1:' + wp + '/'); await pg.waitForTimeout(500);
-  await pg.click('#bTermux'); await pg.waitForTimeout(500);
+  await pg.click('#bSetTop'); await pg.click('#emberHub [data-go=hacking]'); await pg.waitForTimeout(500);
   ok('panel visible on Hacking tab', await pg.isVisible('#etPanel'));
   ok('half height', Math.abs((await pg.locator('#etPanel').boundingBox()).height - 499) < 12, JSON.stringify(await pg.locator('#etPanel').boundingBox()));
   ok('red light when disconnected', await pg.evaluate(() => document.getElementById('etLed').className.includes('off')));

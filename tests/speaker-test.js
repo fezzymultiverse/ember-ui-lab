@@ -1,6 +1,6 @@
 // Ember V1.8.1 test: red Stop speaker, native voice picker, speed/pitch, lively delivery, mic label, drawer Music Console.
 // Native text-to-speech is MOCKED (nothing is heard in this test). Run: node tests/speaker-test.js
-const { chromium } = require(process.env.PW || '/home/claude/.npm-global/lib/node_modules/playwright');
+const { chromium } = require(process.env.PW || 'playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..', 'www');
 const srv = http.createServer((q, r) => {

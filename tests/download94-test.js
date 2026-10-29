@@ -6,7 +6,7 @@ const fs=require('node:fs'),path=require('node:path');const a=process.argv.slice
 `);fs.chmodSync(mock,0o700);
 const port=18000+Math.floor(Math.random()*10000),base='http://127.0.0.1:'+port,token='bridge-unit-test-token';let count=0;
 function check(n,c){assert(c,n);count++;console.log('PASS '+n);}
-const child=spawn(process.execPath,[path.join(__dirname,'../tools/download-bridge.cjs')],{env:{...process.env,EMBER_DOWNLOAD_PORT:String(port),EMBER_DOWNLOAD_TOKEN:token,EMBER_DOWNLOAD_DIR:tmp,EMBER_YTDLP_BIN:mock},stdio:['ignore','pipe','pipe']});
+const child=spawn(process.execPath,[path.join(__dirname,'../download-bridge.cjs')],{env:{...process.env,EMBER_DOWNLOAD_PORT:String(port),EMBER_DOWNLOAD_TOKEN:token,EMBER_DOWNLOAD_DIR:tmp,EMBER_YTDLP_BIN:mock},stdio:['ignore','pipe','pipe']});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function call(p,body,auth=token,origin='http://localhost:8080'){return fetch(base+p,{method:body?'POST':'GET',headers:{Authorization:'Bearer '+auth,Origin:origin,...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined});}
 (async()=>{try{let online=false;for(let i=0;i<60;i++){try{const r=await call('/health');if(r.ok){online=true;break;}}catch(_){}await sleep(50);}check('bridge launches on loopback and executable health works',online);check('unauthenticated clients refused',(await call('/health',null,'wrong')).status===401);check('foreign web origins refused',(await call('/health',null,token,'https://attacker.invalid')).status===403);check('arbitrary internal URLs refused',(await call('/download',{url:'http://127.0.0.1/private'})).status===400);

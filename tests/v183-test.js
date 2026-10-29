@@ -1,5 +1,5 @@
 // Ember V1.8.3 test: real in-app browser wiring (native plugin MOCKED) and Termux auto-connect (WebSocket MOCKED). Run: node tests/v183-test.js
-const { chromium } = require(process.env.PW || '/home/claude/.npm-global/lib/node_modules/playwright');
+const { chromium } = require(process.env.PW || 'playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..', 'www');
 const srv = http.createServer((q, r) => {

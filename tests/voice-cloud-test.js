@@ -1,6 +1,6 @@
 // Ember V1.9.9 test: Ember Voice (Gemini / ElevenLabs cloud voice) with the phone voice as fallback.
 // fetch is MOCKED, native text-to-speech is MOCKED, nothing is heard and no network is used. Run: node tests/voice-cloud-test.js
-const { chromium } = require(process.env.PW || '/home/claude/.npm-global/lib/node_modules/playwright');
+const { chromium } = require(process.env.PW || 'playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..', 'www');
 const srv = http.createServer((q, r) => {

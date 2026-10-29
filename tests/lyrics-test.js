@@ -1,6 +1,6 @@
 // Ember V1.9.10 test: three-line lyrics preview (LRCLIB). fetch is MOCKED, no network. All lyric text below is made-up test text.
 // Run: node tests/lyrics-test.js
-const { chromium } = require(process.env.PW || '/home/claude/.npm-global/lib/node_modules/playwright');
+const { chromium } = require(process.env.PW || 'playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..', 'www');
 const srv = http.createServer((q, r) => {

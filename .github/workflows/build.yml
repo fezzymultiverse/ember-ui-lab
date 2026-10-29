@@ -44,12 +44,14 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: npm install
 
+      - name: Build web assets
+        run: npm run build:web
       - name: Add Android project
         run: |
           if [ ! -d android ]; then npx cap add android; fi
 
       - name: Apply Ember native patch (Kotlin, manifest, NewPipe, signing)
-        run: python3 scripts/apply_android_patch.py android android_patch
+        run: python3 apply_android_patch.py android .
 
       - name: Sync web assets
         run: npx cap sync android

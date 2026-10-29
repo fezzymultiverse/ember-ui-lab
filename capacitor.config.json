@@ -1,6 +1,6 @@
 {
   "appId": "com.fezzymultiverse.ember",
   "appName": "Ember",
-  "webDir": "dist",
+  "webDir": "www",
   "bundledWebRuntime": false
 }

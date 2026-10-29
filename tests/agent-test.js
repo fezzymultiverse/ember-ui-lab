@@ -104,7 +104,7 @@ const srv = http.createServer((q, r) => {
   ok('no switch on = no agent tools', await names({}) == '');
   ok('Web Search on = web_search only', await names({ agentAddon: true }) == 'web_search');
   ok('web_search tool text names the DuckDuckGo fallback', /DuckDuckGo/.test(await pg.evaluate(() => window.EmberAgentAddon.toolsFor({ agentAddon: true })[0].description)));
-  ok('YouTube on = youtube_search + youtube_download', await names({ youtubeAddon: true }) == 'youtube_search,youtube_download,playlist_list,playlist_download');
+  ok('YouTube on = youtube_search + youtube_download', await names({ youtubeAddon: true }) == 'youtube_search,youtube_download,playlist_list,playlist_download,play_song', await names({ youtubeAddon: true }));
   ok('Vision on = see_image only', await names({ visionAddon: true }) == 'see_image');
 
   // ---------- 2. Tavily ----------
@@ -120,7 +120,7 @@ const srv = http.createServer((q, r) => {
   // V1.9.24: an ordinary name: Instant Answer is empty, the web-results fallback finds the page
   MODE.ddg = 'empty'; MODE.html = 'ok'; r = await A('web_search', { query: 'Jane Doe Cape Town' });
   ok('name search: empty Instant Answer falls through to DuckDuckGo web results', !r.error && r.source == 'DuckDuckGo web' && r.results.length == 2 && r.results[0].url == 'https://example.org/jane-doe' && /Cape Town/.test(r.results[0].snippet), r);
-  ok('name search: the note tells the AI not to invent facts about a person', /Never invent facts about a person/.test(r.note || ''), r);
+  ok('name search: the note tells the AI not to invent facts about a person', /Never invent a real name, identity or topic fact/.test(r.note || ''), r);
   MODE.html = 'down'; MODE.wiki = 'ok'; r = await A('web_search', { query: 'Jane Doe' });
   ok('name search: web results down -> Wikipedia answers', !r.error && r.source == 'Wikipedia' && r.results[0].title == 'Jane Doe' && !/<span/.test(r.results[0].snippet), r);
   MODE.wiki = 'down'; MODE.html = 'down';

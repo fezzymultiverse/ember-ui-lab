@@ -1,5 +1,5 @@
 // Ember V1.9.8 test: Providers dropdown + honest dots, header centre, command line, auto-fold, one 📎 in Documents, mic removed. Run: node tests/v198-test.js
-const { chromium } = require(process.env.PW || '/home/claude/.npm-global/lib/node_modules/playwright');
+const { chromium } = require(process.env.PW || 'playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..', 'www');
 const srv = http.createServer((q, r) => {

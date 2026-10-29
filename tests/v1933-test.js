@@ -1,6 +1,6 @@
 // Ember V1.9.48 test: a reply can be cancelled (no further engines tried) and each engine attempt is announced. Pure Node, no network.
 const fs = require('fs'), path = require('path'), vm = require('vm');
-const { K } = require('../tools/diag.js');
+const { K } = require('../diag.js');
 let pass = 0, fail = 0;
 const ok = (n, c, x) => { c ? pass++ : fail++; console.log(c ? 'PASS' : 'FAIL', n, c ? '' : (typeof x == 'string' ? x : JSON.stringify(x))); };
 const mem = { ember_keys: JSON.stringify({ groq: [{ key: K.groq, st: null }], mistral: [{ key: K.mistral, st: null }] }) };
