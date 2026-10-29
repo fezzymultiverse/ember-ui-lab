@@ -1,0 +1,16 @@
+/* Ember V1.10.5: controls inside the Command Centre widget at the bottom of Settings. */
+.cwx-ticker{margin:10px 0 8px;padding:7px 9px;border-radius:8px;background:#0a1019;color:#9daec4;font:11.5px/1.3 ui-monospace,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cwx-h{display:flex;align-items:center;gap:8px;margin:16px 0 8px;font-size:13.5px}.cwx-h span{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#ff005f;color:#fff;font-size:11px}
+.cwx-lb{display:block;margin:8px 0 4px;font-size:12px;color:#9daec4}
+.cwx-row{display:flex;gap:8px;margin:8px 0;align-items:center}.cwx-row>*{flex:1 1 0;min-width:0}
+.cwx-wide{width:100%;margin-top:8px}.cwx-hot{background:#ff005f!important;color:#fff!important}
+.cwx-msg{margin:6px 0;font-size:12px;color:#9daec4;white-space:pre-wrap;word-break:break-word}.cwx-msg a{color:#00e5ff}
+.cwx-list{display:flex;flex-direction:column;gap:6px;margin:8px 0}
+.cwx-repo{display:flex;gap:9px;align-items:flex-start;padding:8px;border:1px solid #263245;border-radius:9px;background:#0a1019}
+.cwx-repo input{margin-top:3px;flex:0 0 auto;width:18px;height:18px}.cwx-repo span{display:flex;flex-direction:column;min-width:0}.cwx-repo b{font-size:13px;word-break:break-all}.cwx-repo small{color:#9daec4;font-size:11.5px}.cwx-repo em{font-style:normal;font-size:10px;color:#ffc46b}
+.cwx-on{border-color:#5fff00!important;color:#5fff00!important}
+.cwx-art{display:flex;flex-direction:column;gap:8px;margin-top:8px}.cwx-card{padding:8px;border:1px solid #263245;border-radius:9px;background:#0a1019;display:flex;flex-direction:column;gap:6px}.cwx-card img,.cwx-card video{max-width:100%;border-radius:8px}.cwx-card audio{width:100%}.cwx-card b{font-size:12px;word-break:break-all}
+#ccWidgetBody{max-height:min(58vh,540px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+#ccWidgetBody[hidden]{display:none}
+.cwx{margin-top:12px;color:#edf3fc}
+.cwx input[type=text],.cwx input[type=password],.cwx input[type=search],.cwx select,.cwx textarea{width:100%;box-sizing:border-box;padding:10px;border-radius:9px;border:1px solid #344257;background:#0a1019;color:#edf3fc;font:inherit;font-size:14px}

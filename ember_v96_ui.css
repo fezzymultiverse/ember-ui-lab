@@ -1,0 +1,178 @@
+/* Ember V1.9.100 - ember_v96_ui.css: right-panel UI layer.
+   Loads last on purpose: it overrides the older header rules (including the
+   !important circle rules further up the cascade) for the new look. */
+
+/* ---------- 1) Header icons: no circles, bigger, coloured, animated ---------- */
+html body header .hl>#bHist.hb,html body header .hr>#bActionMenu.hb{
+  width:46px!important;height:46px!important;min-width:46px!important;max-width:46px!important;flex:0 0 46px!important;
+  border-radius:15px!important;padding:0!important;
+  display:inline-flex!important;align-items:center;justify-content:center;
+  font-size:21px!important;line-height:1;overflow:visible!important;
+  background:linear-gradient(150deg,#1d2a44,#101321)!important;
+  border:1px solid #33507e!important;
+  box-shadow:0 5px 16px #0007,inset 0 0 0 1px #ffffff10;
+  animation:emberIconGlow 2.6s ease-in-out infinite;
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;
+}
+html body header .hl>#bHist.hb svg,html body header .hr>#bActionMenu.hb svg{width:26px!important;height:26px!important;flex:none}
+html body header .hl>#bHist.hb:hover,html body header .hr>#bActionMenu.hb:hover,html body header .hl>#bHist.hb:active,html body header .hr>#bActionMenu.hb:active{transform:translateY(-2px) scale(1.06);filter:brightness(1.25)}
+#bHist{--glow:#ff8b40;color:#ffb47c!important;border-color:#80522e!important}
+#bActionMenu{--glow:#b18cff;color:#cdb4ff!important;border-color:#6d4fc2!important}
+@keyframes emberIconGlow{0%,100%{box-shadow:0 5px 16px #0007,0 0 0 0 var(--glow,#39a9ff)}50%{box-shadow:0 5px 16px #0007,0 0 15px 2px color-mix(in srgb,var(--glow,#39a9ff) 55%,transparent)}}
+@media(prefers-reduced-motion:reduce){html body header .hl>#bHist.hb,html body header .hr>#bActionMenu.hb{animation:none!important;transition:none!important}}
+
+/* ---------- 2) "Ember" on the grid line + 3 blue lights (big → small) sweeping left → right ---------- */
+.ember-title-grid{display:inline-flex;flex-direction:column;align-items:center;gap:5px;padding:5px 16px 6px;border-radius:10px;
+  background-image:linear-gradient(#22334e 1px,transparent 1px),linear-gradient(90deg,#22334e 1px,transparent 1px);
+  background-size:17px 17px;background-position:center;position:relative}
+.ember-title-grid #pName{font-size:19px;font-weight:800;letter-spacing:.4px;text-shadow:0 0 12px #1173d455}
+.ember-title-grid::after{content:"";position:absolute;left:10%;right:10%;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,#39a9ff88,transparent)}
+.ember-lights{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:11px}
+.ember-lights i{display:block;border-radius:50%;background:#39a9ff;animation:emberSweep 1.5s ease-in-out infinite}
+.ember-lights i:nth-child(1){width:11px;height:11px;box-shadow:0 0 12px #39a9ff,0 0 26px #39a9ff77}
+.ember-lights i:nth-child(2){width:7px;height:7px;animation-delay:.18s;box-shadow:0 0 9px #39a9ff,0 0 18px #39a9ff66}
+.ember-lights i:nth-child(3){width:4px;height:4px;animation-delay:.36s;box-shadow:0 0 6px #39a9ff,0 0 12px #39a9ff55}
+@keyframes emberSweep{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}
+@media(prefers-reduced-motion:reduce){.ember-lights i{animation:none!important;opacity:.9}}
+
+/* ---------- 3) Command Centre widget at the bottom of Settings (V1.10.2): collapsed row, tap to expand ---------- */
+#ccWidget.ccw{margin:16px 12px 8px;padding:12px 14px;border-radius:16px;border:1px solid #37506a;
+  background:linear-gradient(140deg,#17213188,transparent 65%),#101825;box-shadow:0 7px 20px #0003;
+  font-family:system-ui,-apple-system,Roboto,sans-serif;color:#edf3fc}
+#settings .acc-wrap.acc-in-detail~#ccWidget{display:none!important}
+#ccWidget .ccw-top{display:flex;align-items:center;gap:11px;width:100%;margin:0;padding:0;background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#ccWidget .ccw-top:focus-visible{outline:2px solid #3d8bff;outline-offset:4px;border-radius:10px}
+#ccWidget .ccw-ico{flex:0 0 38px;width:38px;height:38px;display:grid;place-items:center;border-radius:11px;font-size:20px;color:#ff8b40;background:#342218;border:1px solid #80522e}
+#ccWidget .ccw-t{flex:1 1 auto;min-width:0}
+#ccWidget .ccw-t b{display:block;font-size:14.5px;font-weight:700}
+#ccWidget .ccw-t small{display:block;color:#9daec4;font-size:10.5px;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#ccWidget .ecc-chip{flex:0 0 auto;font-size:9px;font-weight:750;letter-spacing:1px;border:1px solid #37506a;background:#21314966;padding:4px 6px;border-radius:5px;color:#a7cdfa}
+#ccWidget .ccw-chev{flex:0 0 18px;display:flex;color:#6c6c73;transition:transform .2s ease,color .2s ease}
+#ccWidget.open .ccw-chev{transform:rotate(180deg);color:#d0d0d5}
+#ccWidget .ccw-body{margin-top:12px;animation:emberPageFromRight .2s ease-out}
+#ccWidget .ccw-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#ccWidget .ccw-tile{border:1px solid #29445f;border-radius:10px;background:#102036;padding:8px 9px;min-width:0}
+#ccWidget .ccw-tile small{display:block;font-size:9.5px;color:#9daec4;letter-spacing:.3px}
+#ccWidget .ccw-tile b{display:block;font:600 14px/1.3 ui-monospace,SFMono-Regular,Consolas,monospace;margin-top:3px;color:#c5e2ff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#ccWidget .ccw-box{margin-top:10px;border:1px solid #29445f;border-radius:9px;background:#102036;padding:8px 11px}
+#ccWidget .ccw-box small{font-size:9px;letter-spacing:1.4px;font-weight:750;color:#66aaff}
+#ccWidget .ccw-thought{background:#080d15;border-color:#253349;border-left:2px solid #ff8b40}
+#ccWidget .ccw-thought small{color:#ff8b40}
+#ccWidget .ccw-box p{margin:5px 0 0;font:11.5px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;color:#d2deed;white-space:pre-wrap;overflow-wrap:anywhere;max-height:96px;overflow:auto}
+#ccWidget .ccw-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+#ccWidget .ccw-btns button{flex:1 1 auto;min-height:40px;padding:9px 13px;border-radius:10px;border:1px solid #30415a;background:#172231;color:#dbe8f8;font:600 12.5px system-ui;cursor:pointer;transition:background .15s,border-color .15s}
+#ccWidget .ccw-btns button:hover{background:#22334a;border-color:#66aaff}
+#ccWidget .ccw-btns #ccWidgetOpen{border-color:#80522e;background:#342218;color:#ffc59b}
+
+/* ---------- 4) API keys sub-panel: opens to the right, real logos + name titles ---------- */
+.ksp-backdrop{position:fixed;inset:0;border:0;background:#0008;z-index:189;backdrop-filter:blur(3px)}
+#keysSidePanel{position:fixed;top:0;right:0;bottom:0;z-index:190;width:min(430px,100vw);height:100dvh;
+  display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  background:radial-gradient(ellipse at 100% 0,#1c2f4d66,transparent 55%),#0a0e16;border-left:1px solid #2e4160;
+  box-shadow:-18px 0 65px #000a;transform:translateX(105%);visibility:hidden;pointer-events:none;
+  transition:transform .24s ease,visibility .24s ease;color:#e8eefc;font-family:system-ui,-apple-system,Roboto,sans-serif}
+#keysSidePanel.show{transform:translateX(0);visibility:visible;pointer-events:auto}
+.ksp-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:22px 20px 16px;border-bottom:1px solid #2e4160}
+.ksp-eyebrow{font-size:10px;letter-spacing:2.1px;color:#ff8b40;font-weight:750}
+.ksp-head h3{font-size:20px;font-weight:700;margin:6px 0 0;letter-spacing:-.3px}
+.ksp-sub{display:block;color:#9daec4;font-size:11px;margin-top:4px}
+#kspClose{border:1px solid #2e4160;background:#152234;color:#dbe8f8;border-radius:10px;width:36px;height:36px;font-size:15px;cursor:pointer;flex:0 0 auto}
+.ksp-body{flex:1 1 auto;overflow:auto;overscroll-behavior:contain;padding:16px 14px 24px}
+.ksp-row{display:flex;align-items:center;gap:11px;width:100%;text-align:left;padding:12px;margin:0 0 9px;
+  border:1px solid #26354f;border-radius:14px;background:#0f1826;color:inherit;font:inherit;cursor:pointer;
+  transition:background .15s,border-color .15s,transform .12s ease}
+.ksp-row:hover{background:#172538;border-color:#3a5d8f;transform:translateX(-3px)}
+.ksp-row.ksp-dim{opacity:.62}
+.ksp-dot{flex:0 0 10px;width:10px;height:10px;border-radius:50%;border:2px solid #5a5a5a;box-sizing:border-box}
+.ksp-dot.ok{background:#22c55e;border-color:#22c55e;box-shadow:0 0 8px #22c55e}
+.ksp-dot.limited{background:#f59e0b;border-color:#f59e0b;box-shadow:0 0 7px #f59e0b}
+.ksp-dot.bad{background:#ef4444;border-color:#ef4444;box-shadow:0 0 7px #ef4444}
+.ksp-dot.unknown{border-color:#8a8a8a}
+.ksp-dot.none{background:transparent;border-color:#4a4a4a}
+.ksp-row .ef-badge{flex:0 0 34px;width:34px;height:34px;border-radius:10px!important}
+.ksp-row .ef-badge img{width:100%;height:100%;object-fit:contain}
+.ksp-row .pdbrand{width:34px;height:34px;flex:0 0 34px}
+.ksp-info{flex:1 1 auto;min-width:0}
+.ksp-info b.provider-title{display:block;font-size:15.5px;font-weight:800;letter-spacing:.2px;color:#f3f6fc}
+.ksp-info small{display:block;color:#9daec4;font-size:11px;margin-top:2px}
+.ksp-go{color:#7ea4d4;font-size:20px;flex:0 0 auto}
+#kspManage{width:100%;min-height:46px;margin-top:6px;border-radius:12px}
+.ksp-note{color:#8fa2bc;font-size:11px;line-height:1.6;margin-top:12px}
+
+/* Providers keep their real logo beside their name everywhere they appear */
+.provider-title{font-weight:800!important}
+@media(prefers-reduced-motion:reduce){#keysSidePanel,.ksp-row{transition:none!important}}
+
+/* ---------- 5) V1.9.101: one consistent dropdown row for every menu item ----------
+   Old circle / 32px / 42px rules for #bGlobe, #bTermux, #bSet and #bAiFeatures leaked into the
+   menu rows. This block resets them so Emoji + text lines up the same on all six rows. */
+html body #headerActionsMenu button.action-item{
+  display:flex!important;flex:none!important;align-items:center!important;justify-content:flex-start!important;
+  width:100%!important;min-width:0!important;max-width:none!important;height:auto!important;min-height:54px!important;
+  margin:3px 0!important;padding:8px 12px!important;gap:13px!important;box-sizing:border-box!important;
+  border:1px solid transparent!important;border-radius:13px!important;background:transparent!important;
+  box-shadow:none!important;animation:none!important;order:0!important;position:relative!important;
+  color:#eef4ff!important;font:700 15px/1.2 system-ui,-apple-system,Roboto,sans-serif!important;
+  letter-spacing:0!important;text-align:left!important;white-space:nowrap;overflow:hidden!important;
+  transition:background .15s,border-color .15s,transform .15s}
+html body #headerActionsMenu button.action-item::before{content:none!important}
+html body #headerActionsMenu button.action-item:hover,
+html body #headerActionsMenu button.action-item:focus-visible{background:#172640!important;border-color:#3a5d8f!important;transform:translateX(-3px)}
+html body #headerActionsMenu button.action-item>span:last-child{font-size:15px!important;font-weight:700!important;color:inherit;flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
+html body #headerActionsMenu .action-emoji{flex:0 0 36px!important;width:36px!important;height:36px!important;display:grid!important;place-items:center;border-radius:11px!important;font-size:20px!important;line-height:1;background:#152b49;border:1px solid #ffffff14}
+#bCommandCenter .action-emoji{background:#342218!important;color:#ffb47c;border-color:#80522e!important}
+#bKeysMenu .action-emoji{background:#10301f!important;color:#7fe9bd;border-color:#1f7a52!important}
+#bGlobe .action-emoji{background:#0f2a45!important;border-color:#2b6cb8!important}
+#bTermux .action-emoji{background:#10301f!important;border-color:#1f7a52!important}
+#bSet .action-emoji{background:#2a2540!important;border-color:#6d4fc2!important}
+#bAiFeatures .action-emoji{background:#3a1f35!important;border-color:#a44b8c!important}
+html body #headerActionsMenu #bKeysMenu{color:#9ff0cc!important}
+
+/* Footer Providers button: it only ever carries an icon plus the word "Providers". */
+html body #chatProviderBar #bProv{font:600 12px/1 system-ui,-apple-system,Roboto,sans-serif!important;overflow:hidden!important;white-space:nowrap}
+html body #chatProviderBar #bProv>span{font:600 12px/1 system-ui,-apple-system,Roboto,sans-serif!important;color:#c8d7e9;letter-spacing:0}
+html body #chatProviderBar #bProv{width:auto!important;min-width:0!important;max-width:none!important;height:32px!important;flex:0 0 auto!important;animation:none!important}
+
+/* ---------- 6) Provider logos: full-bleed app-icon tile (Play Store style) ---------- */
+.ksp-row .ef-badge.ef-logo,.ksp-row .ef-badge.ef-play{flex:0 0 44px;width:44px;height:44px;border-radius:12px!important;overflow:hidden;background:#fff;padding:5px;box-sizing:border-box}
+.ksp-row .ef-badge.ef-play{padding:0;background:transparent}
+.ksp-row .ef-badge img{width:100%;height:100%;object-fit:contain;border-radius:inherit}
+html body header #headerActionsMenu button#bAiFeatures.action-item.hb{width:100%!important;min-width:0!important;max-width:none!important;flex:none!important;height:auto!important;margin:3px 0!important;border-radius:13px!important;font-size:15px!important;animation:none!important}
+html body header .header-actions-menu{width:min(340px,calc(100vw - 20px))!important}
+
+/* ---------- 7) V1.10.1: floating menu rows read like the Settings list ----------
+   Same emoji tiles, now with a bold title and a grey description under it (Settings style):
+   flat full-width rows, hairline dividers, no pill borders. */
+html body header #headerActionsMenu{padding:4px 0!important;width:min(360px,calc(100vw - 20px))!important}
+html body header #headerActionsMenu button.action-item,
+html body header #headerActionsMenu button#bAiFeatures.action-item.hb{
+  margin:0!important;padding:13px 16px!important;min-height:64px!important;gap:14px!important;
+  border:0!important;border-bottom:1px solid #1b1b1e!important;border-radius:0!important;
+  white-space:normal!important;transform:none!important}
+html body header #headerActionsMenu button.action-item:last-child{border-bottom:0!important}
+html body header #headerActionsMenu button.action-item:hover,
+html body header #headerActionsMenu button.action-item:focus-visible{background:#0e0e10!important;border-color:#1b1b1e!important;transform:none!important}
+html body header #headerActionsMenu button.action-item:focus-visible{outline:2px solid #3d8bff!important;outline-offset:-2px}
+html body header #headerActionsMenu .action-txt{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:3px;overflow:visible!important;text-overflow:clip!important}
+html body header #headerActionsMenu .action-txt b{font-size:15px;font-weight:600;line-height:1.3;color:inherit}
+html body header #headerActionsMenu .action-txt small{font-size:12.5px;font-weight:400;line-height:1.4;color:#85858c;white-space:normal}
+
+/* ---------- 8) V1.10.3: top-bar Browser button + blue "next up" dot on Providers ---------- */
+html body header .hr>#bBrowserTop.hb{
+  width:46px!important;height:46px!important;min-width:46px!important;max-width:46px!important;flex:0 0 46px!important;
+  border-radius:15px!important;padding:0!important;display:inline-flex!important;align-items:center;justify-content:center;
+  font-size:21px!important;line-height:1;overflow:visible!important;
+  background:linear-gradient(150deg,#1d2a44,#101321)!important;border:1px solid #33507e!important;
+  box-shadow:0 5px 16px #0007,inset 0 0 0 1px #ffffff10;animation:none!important}
+html body header .hr>#bBrowserTop.hb:active{transform:scale(.96)}
+html body #chatProviderBar #bProv{gap:8px!important;max-width:100%!important}
+#provNext.pn{display:inline-flex;align-items:center;gap:7px;min-width:0;margin-left:2px;padding-left:9px;border-left:1px solid #2b3a50;font:600 11.5px/1 system-ui,-apple-system,Roboto,sans-serif;color:#9cc7ff}
+#provNext .pn-t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+#provNext .pn-dot{display:block;flex:0 0 9px;width:9px;height:9px;border-radius:50%;background:#3d8bff;box-shadow:0 0 8px #3d8bffaa;animation:pnBlink 1.1s ease-in-out infinite}
+#provNext.busy .pn-dot{animation-duration:.45s}
+#provNext.idle{color:#7f8da1}
+#provNext.idle .pn-dot{background:#59657a;box-shadow:none;animation:none}
+#provNext.flip .pn-t{animation:pnFlip .45s ease-out}
+@keyframes pnBlink{0%,100%{opacity:1;box-shadow:0 0 9px #3d8bffcc}50%{opacity:.18;box-shadow:0 0 0 #3d8bff00}}
+@keyframes pnFlip{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#provNext .pn-dot,#provNext.flip .pn-t{animation:none!important}}

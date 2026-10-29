@@ -1,0 +1,122 @@
+
+> ember@1.9.95 test
+> node tests/artifact-test.js && node tests/routing-fallback-test.js && node tests/streaming-routing-test.js && node tests/term-test.js && node tests/app-test.js && node tests/safety-test.js && node tests/voice-native-test.js && node tests/agent-test.js && node tests/context-test.js && node tests/music-test.js && node tests/speaker-test.js && node tests/scrape-test.js && node tests/keyscan-test.js && node tests/handoff-test.js && node tests/v183-test.js && node tests/v198-test.js && node tests/v1915-test.js && node tests/v1924-test.js && node tests/v1925-test.js && node tests/v1927-test.js && node tests/v1927b-test.js && node tests/v1928-test.js && node tests/v1929-test.js && node tests/v1930-test.js && node tests/v1932-test.js && node tests/v1933-test.js
+
+PASS artifact parse/render tests (22 assertions)
+PASS 503 advances to next configured provider 
+PASS fallback returns the successful response 
+PASS both providers were attempted 
+PASS 400 from Groq moves on to Mistral 
+PASS 413 from Groq moves on to Mistral 
+PASS 404 from Groq moves on to Mistral 
+PASS all engines refusing returns the provider reason 
+PASS both engines were tried before giving up 
+PASS pinned engine still fails plainly 
+PASS pinned engine does not call another engine 
+
+10 passed, 0 failed
+PASS stream accumulates full answer 
+PASS stream callback receives incremental chunks 
+PASS cancel aborts the active stream without provider fallback 
+
+3 passed, 0 failed
+PASS text + CRLF 
+PASS clear + home 
+PASS cursor position 
+PASS SGR colour 
+PASS 256 + truecolour 
+PASS scroll feeds scrollback 
+PASS erase line 
+PASS alt screen 
+PASS alt restore 
+PASS cursor report 
+PASS autowrap 
+PASS resize 
+PASS OSC title 
+PASS delete chars 
+PASS line drawing 
+PASS scroll region 
+PASS getText 
+PASS redact gsk key 
+PASS redact password 
+PASS redact long token 
+PASS keeps normal 
+PASS danger rm -rf / 
+PASS safe cmds 
+PASS splitReply 
+PASS genBase 
+PASS command 
+PASS panel visible on Hacking tab 
+PASS half height 
+PASS red light when disconnected 
+PASS collapsed beacon on 
+PASS connected (ws path + subprotocol) 
+PASS green light 
+PASS handshake has size 
+PASS prompt rendered 
+PASS preset typed + run 
+PASS output echoed 
+PASS type-only mode (no Enter) 
+PASS keyboard typing + backspace + enter 
+PASS expands to full 
+PASS beacon off when full 
+PASS resize sent to ttyd 
+PASS collapse stops at half 
+PASS bar state 
+PASS header tap reopens to half 
+PASS setup shows command 
+"why did it fail?\n\n[TERMINAL SCREEN, last lines, keys masked]\nfezzy@termux:~$ ls -la\nran\n$ pwdabc\nran\n$"
+PASS chat sends screen context 
+PASS chat renders 2 command cards 
+PASS Insert types without Enter 
+PASS destructive Run needs second tap 
+PASS red light after drop 
+PASS auto-reconnect 
+PASS no page errors 
+52 passed, 0 failed
+PASS first run shows the key card 
+PASS Free Mode toggle is ON with no keys 
+PASS Free Mode badge shows at the top of the chat 
+PASS Free Mode busy shows a graceful message 
+PASS no-key send is answered by Free Mode 
+PASS Settings did not pop up for a no-key send 
+PASS Free Mode never gets a memory or summary job 
+CRASH page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('.stab[data-st="keys"]')
+    - locator resolved to <button class="stab" data-st="keys">Keys</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+    at pg.click (/home/user/ember/ember-V1_9_94/tests/app-test.js:36:62)
+    at async /home/user/ember/ember-V1_9_94/tests/app-test.js:96:28 {
+  log: [
+    `  - waiting for locator('.stab[data-st="keys"]')`,
+    '    - locator resolved to <button class="stab" data-st="keys">Keys</button>',
+    '  - attempting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not visible',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not visible',
+    '    - retrying click action',
+    '      - waiting 100ms',
+    '    56 × waiting for element to be visible, enabled and stable',
+    '       - element is not visible',
+    '     - retrying click action',
+    '       - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}

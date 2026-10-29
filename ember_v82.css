@@ -1,0 +1,25 @@
+/* Ember V1.9.82 - spacious Settings. Layout only (gaps, padding, tap size); colours and logic untouched. Loaded after ember_v81.css. */
+#settings .stabs{padding:12px 16px!important;gap:10px!important;scroll-padding:0 16px;-webkit-overflow-scrolling:touch}
+#settings .stab{min-height:42px;padding:0 18px!important}
+#settings .sb{padding:20px 18px calc(48px + var(--safe,0px))!important;display:flex;flex-direction:column;gap:18px}
+#settings .sb>.card{margin:0!important;padding:20px 18px 22px!important;border-radius:22px!important;flex-direction:column;gap:14px}
+#settings .sb>.card[data-tab]:not(.stab-show){display:none!important}
+#settings .sb>.card.stab-show,#settings .sb>.card:not([data-tab]){display:flex}
+#settings .sb>.card.hidden{display:none!important}
+#settings .card .ct{margin:0 0 4px!important;padding:2px 0 6px;font-size:15px;letter-spacing:.02em}
+#settings .card.collapsed{gap:0}
+#settings .card>*{margin-top:0!important;margin-bottom:0!important}
+#settings .card label,#settings .card .lbl{display:block;margin:6px 0 -4px;font-size:13px;line-height:1.4}
+#settings .card input[type=text],#settings .card input[type=password],#settings .card input[type=url],#settings .card input[type=number],#settings .card input[type=search],#settings .card select{min-height:50px;padding:0 16px;border-radius:16px;box-sizing:border-box}
+#settings .card textarea{min-height:120px;padding:14px 16px;border-radius:16px;line-height:1.5;box-sizing:border-box}
+#settings .card .cr{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding:8px 4px;line-height:1.4}
+#settings .card .cr+.cr{border-top:1px solid #1d1d1d}
+#settings .card .btn,#settings .card button.g{min-height:50px;border-radius:16px}
+#settings .card .prow,#settings .card .brbtns,#settings .card .btnrow{display:flex;flex-wrap:wrap;gap:12px}
+#settings .card .prow>*,#settings .card .brbtns>*{flex:1 1 140px}
+#settings .card .hint{margin:0!important;padding:0 2px;line-height:1.7;font-size:13.5px}
+#settings .card .kgrp{margin-top:12px!important}
+#settings .card .kr{padding:14px!important;gap:10px 12px!important;border-radius:16px}
+#settings .card .kghead{min-height:52px;padding:12px 16px!important}
+#settings .card small{line-height:1.5}
+#settings .card hr,#settings .card .sep{margin:6px 0;border-color:#1d1d1d}

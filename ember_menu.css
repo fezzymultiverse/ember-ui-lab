@@ -1,0 +1,149 @@
+/* Ember V1.10.11 - ember_menu.css. Loaded LAST.
+   One look for every menu: compact rows in one rounded group, pages that open to the right, flat pages with slim controls.
+   Brand: S.O.I. x Bojack - black base, Ember accent (follows the chosen accent colour) and blue for switches and focus. */
+
+:root{
+  --m-bg:#06070a;--m-s1:#0d1017;--m-s2:#131722;--m-line:#1c212c;--m-line2:#2a3040;
+  --m-tx:#eceff4;--m-mu:#8b93a3;--m-mu2:#697082;--m-bl:#3d8bff;--m-gr:#4ade80;--m-rd:#ff8f85;
+  --m-or:var(--ac,#ff7a1a);--m-h:42px;--m-act:34px
+}
+
+/* ======================= shared components (Hub + Settings) ======================= */
+.mgrp{background:var(--m-s1);border:1px solid var(--m-line);border-radius:14px;overflow:hidden}
+.mrow{display:flex;align-items:center;gap:12px;width:100%;min-height:54px;padding:9px 12px;margin:0;background:transparent;border:0;border-bottom:1px solid var(--m-line);border-radius:0;color:var(--m-tx);font:inherit;text-align:left;cursor:pointer;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+.mgrp>.mrow:last-child{border-bottom:0}
+.mrow:active{background:var(--m-s2)}
+.mrow:focus-visible{outline:2px solid var(--m-bl);outline-offset:-2px}
+.mrow-t{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px}
+.mrow-t b{font-size:14.5px;font-weight:600;line-height:1.3;color:var(--m-tx);overflow-wrap:anywhere}
+.mrow-t small{font-size:12px;font-weight:400;line-height:1.35;color:var(--m-mu);overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mrow-c{flex:0 0 16px;color:var(--m-mu2)}
+.mrow-n{flex:0 0 auto;min-width:24px;padding:2px 8px;border:1px solid var(--m-line2);border-radius:999px;font-size:12px;font-weight:600;text-align:center;color:#c8cfdc}
+.mrow-back{color:#90bfff;border-bottom:1px solid var(--m-line)}
+.mrow-back .mrow-t b{color:#e8f0ff}
+.em-tile{flex:0 0 34px;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#111a2b;border:1px solid #1f2c47;color:#8fb8ff}
+.em-tile[data-tone="o"]{background:#241508;border-color:#4a2d12;color:#ffa05a}
+.em-tile[data-tone="g"]{background:#0b2016;border-color:#17402b;color:#5be39a}
+.em-tile[data-tone="p"]{background:#1a1230;border-color:#35264f;color:#c2a2ff}
+.em-i{display:block}
+
+/* ======================= the Settings sheet ======================= */
+html body #settings{background:radial-gradient(ellipse at 100% 0,#141c2e99,transparent 50%),var(--m-bg)}
+
+/* header: [back] [logo] title + crumb [close] , brand hairline under it */
+html body #settings .sh.sh-ember{position:relative;display:flex;align-items:center;gap:10px;padding:10px 14px;min-height:60px;box-sizing:border-box;background:var(--m-bg);border-bottom:0}
+html body #settings .sh.sh-ember::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,var(--m-or),#3d8bff 60%,transparent)}
+html body #settings .sh-ember>.sh-t,html body #settings .sh-ember>.sh-logo{display:none!important}
+.mnu-bar{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:10px}
+.mnu-back{flex:0 0 38px;width:38px;height:38px;display:grid;place-items:center;padding:0;border:1px solid var(--m-line);background:var(--m-s1);border-radius:11px;color:#d4d9e4;cursor:pointer}
+.mnu-back:active{border-color:var(--m-bl)}
+.mnu-logo{flex:0 0 26px;width:26px;height:26px;border-radius:7px;object-fit:contain}
+.mnu-ttl{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:1px}
+.mnu-ttl b{font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.2;color:var(--m-tx);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mnu-ttl small{font-size:12px;line-height:1.3;color:var(--m-mu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+html body #settings .sh-ember #bSx{order:3;flex:0 0 38px;width:38px;height:38px;margin:0!important;border-radius:11px;background:var(--m-s1);border:1px solid var(--m-line);color:#d4d9e4;font-size:15px}
+
+/* the old per-section and per-card back bars are replaced by the header arrow */
+html body #settings .acc-backbar,html body #settings .acc-card-backbar{display:none!important}
+
+/* section body: a list (level 2) or one page (level 3) */
+html body #settings .acc-wrap.acc-in-detail .acc-item.open>.acc-b{padding:14px 14px 28px!important;gap:12px;scroll-padding-top:12px}
+html body #settings .acc-b.mnu .mnu-list{display:block}
+html body #settings .acc-b.mnu.mnu-paged>.mnu-list{display:none}
+/* cards are never shown inside the list; only the open card (and the workspace that holds it) */
+html body #settings .acc-b.mnu>.card:not(.mnu-open),html body #settings .acc-b.mnu>#repoWorkspace>.card:not(.mnu-open){display:none!important}
+html body #settings .acc-b.mnu:not(.mnu-paged)>#repoWorkspace{display:none!important}
+html body #settings .acc-b.mnu>.card.mnu-open,html body #settings .acc-b.mnu>#repoWorkspace>.card.mnu-open{display:flex!important;flex-direction:column;gap:10px}
+html body #settings .acc-b.mnu>#repoWorkspace{display:block}
+html body #settings .acc-b.mnu.mnu-fwd>.card.mnu-open,html body #settings .acc-b.mnu.mnu-fwd>#repoWorkspace{animation:mnuFwd .24s ease-out}
+html body #settings .acc-b.mnu.mnu-back>.mnu-list{animation:mnuBack .24s ease-out}
+@keyframes mnuFwd{from{opacity:0;transform:translateX(34px)}to{opacity:1;transform:none}}
+@keyframes mnuBack{from{opacity:0;transform:translateX(-34px)}to{opacity:1;transform:none}}
+
+/* a page is flat: no box around it, no heading (the header shows it), no fold arrow */
+html body #settings .acc-b.mnu>.card.mnu-open,html body #settings .acc-b.mnu>#repoWorkspace>.card.mnu-open{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0!important;border-radius:0!important}
+html body #settings .acc-b.mnu .card>.ct:first-child{display:none!important}
+html body #settings .acc-b .card>.ct::after{content:none!important;display:none!important}
+html body #settings .acc-b .card .ct{font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:#dfe4ee;margin:12px 0 0;line-height:1.35}
+html body #settings .acc-b .card .ct small,html body #settings .acc-b .card .ct span:not(.txbadge){font-size:12px;font-weight:400;color:var(--m-mu)}
+
+/* text */
+html body #settings .acc-b .hint{margin:0;padding:0 2px;font-size:12px;line-height:1.55;color:var(--m-mu)}
+html body #settings .acc-b .hint b{color:#c3cad8}
+html body #settings .acc-b .lb{display:block;margin:6px 2px -2px;font-size:12px;font-weight:600;line-height:1.35;color:#aab2c2}
+
+/* every size comes from two tokens: rows and full-width controls = 42px, actions inside a row = 34px */
+html body #settings{--row-h:var(--m-h);--act-h:var(--m-act)}
+
+/* inputs and selects */
+html body #settings .acc-b input[type=text],html body #settings .acc-b input[type=url],html body #settings .acc-b input[type=password],
+html body #settings .acc-b input[type=number],html body #settings .acc-b input[type=search],html body #settings .acc-b select{
+  box-sizing:border-box;width:100%;min-height:var(--m-h)!important;height:var(--m-h);padding:0 12px;border-radius:11px!important;font-size:14px;line-height:1.3;color:var(--m-tx);background:#0a0c11!important;border:1px solid #242a37!important;box-shadow:none}
+html body #settings .acc-b textarea{box-sizing:border-box;width:100%;min-height:80px;padding:10px 12px;border-radius:11px;font-size:14px;line-height:1.5;color:var(--m-tx);background:#0a0c11!important;border:1px solid #242a37!important}
+html body #settings .acc-b input::placeholder,html body #settings .acc-b textarea::placeholder{color:#5f6779}
+html body #settings .acc-b input:focus,html body #settings .acc-b select:focus,html body #settings .acc-b textarea:focus{outline:0;border-color:var(--m-bl)!important;box-shadow:0 0 0 3px #3d8bff26}
+html body #settings .acc-b input[type=range]{min-height:0!important;height:auto;padding:0;border:0!important;background:transparent!important}
+
+/* buttons: primary = blue tint, .g = quiet, .danger = red tint */
+html body #settings .acc-b .btn,html body #settings .acc-b button.g{
+  box-sizing:border-box;min-height:var(--m-h)!important;height:auto;padding:0 14px!important;border-radius:11px!important;font-size:13.5px;font-weight:600;line-height:1.25;
+  display:flex;align-items:center;justify-content:center;text-align:center;width:auto;
+  background:#14233d!important;background-image:none!important;color:#d6e6ff!important;border:1px solid #2b5aa8!important;box-shadow:none!important}
+html body #settings .acc-b .btn.g,html body #settings .acc-b button.g{background:#10131a!important;color:#d4d9e4!important;border-color:#272d3b!important}
+html body #settings .acc-b .btn.danger,html body #settings .acc-b .btn.g.danger{background:#1a1012!important;color:var(--m-rd)!important;border-color:#4a2a2a!important}
+html body #settings .acc-b .btn:active{border-color:var(--m-bl)!important}
+html body #settings .acc-b .btn:disabled{opacity:.45}
+html body #settings .acc-b>.card>.btn,html body #settings .acc-b .card>.btn:only-of-type{width:100%}
+html body #settings .acc-b .btnrow{display:flex;flex-wrap:wrap;gap:8px;margin:0!important}
+html body #settings .acc-b .btnrow>.btn,html body #settings .acc-b .btnrow>button{flex:1 1 0;min-width:96px}
+html body #settings .acc-b .card>.btn{margin-top:0!important}
+
+/* switch rows */
+html body #settings .acc-b .cr{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;padding:6px 12px!important;margin:0!important;border:1px solid var(--m-line);border-radius:12px;background:var(--m-s1);box-sizing:border-box}
+html body #settings .acc-b .cr>span{flex:1 1 auto;min-width:0;font-size:14px;line-height:1.35;color:var(--m-tx)}
+
+/* permission rows: label + status on the left, action(s) on the right */
+html body #settings .acc-b .prow.prow-g{display:grid!important;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;row-gap:5px;align-items:center;min-height:0!important;padding:10px 12px!important;margin:0!important;border:1px solid var(--m-line)!important;border-left:3px solid var(--st,#4a5163)!important;border-radius:12px;background:var(--m-s1)}
+html body #settings .acc-b .prow.prow-g>span:first-child{grid-column:1;grid-row:1;display:block;flex:none;font-size:14px;font-weight:600;line-height:1.35;color:var(--m-tx);min-width:0}
+html body #settings .acc-b .prow.prow-g>span:first-child::before{content:none!important}
+html body #settings .acc-b .prow.prow-g>.pstatus{grid-column:1;grid-row:2;justify-self:start;flex:none;max-width:100%;padding:2px 9px;border-radius:999px;font-size:11.5px;line-height:1.4;white-space:normal;text-align:left}
+html body #settings .acc-b .prow.prow-g>.prow-act{grid-column:2;grid-row:1 / span 2;display:flex;align-items:center;gap:6px}
+html body #settings .acc-b .prow.prow-g .btn{min-height:var(--m-act)!important;height:var(--m-act);padding:0 12px!important;margin:0!important;width:auto!important;font-size:13px}
+
+/* memory rows, key rows */
+html body #settings .acc-b .mi,html body #settings .acc-b .kr{min-height:46px!important;padding:6px 10px!important;border:1px solid var(--m-line);border-radius:12px;background:var(--m-s1);margin:0 0 8px!important}
+html body #settings .acc-b .mi button,html body #settings .acc-b .kr button{min-height:var(--m-act)!important;min-width:var(--m-act)}
+html body #settings .acc-b .mi>span{font-size:13.5px;line-height:1.4}
+html body #settings .acc-b .mg-items{margin-top:8px}
+html body #settings .acc-b #mFacts .mrow-back{margin-bottom:0;border:1px solid var(--m-line);border-radius:12px;background:var(--m-s1)}
+html body #settings .acc-b #mFacts .mg-list{margin-top:2px}
+html body #settings .acc-b #kList{display:flex;flex-direction:column;gap:8px}
+html body #settings .acc-b #kList .kgrp{border:1px solid var(--m-line);border-radius:12px;background:var(--m-s1);overflow:hidden}
+html body #settings .acc-b #kList .kghead{display:flex;align-items:center;gap:10px;width:100%;min-height:50px;padding:8px 12px;background:transparent;border:0;color:var(--m-tx);font:600 14.5px/1.3 system-ui;text-align:left}
+html body #settings .acc-b #kList .kghead .chev{margin-left:auto;font-size:18px;color:var(--m-mu2)}
+html body #settings .acc-b #kList .key-back{display:flex;align-items:center;width:100%;min-height:44px;padding:0 12px;background:transparent;border:0;border-bottom:1px solid var(--m-line);color:#90bfff;font:600 13.5px/1 system-ui;margin:0}
+html body #settings .acc-b #kList .kgbody{padding:8px}
+html body #settings .acc-b #kList.key-detail-mode .key-away{display:none!important}
+html body #settings .acc-b #kList .key-current .kghead .chev{display:none}
+
+/* Scraping tabs (Keys / Health / Test) as one slim segmented control */
+html body #settings .acc-b .wtabs{display:flex;gap:4px;padding:3px;border:1px solid var(--m-line);border-radius:12px;background:var(--m-s1)}
+html body #settings .acc-b .wtab{flex:1 1 0;min-height:34px;padding:0 8px;border:0;border-radius:9px;background:transparent;color:var(--m-mu);font:600 13px/1 system-ui}
+html body #settings .acc-b .wtab.on{background:#14233d;color:#d6e6ff}
+html body #settings .acc-b .wpane{display:flex;flex-direction:column;gap:8px}
+html body #settings .acc-b .wpane.hidden{display:none}
+html body #settings .acc-b .rep,html body #settings .acc-b .wout{font-size:12.5px;line-height:1.5}
+
+/* accent chips */
+html body #settings .acc-b .chips{display:flex;flex-wrap:wrap;gap:10px;padding:4px 2px}
+html body #settings .acc-b .chips .chip{width:30px;height:30px;border-radius:50%}
+
+/* usage blocks */
+html body #settings .acc-b .ux-blk{padding:10px 12px;border-radius:12px;background:var(--m-s1);border:1px solid var(--m-line)}
+
+/* GitHub / Repo Runner pages keep their own markup, just tighter */
+html body #settings #repoWorkspace .card{padding:0!important;background:transparent!important;border:0!important}
+
+@media(prefers-reduced-motion:reduce){
+  html body #settings .acc-b.mnu.mnu-fwd>.card.mnu-open,html body #settings .acc-b.mnu.mnu-fwd>#repoWorkspace,html body #settings .acc-b.mnu.mnu-back>.mnu-list{animation:none}
+}

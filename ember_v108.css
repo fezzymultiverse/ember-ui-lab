@@ -1,0 +1,16 @@
+/* Ember V1.10.9 - ember_v108.css */
+
+/* 1) One Settings only: the old "All Settings" list is never shown (the side panel is the list). */
+html body #settings .acc-wrap:not(.acc-in-detail){visibility:hidden}
+html body #ehubClassic{display:none!important}
+
+/* 2) Sheets opened from inside Settings (Media engines etc.) must sit ABOVE the Settings panel (z-index 181), not under it. */
+.sheet.show:not(#settings){z-index:190}
+
+/* 3) Permissions, Voice & Background: clean two-line rows instead of squashed label/pill/button in one line. */
+html body #settings .acc-b .prow:has(.pstatus){display:flex!important;flex-wrap:wrap;align-items:center;gap:10px;padding:14px!important;margin:0 0 10px!important;border:1px solid #1f1f23!important;border-left:3px solid var(--st,#6c6c73)!important;border-radius:14px;background:#0e0e10}
+html body #settings .acc-b .prow:has(.pstatus)>span:first-child{flex:1 1 100%;display:flex;align-items:flex-start;gap:6px;font-size:15px;font-weight:600;line-height:1.35;color:#ececef;min-width:0}
+html body #settings .acc-b .prow:has(.pstatus)>span:first-child::before{flex:0 0 26px;margin-right:0!important}
+html body #settings .acc-b .prow:has(.pstatus) .pstatus{flex:1 1 130px;min-width:0;box-sizing:border-box;text-align:center;white-space:normal}
+html body #settings .acc-b .prow:has(.pstatus) .btn{flex:0 0 auto;width:auto!important;min-height:42px;margin:0!important;padding:0 16px!important}
+html body #settings .acc-b .prow:has(.pstatus) .sw{flex:0 0 auto}

@@ -1,0 +1,31 @@
+const fs = require('fs');
+const path = require('path');
+const root = path.join(__dirname, '..');
+const www = path.join(root, 'www');
+const assert = require('assert');
+const html = fs.readFileSync(path.join(www, 'index.html'), 'utf8');
+const css = fs.readFileSync(path.join(www, 'ember_v96.css'), 'utf8');
+const app = fs.readFileSync(path.join(www, 'app.js'), 'utf8');
+const acc = fs.readFileSync(path.join(www, 'ember_acc.js'), 'utf8');
+const workspace = fs.readFileSync(path.join(www, 'ember_workspace.js'), 'utf8');
+const features = fs.readFileSync(path.join(www, 'ember_features.js'), 'utf8');
+const sw = fs.readFileSync(path.join(www, 'sw.js'), 'utf8');
+assert.match(html, /id="bActionMenu"/, 'one header actions button should replace separate right-side controls');
+assert.match(html, /id="headerActionsMenu"/, 'actions should open in a labeled menu');
+assert.match(html, /id="bCommandCenter"[\s\S]*?Ember Command Centre/, 'menu should retain the Command Centre action');
+assert.match(html, /class="ember-signal"[\s\S]*?<i><\/i><i><\/i><i><\/i>/, 'Ember title should have the three-light signal');
+assert.match(acc, /acc-in-detail/, 'settings categories should use a detail page');
+assert.match(acc, /data-acc-back/, 'settings detail page should have return navigation');
+assert.match(fs.readFileSync(path.join(__dirname, '..', 'www', 'ember_menu.js'), 'utf8'), /mnu-paged/, 'settings card options should open in a detail page (V1.10.11: ember_menu.js)');
+assert.match(app, /data-key-provider-open/, 'provider key groups should open as detail pages');
+assert.match(workspace, /headerActionsMenu/, 'AI Features should be moved to the actions menu');
+assert.doesNotMatch(workspace, /bar\.append\(\$\('engs'\)\)/, 'engine status should not be placed in the lower chat footer');
+assert.match(css, /header-actions-menu/, 'the header action menu should be styled');
+assert.match(sw, /ember-v1\.9\.99-ui-refinement/, 'offline cache version should be bumped');
+assert.match(sw, /ember_action_menu\.js/, 'offline cache should include the new actions script');
+assert.match(sw, /provider-icons\/puter\.webp/, 'offline cache should include provider marks');
+assert.match(css, /ember-signal i:nth-child\(3\)/, 'the three status lights should scale from large to small');
+for (const f of ['groq.svg','mistral.svg','gemini.svg','cohere.svg','anthropic.svg','openrouter.svg','stability.svg','puter.webp']) {
+  assert.ok(fs.existsSync(path.join(www, 'provider-icons', f)), 'bundled provider icon missing: ' + f);
+}
+console.log('13 Ember UI refinement checks passed');

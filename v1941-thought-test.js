@@ -1,0 +1,15 @@
+const fs = require('fs');
+const assert = require('assert');
+const js = fs.readFileSync('www/ember_timeline.js', 'utf8');
+const css = fs.readFileSync('www/style.css', 'utf8');
+const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+const sw = fs.readFileSync('www/sw.js', 'utf8');
+assert(/^1\.9\.\d+$/.test(pkg.version));
+assert(sw.includes("const V = 'ember-v" + pkg.version + "'"), 'service worker cache must refresh this version');
+assert(js.includes("['tl', 'dd', 'claude'].includes(v)"), 'existing dropdown and new style must be preserved');
+assert(js.includes("{ tl: 'dd', dd: 'claude', claude: 'tl' }"), 'switch must cycle all three styles');
+assert(js.includes('et-dots') && js.includes('et-status'), 'Claude-like status display must exist');
+assert(js.includes('et-claude-saved') && js.includes('Thought for '), 'completed run summary must be saved');
+assert(js.includes("case 'web_search'") && js.includes("case 'youtube_download'"), 'existing web and download labels must remain');
+assert(css.includes('.et-claude .et-dots') && css.includes('prefers-reduced-motion:reduce'), 'animation and reduced-motion support must exist');
+console.log('PASS V1.9.41/42 additive thinking display regression checks');

@@ -1,0 +1,44 @@
+/* Ember V1.9.81 - egg = the app SVG icon (inline, no orb), flashing blue dot beside every Thinking label, Manus-style "More add-ons" sheet. Loaded after ember_v80.css. */
+:root{--live:#3b9eff}
+
+/* ---- 1. the egg on the empty screen is the Ember app icon (inline SVG, no .flame orb rules can touch it) ---- */
+.ev-hero{display:block;width:84px;height:84px;margin:0 auto;border-radius:22px;overflow:visible;filter:drop-shadow(0 10px 30px rgba(255,106,0,.42));animation:ev-breathe 4s ease-in-out infinite;transform-origin:50% 60%}
+@keyframes ev-breathe{0%,100%{transform:scale(1)}45%{transform:scale(1.07)}}
+@media(max-height:700px){.ev-hero{width:60px;height:60px}}
+@media(prefers-reduced-motion:reduce){.ev-hero{animation:none}}
+
+/* ---- 2. flashing blue dot beside Thinking (every thinking style, the top pill and the live row) ---- */
+@keyframes ev-blink{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(59,158,255,.7),0 0 10px 2px rgba(59,158,255,.9)}50%{opacity:.22;transform:scale(.78);box-shadow:0 0 0 7px rgba(59,158,255,0),0 0 2px 0 rgba(59,158,255,.2)}}
+html body .et-led{flex:0 0 10px;width:10px;height:10px;border-radius:50%;background:#3b9eff!important;animation:ev-blink 1s ease-in-out infinite!important}
+html body .tl-shimmer::before,html body .et-shimmer::before{content:"";display:inline-block;width:9px;height:9px;margin-right:9px;border-radius:50%;background:#3b9eff;vertical-align:middle;position:relative;top:-1px;animation:ev-blink 1s ease-in-out infinite}
+html body .tl-item.tl-now .tl-live{background:#3b9eff!important;box-shadow:0 0 0 3px rgba(59,158,255,.16),0 0 12px rgba(59,158,255,.8)!important;animation:ev-blink 1s ease-in-out infinite!important}
+html body .tl-item.tl-now .tl-live::after{background:#3b9eff!important}
+html body #engs.activity i{background:#3b9eff!important;animation:ev-blink 1s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){html body .et-led,html body .tl-shimmer::before,html body .et-shimmer::before,html body .tl-item.tl-now .tl-live,html body #engs.activity i{animation:none!important;opacity:1}}
+
+/* ---- 3. "+" menu: the More add-ons row ---- */
+.pmenu .pm-more{margin:2px 0 6px;border:1px solid color-mix(in srgb,var(--ac) 65%,#000)!important;background:linear-gradient(135deg,rgba(255,106,0,.20),rgba(255,106,0,.05))!important}
+.pmenu .pm-more .pm-ic{width:30px;height:30px;border-radius:10px;background:var(--ac);color:#140600;font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:18px}
+.pmenu .pm-more .pm-chev{margin-left:auto;color:var(--ac);font-size:20px}
+
+/* ---- 4. Add-ons sheet ---- */
+#xaddons{z-index:72}
+#xaddons .xa-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px 14px calc(30px + var(--safe,0px));max-width:760px;width:100%;margin:0 auto}
+.xa-search{width:100%;box-sizing:border-box;height:44px;border-radius:14px;border:1px solid #2c2c2c;background:#0e0e0e;color:#fff;padding:0 14px;font-size:16px;outline:none}
+.xa-search:focus{border-color:var(--ac)}
+.xa-cats{display:flex;gap:8px;overflow-x:auto;margin:12px -2px 4px;padding:2px;scrollbar-width:none}
+.xa-cats::-webkit-scrollbar{display:none}
+.xa-cat{flex:0 0 auto;height:34px;padding:0 14px;border-radius:999px;border:1px solid #2c2c2c;background:#111;color:#cfcfcf;font-size:13px;font-weight:600;white-space:nowrap}
+.xa-cat.on{background:var(--ac);border-color:var(--ac);color:#140600}
+.xa-h{font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#a8a8a8;margin:18px 2px 8px}
+.xa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.xa-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:112px;padding:13px 12px 12px;border-radius:18px;border:1px solid #262626;background:#0e0e0e;color:#fff;text-align:left;-webkit-tap-highlight-color:transparent}
+.xa-tile:active{background:#181818;border-color:var(--ac)}
+.xa-tile.on{border-color:var(--ac);background:linear-gradient(160deg,rgba(255,106,0,.17),#0e0e0e 70%);box-shadow:0 0 18px rgba(255,106,0,.18)}
+.xa-ic{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;background:var(--t1,rgba(255,106,0,.16))}
+.xa-t{font-size:14.5px;font-weight:700;line-height:1.2}
+.xa-s{font-size:12px;line-height:1.35;color:#a8a8a8}
+.xa-k{position:absolute;top:10px;right:10px;font-size:9.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:3px 7px;border-radius:99px;background:#1b1b1b;color:#bdbdbd}
+.xa-k.on{background:var(--ac);color:#140600}
+.xa-empty{padding:30px 10px;text-align:center;color:#a8a8a8;font-size:14px}
+.xa-foot{margin:18px 2px 0;font-size:12px;line-height:1.5;color:#8d8d93}

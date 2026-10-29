@@ -1,0 +1,26 @@
+PASS EmberVoice loaded 
+PASS active() true by default with a Gemini key saved 
+PASS speak ok 
+PASS one Gemini request, first model is 3.1 flash tts preview 
+PASS key goes in x-goog-api-key, not the URL 
+PASS asks for AUDIO with the Puck voice 
+FAIL text and warm style prefix sent 
+PASS calm tone asks for slow, soft, no jokes 
+PASS 404 on the first model moves to the next and succeeds 
+PASS working model is remembered and tried first 
+PASS 429 returns not-ok with the text to read on the phone voice 
+PASS a model that returns no audio falls back 
+PASS speakText falls back to the phone voice with the same text 
+FAIL cloud request made and the phone voice not used 
+FAIL stop ends playback early and reports stopped {"ok":false,"note":"Gemini voice is unavailable, using the phone voice","rest":"A long one that will be stopped."} 906ms
+PASS split keeps every chunk at or under 700 characters 
+FAIL a very long reply uses 6 cloud chunks and leaves the rest {"ok":false,"hasRest":true,"restLen":9502} calls=0
+PASS active() true with an ElevenLabs key 
+FAIL ElevenLabs request has the key header, voice id in the path and the text {"ok":false,"note":"Gemini voice is unavailable, using the phone voice","rest":"Eleven labs speaking."}[]
+FAIL ElevenLabs with no key is not active 
+PASS Ember Voice picker, voice list and note exist 
+PASS choosing Phone voice only turns the cloud voice off and saves it 
+PASS Phone voice only: native voice speaks and no cloud request is made 
+PASS no page errors 
+
+18 passed, 6 failed

@@ -1,0 +1,24 @@
+PASS new media and downloader modules loaded
+PASS AI Features accessible from main UI
+PASS Stability full name and embedded badge visible
+PASS chat provider list excludes media-only Stability
+PASS default Stability media has no dead video option
+PASS Puter explicitly offers video
+PASS AI stages media request without paid submission
+PASS adding Stability key tests account without generation
+PASS unconfirmed media generation blocked
+PASS Stability image request uses multipart official endpoint
+PASS generated image stored as downloadable binary artifact
+PASS Stability audio correct model duration and endpoint
+PASS media output is kept outside conversation context
+PASS binary artifacts persist across reload
+PASS permission switches compact at mobile width
+PASS permission switches expose accessible state
+PASS system permission grants remain honest Request controls
+PASS download engine and video mode saved
+PASS playlist download reaches yt-dlp as full video mode
+PASS AI video download uses same resolver
+PASS pasted YouTube playlist is recognized for AI download
+PASS no uncaught page errors
+
+22 browser integration checks passed. All providers and bridge mocked.

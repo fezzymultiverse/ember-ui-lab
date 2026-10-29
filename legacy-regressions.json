@@ -1,0 +1,140 @@
+[
+  {
+    "test": "artifact-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "routing-fallback-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "streaming-routing-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "safety-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "context-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "keyscan-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "handoff-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "v1915-test.js",
+    "status": "FAIL",
+    "exit": 1,
+    "details": [
+      "FAIL persona shows scraper tools when scraping is on "
+    ]
+  },
+  {
+    "test": "v1927-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "v1927b-test.js",
+    "status": "FAIL",
+    "exit": 1,
+    "details": [
+      "FAIL button label says whole playlist undefined"
+    ]
+  },
+  {
+    "test": "v1928-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "v1929-test.js",
+    "status": "FAIL",
+    "exit": 1,
+    "details": []
+  },
+  {
+    "test": "v1930-test.js",
+    "status": "FAIL",
+    "exit": 1,
+    "details": [
+      "FAIL menu markup has 4 toggles and 3 do-it-now items undefined"
+    ]
+  },
+  {
+    "test": "v1932-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "v1933-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "v1980-puter-key-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "v1987-test.js",
+    "status": "FAIL",
+    "exit": 1,
+    "details": [
+      "FAIL pdf: mintpdf answers with a real PDF ",
+      "FAIL pdf: daily limit on mintpdf falls to pdfrender (JSON base64) ",
+      "FAIL pdf: an HTML error page is rejected, next provider tried ",
+      "FAIL pdf: length mismatch is caught as truncation, both failing gives ok:false ",
+      "FAIL pdf: gzip responses skip the length check "
+    ]
+  },
+  {
+    "test": "v1988-test.js",
+    "status": "FAIL",
+    "exit": 1,
+    "details": []
+  },
+  {
+    "test": "v1991-deliverables-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "v1992-repo-runner-test.js",
+    "status": "PASS",
+    "exit": 0,
+    "details": []
+  },
+  {
+    "test": "command-center-test.js",
+    "status": "FAIL",
+    "exit": 1,
+    "details": []
+  }
+]

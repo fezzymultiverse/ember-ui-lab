@@ -1,0 +1,26 @@
+{
+  "pdfmake-0.2.20.min.js": {
+    "url": "https://cdn.jsdelivr.net/npm/pdfmake@0.2.20/build/pdfmake.min.js",
+    "sha256": "c2fd3a5e24db096c9139bb7d266765de433b0b866d03ba356c2ef4d9ae1a53b7"
+  },
+  "pdfmake-0.2.20-fonts.js": {
+    "url": "https://cdn.jsdelivr.net/npm/pdfmake@0.2.20/build/vfs_fonts.js",
+    "sha256": "f91db5690400fc851536c3a9322f822619f8e9f681abe42013e572d88d3c1f38"
+  },
+  "docx-9.5.1.iife.js": {
+    "url": "https://cdn.jsdelivr.net/npm/docx@9.5.1/dist/index.iife.js",
+    "sha256": "bb2908d72ffd8a3d896b455563733d3a2e708e1384a5140e05b3c6dd0b2f676d"
+  },
+  "pdfmake-LICENSE.txt": {
+    "url": "https://cdn.jsdelivr.net/npm/pdfmake@0.2.20/LICENSE",
+    "sha256": "009e509bbd25a0f7572b184781707263f5df9e89d2ed751c46e0f6edf0c5d42e"
+  },
+  "docx-LICENSE.txt": {
+    "url": "https://cdn.jsdelivr.net/npm/docx@9.5.1/LICENSE",
+    "sha256": "b5b2364c0c95a26b2a2399d7e706a61acac680be1d5b180b00592ee85830bffb"
+  },
+  "Roboto-LICENSE.txt": {
+    "url": "https://raw.githubusercontent.com/googlefonts/roboto/main/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  }
+}

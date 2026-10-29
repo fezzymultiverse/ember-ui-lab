@@ -1,0 +1,46 @@
+PASS first run shows the key card 
+PASS Free Mode toggle is ON with no keys 
+PASS Free Mode badge shows at the top of the chat 
+PASS Free Mode busy shows a graceful message 
+PASS no-key send is answered by Free Mode 
+PASS Settings did not pop up for a no-key send 
+PASS Free Mode never gets a memory or summary job 
+CRASH page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('.stab[data-st="keys"]')
+    - locator resolved to <button class="stab" data-st="keys">Keys</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+    at pg.click (/home/user/ember/baseline/ember-V1_9_94/tests/app-test.js:36:62)
+    at async /home/user/ember/baseline/ember-V1_9_94/tests/app-test.js:96:28 {
+  log: [
+    `  - waiting for locator('.stab[data-st="keys"]')`,
+    '    - locator resolved to <button class="stab" data-st="keys">Keys</button>',
+    '  - attempting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not visible',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not visible',
+    '    - retrying click action',
+    '      - waiting 100ms',
+    '    56 × waiting for element to be visible, enabled and stable',
+    '       - element is not visible',
+    '     - retrying click action',
+    '       - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}
