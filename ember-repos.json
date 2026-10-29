@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "brain": "fezzymultiverse/ember-brain",
+  "brain": "aravindhangen/Intelligent-Codebase-Query-System-using-RAG",
   "target": "fezzymultiverse/ember-ui-lab",
   "branch": "",
   "sources": [
     {
-      "repo": "fezzymultiverse/ember-brain"
+      "repo": "aravindhangen/Intelligent-Codebase-Query-System-using-RAG"
     },
     {
       "repo": "callbacked/keyless-gpt-wrapper-api"
@@ -18,6 +18,15 @@
     },
     {
       "repo": "somanchiu/Keyless-Google-Maps-API"
+    },
+    {
+      "repo": "bibinprathap/VeritasGraph"
+    },
+    {
+      "repo": "Atumkezie/atumkezie.github.io"
+    },
+    {
+      "repo": "ZaunEkko/codex-plugins"
     }
   ],
   "buildWorkflow": "build.yml",
